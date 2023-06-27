@@ -1,4 +1,4 @@
-# AI-Strategy
+# strategy-ai
 
 ## What is This For?
 This is an app designed to take your company's strategy documents and identify the core strategy of your business across the multiple perspectives, including:
