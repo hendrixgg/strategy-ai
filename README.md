@@ -34,3 +34,6 @@ The more documents uploaded the better the system will be able to provide insigh
 - https://dev.to/nagatodev/getting-started-with-flask-1kn1
 
 ### Front-End: ReactJs
+- create the app: https://www.youtube.com/watch?v=vr-I2HIVmTw
+- https://developer.okta.com/blog/2022/03/14/react-vite-number-converter
+- need to figure out how to use typescript with all of this **maybe not cause will be slower to learn, but pretty sure it is industry standard
