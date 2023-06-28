@@ -1,13 +1,15 @@
-from flask import Flask, jsonify
+from flask import Flask
+from flask_cors import CORS
 
 api = Flask(__name__)
+CORS(api, origins="*")
 
 
 @api.route('/profile')
 def my_profile():
     response_body = {
-        "name": "Nagato",
-        "about": "Hello! I'm a full stack developer that loves python and javascript"
+        "name": "Hendrix",
+        "about": "I'm making an application that takes company documents and identifies their strategy with AI."
     }
 
-    return jsonify(response_body)
+    return response_body
