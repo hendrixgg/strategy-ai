@@ -1,0 +1,111 @@
+{
+    "path": "",
+    "name": "photos",
+    "type": "directory",
+    "children": [
+        {
+            "path": "summer",
+            "name": "summer",
+            "type": "directory",
+            "children": [
+                {
+                    "path": "summer/june",
+                    "name": "june",
+                    "type": "directory",
+                    "children": [
+                        {
+                            "path": "summer/june/windsurf.jpg",
+                            "name": "windsurf.jpg",
+                            "type": "file",
+                            "children": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "winter",
+            "name": "winter",
+            "type": "directory",
+            "children": [
+                {
+                    "path": "winter/january",
+                    "name": "january",
+                    "type": "directory",
+                    "children": [
+                        {
+                            "path": "winter/january/ski.png",
+                            "name": "ski.png",
+                            "type": "file",
+                            "children": null
+                        },
+                        {
+                            "path": "winter/january/snowboard.jpg",
+                            "name": "snowboard.jpg",
+                            "type": "file",
+                            "children": null
+                        }
+                    ]
+                },
+                {
+                    "path": "winter/january2",
+                    "name": "january2",
+                    "type": "directory",
+                    "children": [
+                        {
+                            "path": "winter/january2/ski.png",
+                            "name": "ski.png",
+                            "type": "file",
+                            "children": null
+                        },
+                        {
+                            "path": "winter/january2/snowboard.jpg",
+                            "name": "snowboard.jpg",
+                            "type": "file",
+                            "children": null
+                        }
+                    ]
+                },
+                {
+                    "path": "winter/january3",
+                    "name": "january3",
+                    "type": "directory",
+                    "children": [
+                        {
+                            "path": "winter/january3/ski.png",
+                            "name": "ski.png",
+                            "type": "file",
+                            "children": null
+                        },
+                        {
+                            "path": "winter/january3/snowboard.jpg",
+                            "name": "snowboard.jpg",
+                            "type": "file",
+                            "children": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "spring",
+            "name": "spring",
+            "type": "directory",
+            "children": [
+                {
+                    "path": "spring/april",
+                    "name": "april",
+                    "type": "directory",
+                    "children": [
+                        {
+                            "path": "spring/april/dogs.jpg",
+                            "name": "dogs.jpg",
+                            "type": "file",
+                            "children": null
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

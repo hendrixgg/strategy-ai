@@ -46,3 +46,4 @@ The more documents uploaded the better the system will be able to provide insigh
 1. set up backend with python
     1. followed the steps in the article up to [here](https://dev.to/nagatodev/how-to-connect-flask-to-reactjs-1k8i#:~:text=backend/__pycache__-,Connecting,-the%20API%20endpoint)
     1. next step: continue from the above link
+    1. had to modify some stuff in the vite.config.ts file

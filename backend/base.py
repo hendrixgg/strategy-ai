@@ -13,3 +13,8 @@ def my_profile():
     }
 
     return response_body
+
+
+@api.route("/files")
+def files_json():
+    return
