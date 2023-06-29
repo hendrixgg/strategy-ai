@@ -30,4 +30,4 @@ function Directory({ files, indent }: {
     )
 }
 
-export default Directory
+export default Directory;

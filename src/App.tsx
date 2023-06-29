@@ -1,23 +1,19 @@
 import React from 'react'
-// import axios from "axios"
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import './App.css'
-import FilesBox from './FileSystem/FilesBox'
-
-// interface ProfileData {
-//   profile_name: string,
-//   about_me: string,
-// }
+import FilesSection from './FileSystem/FilesSection'
 
 function App(): React.JSX.Element {
 
   return (
     <>
-      <div className="app-view">
-        <div className="top-bar">top bar</div>
-        <div className="container align-horizontally">
-          <div className="files left-inner"><FilesBox /></div>
+      <div className="app-view pack-vertically">
+        <div className="top-bar">
+          <h2>Strategy AI</h2>
+        </div>
+        <div className="content pack-horizontally">
+          <div className="files left-inner">
+            <FilesSection />
+          </div>
           <div className="interaction right-inner">other stuff</div>
         </div>
       </div>

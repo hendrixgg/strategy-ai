@@ -4,7 +4,7 @@ import FileSearchBar from "./FileSearchBar";
 import Directory from "./Directory";
 import FileDirectory from "./FileDirectory";
 
-function FilesBox(): React.JSX.Element {
+function FilesSection(): React.JSX.Element {
     const [clientFiles, setClientFiles] = useState<FileDirectory | null>(null)
     const [aiFiles, setAiFiles] = useState<FileDirectory | null>(null)
 
@@ -37,13 +37,11 @@ function FilesBox(): React.JSX.Element {
 
     return (
         <>
-            <div className="files">
-                <FileSearchBar />
-                <Directory files={clientFiles} indent={0} />
-                <Directory files={aiFiles} indent={0} />
-            </div>
+            <FileSearchBar />
+            <Directory files={clientFiles} indent={0} />
+            <Directory files={aiFiles} indent={0} />
         </>
     )
 }
 
-export default FilesBox;
+export default FilesSection;

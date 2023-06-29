@@ -1,27 +1,9 @@
-.app-view {
-  overflow-y: hidden;
-  height: 100%;
-  width: 100%;
-  display: stretch;
-}
-
-.top-bar {
-  height: 50px;
-  background-color: whitesmoke;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  padding: 0px 18px;
-  border-bottom: 1px solid lightgray;
-}
-
-.container {
-  height: 100%;
+.pack-horizontally {
   display: flex;
 }
 
-.container>div {
-  border: solid;
+.pack-horizontally>div {
+  border: 1px solid;
   height: 100%;
   display: stretch;
 }
@@ -31,11 +13,35 @@
   background-color: whitesmoke;
 }
 
-.files {
-  overflow-y: scroll;
-}
-
 .right-inner {
   flex-grow: 1;
   background-color: lightblue;
+}
+
+.pack-vertically {
+  width: 100%;
+  display: stretch;
+}
+
+.app-view {
+  height: 100%;
+  width: 100%;
+}
+
+.top-bar {
+  height: 5vh;
+  background-color: whitesmoke;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0px 18px;
+  border-bottom: 1px solid lightgray;
+}
+
+.content {
+  height: 95vh;
+}
+
+.files {
+  overflow-y: auto;
 }
