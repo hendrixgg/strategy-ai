@@ -1,6 +1,8 @@
 from flask import Flask
 from flask_cors import CORS
 
+from strategy_ai.tasks.path_to_json import path_to_dict
+
 api = Flask(__name__)
 CORS(api, origins="*")
 
@@ -15,6 +17,6 @@ def my_profile():
     return response_body
 
 
-@api.route("/files")
-def files_json():
-    return
+@api.route("/files/<dir>")
+def files(dir):
+    return path_to_dict(f".\\strategy_ai\\available_data\\{dir}")

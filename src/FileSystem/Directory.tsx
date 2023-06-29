@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-
-interface FileDirectory {
-    path: string,
-    name: string,
-    type: string,
-    children: FileDirectory[] | null
-}
+import FileDirectory from "./FileDirectory";
 
 function Directory({ files, indent }: {
-    files: FileDirectory,
+    files: FileDirectory | null,
     indent: number,
 }): React.JSX.Element {
     const [isExpanded, toggleExpanded] = useState<boolean>(false);
-
+    if (!files) {
+        return (
+            <>
+                <h4>no files to load...</h4>
+            </>
+        )
+    }
     if (files.type === "file") {
         return (
             <>
