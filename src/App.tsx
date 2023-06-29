@@ -1,10 +1,9 @@
-// import { useState } from 'react'
+import React from 'react'
 // import axios from "axios"
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
-import Directory from './FileSystem/Directory'
-import files from "./FileSystem/files.json"
+import FilesBox from './FileSystem/FilesBox'
 
 // interface ProfileData {
 //   profile_name: string,
@@ -15,10 +14,12 @@ function App(): React.JSX.Element {
 
   return (
     <>
-      <div className="top-bar">top bar</div>
-      <div className="container align-horizontally">
-        <div className="files left-inner"><Directory files={files} /></div>
-        <div className="interaction right-inner">other stuff</div>
+      <div className="app-view">
+        <div className="top-bar">top bar</div>
+        <div className="container align-horizontally">
+          <div className="files left-inner"><FilesBox /></div>
+          <div className="interaction right-inner">other stuff</div>
+        </div>
       </div>
     </>
   )

@@ -7,8 +7,9 @@ interface FileDirectory {
     children: FileDirectory[] | null
 }
 
-function Directory({ files }: {
+function Directory({ files, indent }: {
     files: FileDirectory,
+    indent: number,
 }): React.JSX.Element {
     const [isExpanded, toggleExpanded] = useState<boolean>(false);
 
@@ -21,12 +22,12 @@ function Directory({ files }: {
     }
     return (
         <div className="folder">
-            <h2 className="folder-title" onClick={() => toggleExpanded(!isExpanded)}>{files.name}</h2><br />
+            <h2 className="folder-title" onClick={() => toggleExpanded(!isExpanded)}>{files.name}</h2>
             {
-                isExpanded && files.children && files.children.map((item) => <Directory files={item} />)
+                isExpanded && files.children && files.children.map((item) => <Directory key={item.path} files={item} indent={indent + 1} />)
             }
         </div>
     )
 }
 
-export default Directory;
+export default Directory

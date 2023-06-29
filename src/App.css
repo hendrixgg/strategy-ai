@@ -1,3 +1,10 @@
+.app-view {
+  overflow-y: hidden;
+  height: 100%;
+  width: 100%;
+  display: stretch;
+}
+
 .top-bar {
   height: 50px;
   background-color: whitesmoke;
@@ -15,8 +22,8 @@
 
 .container>div {
   border: solid;
-  height: 100vh;
-
+  height: 100%;
+  display: stretch;
 }
 
 .left-inner {
