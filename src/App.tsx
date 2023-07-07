@@ -10,10 +10,10 @@ function App(): React.JSX.Element {
         <h2>Strategy AI</h2>
       </div>
       <div className="content pack-horizontally">
-        <div className="files left-inner">
+        <div className="left-inner">
           <FilesSection />
         </div>
-        <div className="interaction right-inner">
+        <div className="right-inner">
           other stuff
         </div>
       </div>

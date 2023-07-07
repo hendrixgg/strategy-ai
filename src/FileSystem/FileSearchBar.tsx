@@ -3,11 +3,9 @@ import React from "react";
 function FileSearchBar(): React.JSX.Element {
 
     return (
-        <>
-            <div>
-                searchbar
-            </div>
-        </>
+        <div>
+            searchbar
+        </div>
     )
 }
 

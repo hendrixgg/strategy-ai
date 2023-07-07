@@ -5,3 +5,13 @@
     white-space: nowrap;
     overflow: hidden;
 }
+
+.files-section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.files {
+    overflow-y: auto;
+}

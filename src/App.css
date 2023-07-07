@@ -1,12 +1,10 @@
 .top-bar {
   min-height: fit-content;
   height: 5%;
-  background-color: whitesmoke;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
   padding: 0px 18px;
-  border-bottom: 1px solid lightgray;
 }
 
 .content {
@@ -15,26 +13,18 @@
 
 .pack-horizontally {
   display: flex;
-}
-
-.pack-horizontally>div {
-  border: 1px solid;
+  flex-direction: row;
 }
 
 .left-inner {
   min-width: 20%;
   width: 20%;
   resize: horizontal;
-  background-color: whitesmoke;
+  overflow-y: hidden;
 }
 
 /* fills the remaining space horizontally */
 .right-inner {
   flex-grow: 1;
-  background-color: lightblue;
-}
-
-.files {
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow-y: hidden;
 }

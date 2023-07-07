@@ -10,3 +10,10 @@ body {
     height: inherit;
     width: inherit;
 }
+
+/* just so that I can see the borders when working*/
+#root>div,
+#root>div>div {
+    border: 1px solid;
+    box-sizing: border-box;
+}
