@@ -1,6 +1,6 @@
-import React from "react";
+import { FunctionComponent } from "react";
 
-function FileSearchBar(): React.JSX.Element {
+const FileSearchBar: FunctionComponent = () => {
 
     return (
         <div>
@@ -9,4 +9,4 @@ function FileSearchBar(): React.JSX.Element {
     )
 }
 
-export default FileSearchBar
+export default FileSearchBar;

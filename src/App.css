@@ -1,10 +1,5 @@
 .top-bar {
-  min-height: fit-content;
   height: 5%;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  padding: 0px 18px;
 }
 
 .content {
@@ -20,7 +15,7 @@
   min-width: 20%;
   width: 20%;
   resize: horizontal;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 /* fills the remaining space horizontally */

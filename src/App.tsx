@@ -1,13 +1,14 @@
-import React from 'react'
+import { FunctionComponent } from 'react'
 import './App.css'
 import FilesSection from './FileSystem/FilesSection'
+import TopBar from './TopBar/TopBar';
 
-function App(): React.JSX.Element {
+const App: FunctionComponent = () => {
 
   return (
     <>
       <div className="top-bar">
-        <h2>Strategy AI</h2>
+        <TopBar />
       </div>
       <div className="content pack-horizontally">
         <div className="left-inner">

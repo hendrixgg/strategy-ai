@@ -1,16 +1,13 @@
-import React, { useState } from "react";
+import { FunctionComponent, useState } from "react";
 import FileDirectory from "./FileDirectory";
 
-function Directory({ files, indent }: {
+const Directory: FunctionComponent<{
     files: FileDirectory | null,
-    indent: number,
-}): React.JSX.Element {
+}> = ({ files }) => {
     const [isExpanded, toggleExpanded] = useState<boolean>(false);
     if (!files) {
         return (
-            <>
-                <h4>no files to load...</h4>
-            </>
+            <h4>no files to load...</h4>
         )
     }
     if (files.type === "file") {
@@ -22,7 +19,9 @@ function Directory({ files, indent }: {
         <div className="folder">
             <h2 className="folder-title" onClick={() => toggleExpanded(!isExpanded)}>{files.name}</h2>
             {
-                isExpanded && files.children && files.children.map((item) => <Directory key={item.path} files={item} indent={indent + 1} />)
+                isExpanded
+                && files.children
+                && files.children.map((item) => <Directory key={item.path} files={item} />)
             }
         </div>
     )

@@ -43,8 +43,8 @@ const FilesSection: FunctionComponent = () => {
         <div className="files-section">
             <FileSearchBar />
             <div className="files elipses">
-                <Directory files={clientFiles} indent={0} />
-                <Directory files={aiFiles} indent={0} />
+                <Directory files={clientFiles} />
+                <Directory files={aiFiles} />
             </div>
         </div>
     )
