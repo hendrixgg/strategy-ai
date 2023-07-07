@@ -15,9 +15,7 @@ function Directory({ files, indent }: {
     }
     if (files.type === "file") {
         return (
-            <>
-                <h3 className="file-name">{files.name}</h3>
-            </>
+            <h3 className="file-name">{files.name}</h3>
         )
     }
     return (

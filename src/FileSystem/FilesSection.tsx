@@ -3,6 +3,7 @@ import axios from "axios";
 import FileSearchBar from "./FileSearchBar";
 import Directory from "./Directory";
 import FileDirectory from "./FileDirectory";
+import "./FilesSection.css"
 
 function FilesSection(): React.JSX.Element {
     const [clientFiles, setClientFiles] = useState<FileDirectory | null>(null)
@@ -36,11 +37,13 @@ function FilesSection(): React.JSX.Element {
     }, [])
 
     return (
-        <>
+        <div>
             <FileSearchBar />
-            <Directory files={clientFiles} indent={0} />
-            <Directory files={aiFiles} indent={0} />
-        </>
+            <div className="elipses">
+                <Directory files={clientFiles} indent={0} />
+                <Directory files={aiFiles} indent={0} />
+            </div>
+        </div>
     )
 }
 

@@ -1,5 +1,12 @@
 # strategy-ai
 
+## How to run?
+
+### Development environment
+1. Open up split cmd terminals  
+1. In the right terminal start the python server by running: "npm run start-backend"
+1. In the left terminal open the vite react app by running: "npm run dev"
+
 ## What is This For?
 This is an app designed to take your company's strategy documents and identify the core strategy of your business across the multiple perspectives, including:
 
