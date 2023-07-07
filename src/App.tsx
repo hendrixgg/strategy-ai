@@ -1,7 +1,8 @@
 import { FunctionComponent } from 'react'
 import './App.css'
-import FilesSection from './FileSystem/FilesSection'
 import TopBar from './TopBar/TopBar';
+import FilesSection from './FileSystem/FilesSection'
+import TasksSection from './TaskSystem/TasksSection'
 
 const App: FunctionComponent = () => {
 
@@ -15,7 +16,7 @@ const App: FunctionComponent = () => {
           <FilesSection />
         </div>
         <div className="right-inner">
-          other stuff
+          <TasksSection />
         </div>
       </div>
     </>
