@@ -1,6 +1,10 @@
 import { FunctionComponent } from "react";
 
-const TasksSection: FunctionComponent = () => {
+const TasksSection: FunctionComponent<{
+    onTaskSelect: Function,
+    onProgressUpdate: Function,
+    task: string | null,
+}> = () => {
     return (
         <div>
             Tasks

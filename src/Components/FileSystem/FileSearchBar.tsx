@@ -3,9 +3,9 @@ import { FunctionComponent } from "react";
 const FileSearchBar: FunctionComponent = () => {
 
     return (
-        <div>
+        <h5>
             searchbar
-        </div>
+        </h5>
     )
 }
 

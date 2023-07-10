@@ -17,6 +17,6 @@ def my_profile():
     return response_body
 
 
-@api.route("/files/<dir>")
-def files(dir):
-    return path_to_dict(f".\\strategy_ai\\available_data\\{dir}")
+@api.route("/files")
+def files():
+    return path_to_dict(f".\\strategy_ai\\available_data\\visible_files")

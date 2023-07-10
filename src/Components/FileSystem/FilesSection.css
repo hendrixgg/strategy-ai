@@ -1,0 +1,36 @@
+.elipses * {
+    text-overflow: ellipsis;
+
+    /* Required for text-overflow to do anything */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.files-section {
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+}
+
+.files-top-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.refresh-button {
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.refresh-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.files {
+    overflow-y: auto;
+}
