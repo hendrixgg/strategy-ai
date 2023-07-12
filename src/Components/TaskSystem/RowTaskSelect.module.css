@@ -1,0 +1,21 @@
+.rowTaskSelect {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 0rem 0rem;
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.rowTitle {
+    height: fit-content;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0.5rem 0rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+}

@@ -1,14 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+
 html,
 body {
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
+    font-family: Montserrat;
 }
 
 #root {
     height: inherit;
     width: inherit;
+    display: flex;
+    flex-direction: column;
 }
 
 /* just so that I can see the borders when working*/

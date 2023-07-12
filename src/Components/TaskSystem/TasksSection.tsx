@@ -1,13 +1,11 @@
-import { FunctionComponent } from "react";
+import React, { FunctionComponent } from "react";
 
 const TasksSection: FunctionComponent<{
-    onTaskSelect: Function,
-    onProgressUpdate: Function,
-    task: string | null,
-}> = () => {
+    children: React.ReactNode,
+}> = ({ children }) => {
     return (
-        <div>
-            Tasks
+        <div style={{ padding: "0.5rem 2.5rem 0rem" }}>
+            {children}
         </div>
     )
 }

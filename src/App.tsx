@@ -1,62 +1,45 @@
-import { FunctionComponent, useEffect, useState } from 'react'
-import './App.css'
-import TopBar from './Components/TopBar/TopBar';
-import FilesSection from './Components/FileSystem/FilesSection'
+import { FunctionComponent, useEffect, useState } from 'react';
+import './App.css';
+
 import useAxiosFetch from './hooks/useAxiosFetch';
-import TasksSection from './Components/TaskSystem/TasksSection'
+
+import FilesSection from './Components/FileSystem/FilesSection';
 import FileDirectory from './Components/FileSystem/FileDirectory';
 
+import { Tasks, Task } from './Components/TaskSystem/Tasks'; // should be retrieved from the backend, this should be associated with each task in python
+import TasksSection from './Components/TaskSystem/TasksSection';
+import ColumnHeader from "./Components/TaskSystem/ColumnHeader.tsx";
+import RowTaskSelect from './Components/TaskSystem/RowTaskSelect.tsx';
+import { TaskProcessState } from './Components/TaskSystem/TaskProcessState';
+
 const App: FunctionComponent = () => {
-  const [task, setTask] = useState<string | null>(null);
-  const [files, setFiles] = useState<Array<FileDirectory>>([]);
-
-  const [fileData, error, loading, fetchFileData] = useAxiosFetch({
-    method: "GET",
-    url: "/files",
-  });
-
+  const [task, setTask] = useState<Task>(Tasks[0]);
+  const [taskState, setTaskState] = useState<TaskProcessState>(TaskProcessState.selecting);
   useEffect(() => {
-    if (fileData) {
-      setFiles(fileData.children);
-      console.log(fileData);
-    } else {
-      setFiles([]);
+    if (task.id !== 0) {
+      setTaskState(TaskProcessState.ready);
     }
-  }, [fileData]);
-
-  useEffect(() => {
-    if (error) {
-      console.log(error);
-      setFiles([]);
-    }
-  }, [error]);
-
-  useEffect(() => {
-    if (loading) {
-      console.log("retrieving files...");
-      setFiles([]);
-    }
-  }, [loading]);
+  }, [task]);
 
   return (
     <>
-      <div className="top-bar">
-        <TopBar />
+      <div className="top-bar pack-horizontally">
+        <h1>Strategy AI</h1>
       </div>
       <div className="content pack-horizontally">
         <div className="left-inner">
-          <FilesSection
-            files={files}
-            loading={loading}
-            onRefresh={fetchFileData}
-          />
+          <FilesSection />
         </div>
         <div className="right-inner">
-          <TasksSection
-            onTaskSelect={setTask}
-            onProgressUpdate={fetchFileData}
-            task={task}
-          />
+          <TasksSection>
+            <ColumnHeader titleText="Execute Tasks" />
+            <RowTaskSelect
+              setTask={setTask}
+              taskList={Tasks}
+              selectedTask={task}
+              locked={taskState === TaskProcessState.executing || taskState === TaskProcessState.complete}
+            />
+          </TasksSection>
         </div>
       </div>
     </>

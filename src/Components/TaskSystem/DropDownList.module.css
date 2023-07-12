@@ -1,0 +1,158 @@
+.tasks {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    font-weight: 500;
+}
+
+.listboxTitle {
+    position: relative;
+    width: 17.5rem;
+    height: 1.25rem;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0.5rem 0rem;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.listboxbg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.selectTask {
+    position: absolute;
+    top: 33.33%;
+    left: 7.5%;
+}
+
+.chevronIcon3 {
+    position: absolute;
+    height: 10.67%;
+    width: 4.07%;
+    top: 45.5%;
+    right: 7.61%;
+    bottom: 43.83%;
+    left: 88.32%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    opacity: 0.8;
+}
+
+.listboxHeadCurrent {
+    position: relative;
+    width: 17.5rem;
+    height: 3.75rem;
+}
+
+.div {
+    position: relative;
+    display: inline-block;
+    width: 15.5rem;
+    flex-shrink: 0;
+}
+
+.item1 {
+    align-self: stretch;
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    padding: 0.75rem 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdownListClosed {
+    border-radius: 8px;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
+    width: 17.5rem;
+    height: 0.06rem;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.06rem;
+    opacity: 0;
+    color: #333;
+}
+
+.clipList {
+    overflow: hidden;
+    display: flex;
+    min-height: 27rem;
+    flex-direction: column;
+    padding: 0rem 0.5rem 0.5rem;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    color: #666;
+}
+
+.item12 {
+    align-self: stretch;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    padding: 0.75rem 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdownListOpen {
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
+    width: 17.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 0.5rem;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    gap: 0.06rem;
+    color: #333;
+}
+
+.stateopen {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 0.38rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.listboxComponentCurrent1 {
+    position: relative;
+    border-radius: 5px;
+    border: 1px dashed #7b61ff;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1.25rem;
+    text-align: left;
+    font-size: 1rem;
+    color: #333;
+    font-family: Montserrat;
+}

@@ -1,9 +1,15 @@
 .top-bar {
-  height: 5%;
+  height: fit-content;
+  padding: 0.5rem 1rem 0rem;
+  overflow-x: auto;
+}
+
+.top-bar>h1 {
+  text-overflow: clip;
 }
 
 .content {
-  height: 95%;
+  flex-grow: 1;
 }
 
 .pack-horizontally {
@@ -12,7 +18,7 @@
 }
 
 .left-inner {
-  min-width: 20%;
+  min-width: 10%;
   width: 20%;
   resize: horizontal;
   overflow: hidden;
@@ -21,5 +27,5 @@
 /* fills the remaining space horizontally */
 .right-inner {
   flex-grow: 1;
-  overflow-y: hidden;
+  overflow: hidden;
 }

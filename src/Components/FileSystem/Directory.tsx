@@ -1,6 +1,8 @@
 import { FunctionComponent, useState } from "react";
 import FileDirectory from "./FileDirectory";
-import ListItem from "./ListItem";
+import ListItem from "../ListItem/ListItem";
+
+import "./Directory.css"
 
 const fileIconPath = "/file-icon.svg";
 const directoryIconPath = "/folder-icon.svg"
@@ -17,20 +19,26 @@ const Directory: FunctionComponent<{
     }
     if (files.type === "file") {
         return (
-            <ListItem iconPath={fileIconPath} itemText={files.name} />
+            <ListItem>
+                <img className="icon" alt="" src={fileIconPath} />{files.name}
+            </ListItem>
         )
     }
     return (
         <div className="folder">
-            <span onClick={() => toggleExpanded(!isExpanded)}><ListItem iconPath={directoryIconPath} itemText={files.name} /></span>
-            <div className="children">
+            <span onClick={() => toggleExpanded(!isExpanded)}>
+                <ListItem>
+                    <img className="icon" alt="" src={directoryIconPath} />{files.name}
+                </ListItem>
+            </span>
+            <div className="children" style={{ paddingLeft: "0.5rem" }}>
                 {
                     isExpanded
-                    && files.children
-                    && files.children.map((child) => <Directory key={child.path} files={child} />)
+                    && ((files.children?.length && files.children.map((child) => <Directory key={child.path} files={child} />))
+                        || <Directory key={"./" + files.path} files={null} />)
                 }
             </div>
-        </div>
+        </div >
     )
 }
 
