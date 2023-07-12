@@ -1,0 +1,36 @@
+.start {
+    position: relative;
+}
+
+.buttonMaster {
+    flex: 1;
+    border-radius: 10px;
+    border: 4px solid #000;
+    display: flex;
+    flex-direction: row;
+    padding: 0.63rem 1.56rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonMaster:hover {
+    flex: 1;
+    border-radius: 10px;
+    border: 4px solid #5f5f5f;
+    display: flex;
+    flex-direction: row;
+    padding: 0.63rem 1.56rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonMaster:disabled {
+    flex: 1;
+    border-radius: 10px;
+    border: 4px solid #cfcfcf;
+    display: flex;
+    flex-direction: row;
+    padding: 0.63rem 1.56rem;
+    align-items: center;
+    justify-content: center;
+}
