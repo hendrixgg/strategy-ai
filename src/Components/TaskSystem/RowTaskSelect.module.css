@@ -1,5 +1,6 @@
 .rowTaskSelect {
     width: 100%;
+    height: fit-content;
     position: relative;
     display: flex;
     flex-direction: row;

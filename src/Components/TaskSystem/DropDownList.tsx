@@ -29,15 +29,16 @@ const DropDownList: FunctionComponent<{
                     <div className={styles.selectTask}>{selectedOption.name}</div>
                     <img className={styles.chevronIcon3} alt="" src="Chevron.svg" />
                 </div>
-                <div className={open ? styles.dropdownListOpen : styles.dropdownListClosed}>
-                    {options.map((option) => {
-                        return (
-                            <div id={`${option.id}`} className={styles.item1} onClick={disabledFilter(() => selectOption(option))}>
-                                <div className={styles.div}>{option.name}</div>
-                            </div>
-                        );
-                    })}
-                </div>
+                {open &&
+                    <div className={styles.dropdownList}>
+                        {options.map((option) => {
+                            return (
+                                <div id={`${option.id}`} className={styles.item1} onClick={disabledFilter(() => selectOption(option))}>
+                                    <div className={styles.div}>{option.name}</div>
+                                </div>
+                            );
+                        })}
+                    </div>}
             </div>
         </>);
 };

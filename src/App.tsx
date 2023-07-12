@@ -39,6 +39,7 @@ const App: FunctionComponent = () => {
               selectedTask={task}
               locked={taskState === TaskProcessState.executing || taskState === TaskProcessState.complete}
             />
+            <div></div>
           </TasksSection>
         </div>
       </div>
