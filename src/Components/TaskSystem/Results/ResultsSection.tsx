@@ -5,6 +5,18 @@ import { TaskProcessState } from '../TaskProcessState';
 
 import { Task } from '../Tasks';
 import useAxiosFetch from '../../../hooks/useAxiosFetch';
+import Button from '../../buttons/Button';
+
+import axios from "axios";
+const saveResults = async (resultsData: any) => {
+    const response = await axios.request({
+        method: "GET",
+        "url": `/saveoutput/${resultsData.file_name}`
+    });
+    if (response.data.success) {
+        console.log("results saved!");
+    }
+}
 
 const ResultsSection: FunctionComponent<{
     taskState: TaskProcessState,
@@ -12,6 +24,7 @@ const ResultsSection: FunctionComponent<{
     task: Task,
 }> = ({ taskState, setTaskState, task }) => {
     const [results, setResults] = useState<string>("");
+    const [saved, setSaved] = useState<boolean>(false);
     const [resultsData, error, loading, fetchResultsData] = useAxiosFetch({
         method: "GET",
         url: `/runtask/${task.id}`,
@@ -29,9 +42,11 @@ const ResultsSection: FunctionComponent<{
     useEffect(() => {
         switch (taskState) {
             case TaskProcessState.selecting:
+                setSaved(false);
                 setResults("");
                 break;
             case TaskProcessState.ready:
+                setSaved(false);
                 setResults("");
                 break;
             case TaskProcessState.executing:
@@ -50,6 +65,9 @@ const ResultsSection: FunctionComponent<{
                 <ReactMarkdown>
                     {results}
                 </ReactMarkdown>
+            </div>
+            <div style={{ padding: "0.5rem 0.5rem 0rem", height: "fit-oontent" }}>
+                <Button onClick={() => { saveResults(resultsData), setSaved(true) }} disabled={saved}>Save</Button>
             </div>
         </>
     )

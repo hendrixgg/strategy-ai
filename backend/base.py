@@ -23,7 +23,24 @@ def files():
 
 
 @api.route("/runtask/<id>")
-def task(id):
+def run_task(id):
     # run the task and have it put the output files in the ai_files directory
     # return the results in a json
-    return {"text": open(".\\strategy_ai\\available_data\\visible_files\\ai_files\\Company-objectives-using-csv-3.md", "r").read()}
+    results_text = ""
+    with open(".\\strategy_ai\\available_data\\hidden_files\\ai_output\\Company-objectives-using-csv-3.md", "r") as f:
+        results_text = f.read()
+    return {
+        "text": results_text,
+        "file_name": "Company-objectives-using-csv-3.md",
+    }
+
+
+@api.route("/saveoutput/<filename>")
+def save_output(filename):
+    # make a copy of ".\\strategy_ai\\available_data\\hidden_files\\ai_output\\filename" in the directory: ".\\strategy_ai\\available_data\\ai_files"
+    import shutil
+    shutil.copyfile(
+        f".\\strategy_ai\\available_data\\hidden_files\\ai_output\\{filename}",
+        f".\\strategy_ai\\available_data\\visible_files\\ai_files\\{filename}"
+    )
+    return {"success": True}

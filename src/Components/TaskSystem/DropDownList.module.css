@@ -76,6 +76,17 @@
     justify-content: center;
 }
 
+.item1:hover {
+    align-self: stretch;
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    padding: 0.75rem 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
 .clipList {
     display: flex;
     height: fit-content;

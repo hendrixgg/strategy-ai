@@ -23,7 +23,7 @@ const DropDownList: FunctionComponent<{
     return (
         <>
             <div className={styles.clipList}>
-                <div className={styles.listboxHeadCurrent} onClick={disabledFilter(() => setOpen(!open))}>
+                <div role="button" className={styles.listboxHeadCurrent} onClick={disabledFilter(() => setOpen(!open))}>
                     <div className={styles.listboxbg} />
                     <div className={styles.selectTask}>{selectedOption.name}</div>
                     <img className={styles.chevronIcon3} alt="" src="Chevron.svg" />
@@ -32,7 +32,7 @@ const DropDownList: FunctionComponent<{
                     <div className={styles.dropdownList}>
                         {options.map((option) => {
                             return (
-                                <div key={option.id} className={styles.item1} onClick={disabledFilter(() => selectOption(option))}>
+                                <div role="button" key={option.id} className={styles.item1} onClick={disabledFilter(() => selectOption(option))}>
                                     <div className={styles.div}>{option.name}</div>
                                 </div>
                             );

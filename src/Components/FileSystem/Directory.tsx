@@ -24,7 +24,7 @@ const Directory: FunctionComponent<{
     }
     return (
         <div className="folder">
-            <span onClick={() => toggleExpanded(!isExpanded)}>
+            <span role="button" onClick={() => toggleExpanded(!isExpanded)}>
                 <ListItem>
                     <img className="icon" alt="" src={directoryIconPath} />{files.name}
                 </ListItem>

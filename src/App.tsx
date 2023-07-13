@@ -32,7 +32,7 @@ const App: FunctionComponent = () => {
       <div className="top-bar pack-horizontally">
         <h1>Strategy AI</h1>
       </div>
-      <div className="content pack-horizontally">
+      <div className="content">
         <div className="left-inner">
           <FilesSection />
         </div>
@@ -56,9 +56,11 @@ const App: FunctionComponent = () => {
             </div>
             <ColumnHeader titleText="Results" />
             {taskState !== TaskProcessState.selecting && taskState !== TaskProcessState.ready &&
-              <div style={{ padding: "0.5rem 0.5rem 0rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                <ResultsSection taskState={taskState} setTaskState={setTaskState} task={task} />
-              </div>
+              <>
+                <div style={{ padding: "0.5rem 0.5rem 0rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                  <ResultsSection taskState={taskState} setTaskState={setTaskState} task={task} />
+                </div>
+              </>
             }
           </TasksSection>
         </div>
