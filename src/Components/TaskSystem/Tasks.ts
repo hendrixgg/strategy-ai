@@ -29,16 +29,16 @@ export const Tasks: Array<Task> = [
     {
         id: 4,
         name: "Identify Departments",
-        description: "Description text goes here.",
+        description: "",
     },
     {
         id: 5,
         name: "Ontology",
-        description: "Description text goes here.",
+        description: "",
     },
     {
         id: 6,
         name: "Make OKRs",
-        description: "Description text goes here.",
+        description: "",
     },
 ]

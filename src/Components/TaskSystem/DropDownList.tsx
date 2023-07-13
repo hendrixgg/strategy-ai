@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect, useState } from 'react';
+import { FunctionComponent, useState } from 'react';
 import styles from './DropDownList.module.css';
 import { Task } from './Tasks';
 

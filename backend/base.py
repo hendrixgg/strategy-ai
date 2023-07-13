@@ -20,3 +20,10 @@ def my_profile():
 @api.route("/files")
 def files():
     return path_to_dict(f".\\strategy_ai\\available_data\\visible_files")
+
+
+@api.route("/runtask/<id>")
+def task(id):
+    # run the task and have it put the output files in the ai_files directory
+    # return the results in a json
+    return {"text": open(".\\strategy_ai\\available_data\\visible_files\\ai_files\\Company-objectives-using-csv-3.md", "r").read()}

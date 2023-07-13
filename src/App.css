@@ -1,5 +1,5 @@
 .top-bar {
-  height: fit-content;
+  height: 8%;
   padding: 0.5rem 1rem 0rem;
   overflow-x: auto;
 }
@@ -9,25 +9,26 @@
 }
 
 .content {
-  flex-grow: 1;
-}
-
-.pack-horizontally {
-  display: flex;
-  flex-direction: row;
+  position: relative;
+  height: 92%;
 }
 
 .left-inner {
-  min-width: 10%;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 20%;
-  resize: horizontal;
+  height: 100%;
   overflow: hidden;
 }
 
-/* fills the remaining space horizontally */
 .right-inner {
-  flex-grow: 1;
-  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80%;
+  height: 100%;
+  overflow-y: auto;
 }
 
 .row3 {
