@@ -2,8 +2,6 @@ import { FunctionComponent, useState } from "react";
 import FileDirectory from "./FileDirectory";
 import ListItem from "../ListItem/ListItem";
 
-import "./Directory.css"
-
 const fileIconPath = "/file-icon.svg";
 const directoryIconPath = "/folder-icon.svg"
 

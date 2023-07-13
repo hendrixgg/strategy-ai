@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 import styles from './DropDownList.module.css';
 import { Task } from './Tasks';
 
@@ -13,8 +13,7 @@ const DropDownList: FunctionComponent<{
         if (!disabled) {
             return func;
         } else {
-            setOpen(false);
-            return () => { };
+            return () => { setOpen(false) };
         }
     }
     const selectOption = (option: Task) => {
@@ -33,7 +32,7 @@ const DropDownList: FunctionComponent<{
                     <div className={styles.dropdownList}>
                         {options.map((option) => {
                             return (
-                                <div id={`${option.id}`} className={styles.item1} onClick={disabledFilter(() => selectOption(option))}>
+                                <div key={option.id} className={styles.item1} onClick={disabledFilter(() => selectOption(option))}>
                                     <div className={styles.div}>{option.name}</div>
                                 </div>
                             );

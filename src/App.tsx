@@ -41,7 +41,10 @@ const App: FunctionComponent = () => {
                 locked={taskState === TaskProcessState.executing || taskState === TaskProcessState.complete}
               />
               <div className="row3">
-                <Button disabled={taskState !== TaskProcessState.ready}>START</Button>
+                <Button
+                  disabled={taskState !== TaskProcessState.ready}
+                  onClick={() => setTaskState(TaskProcessState.executing)}>
+                  START</Button>
               </div>
             </div>
           </TasksSection>
