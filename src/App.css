@@ -1,11 +1,13 @@
+.app-container {
+  width: 100vw;
+  height: 100vh;
+}
+
 .top-bar {
   height: 8%;
   padding: 0.5rem 1rem 0rem;
   overflow-x: auto;
-}
-
-.top-bar>h1 {
-  text-overflow: clip;
+  border-bottom: solid black 2px;
 }
 
 .content {
@@ -13,22 +15,46 @@
   height: 92%;
 }
 
-.left-inner {
+.content .left-inner {
+  z-index: 1;
   position: absolute;
   top: 0;
   left: 0;
-  width: 20%;
   height: 100%;
+
   overflow: hidden;
+
+  border-right: solid black 2px;
+  box-sizing: content-box;
 }
 
-.right-inner {
+.content .divider {
+  z-index: 9999999;
+  position: absolute;
+  height: 100%;
+  width: 6px;
+}
+
+.content .divider:hover {
+  z-index: 9999999;
+  position: absolute;
+  height: 100%;
+  width: 6px;
+  background-color: #0078D4;
+  cursor: e-resize;
+}
+
+
+/* fills the remaining space horizontally */
+.content .right-inner {
+  z-index: 1;
   position: absolute;
   top: 0;
   right: 0;
-  width: 80%;
   height: 100%;
-  overflow-y: auto;
+
+  overflow: hidden;
+
 }
 
 .row3 {

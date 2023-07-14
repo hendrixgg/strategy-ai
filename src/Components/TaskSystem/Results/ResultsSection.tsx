@@ -31,6 +31,20 @@ const ResultsSection: FunctionComponent<{
     });
 
     useEffect(() => {
+        if (error) {
+            console.log(error);
+            setResults("");
+        }
+    }, [error]);
+
+    useEffect(() => {
+        if (loading) {
+            console.log("retrieving results...");
+            setResults("");
+        }
+    }, [loading]);
+
+    useEffect(() => {
         if (resultsData && taskState === TaskProcessState.executing) {
             console.log(resultsData);
             setTaskState(TaskProcessState.complete);
@@ -57,11 +71,11 @@ const ResultsSection: FunctionComponent<{
                 setResults(resultsData.text);
                 break;
         }
-    }, [taskState])
+    }, [taskState]);
 
     return (
         <>
-            <div style={{ padding: "0.5rem 0.5rem 0rem", overflowY: "auto", height: "30rem" }}>
+            <div style={{ padding: "0.5rem 0.5rem 0rem", overflowY: "auto", height: "24rem" }}>
                 <ReactMarkdown>
                     {results}
                 </ReactMarkdown>

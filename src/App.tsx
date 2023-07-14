@@ -1,5 +1,7 @@
-import { FunctionComponent, useEffect, useState } from 'react';
+import React, { FunctionComponent, useEffect, useState, useRef, useCallback } from 'react';
 import './App.css';
+
+import 'split-pane-react/esm/themes/default.css';
 
 import FilesSection from './Components/FileSystem/FilesSection';
 
@@ -13,6 +15,46 @@ import Button from './Components/buttons/Button.tsx';
 import ResultsSection from './Components/TaskSystem/Results/ResultsSection.tsx'
 
 const App: FunctionComponent = () => {
+  const dividerRef = useRef<HTMLInputElement>(null);
+  const [isResizing, setIsResizing] = useState<boolean>(false);
+  const [dividerPos, setdividerPos] = useState<number>(0.2 * window.innerWidth);
+  const [resizeMousePosOffset, setResizeMousePosOffset] = useState<number>(0);
+
+  const startResizing = useCallback((mouseDownEvent: any) => {
+    setIsResizing(true);
+    if (dividerRef.current) {
+      setResizeMousePosOffset(mouseDownEvent.clientX);
+    } else {
+      setResizeMousePosOffset(0);
+    }
+  }, []);
+
+  const stopResizing = useCallback(() => {
+    setIsResizing(false);
+  }, []);
+
+  const resize = React.useCallback(
+    (mouseMoveEvent: any) => {
+      if (isResizing && dividerRef.current) {
+        setdividerPos(
+          dividerPos
+          + mouseMoveEvent.clientX
+          - resizeMousePosOffset
+        );
+      }
+    },
+    [isResizing]
+  );
+
+  useEffect(() => {
+    window.addEventListener("mousemove", resize);
+    window.addEventListener("mouseup", stopResizing);
+    return () => {
+      window.removeEventListener("mousemove", resize);
+      window.removeEventListener("mouseup", stopResizing);
+    };
+  }, [resize, stopResizing]);
+
   const [task, setTask] = useState<Task>(Tasks[0]);
   const [taskState, setTaskState] = useState<TaskProcessState>(TaskProcessState.selecting);
   useEffect(() => {
@@ -25,18 +67,19 @@ const App: FunctionComponent = () => {
 
   useEffect(() => {
     console.log(taskState)
-  }, [taskState])
+  }, [taskState]);
 
   return (
-    <>
+    <div className="app-container">
       <div className="top-bar pack-horizontally">
         <h1>Strategy AI</h1>
       </div>
       <div className="content">
-        <div className="left-inner">
+        <div className="left-inner" style={{ width: dividerPos + 2 }} >
           <FilesSection />
         </div>
-        <div className="right-inner">
+        <div ref={dividerRef} className="divider" style={{ top: 0, left: dividerPos }} onMouseDown={startResizing} />
+        <div className="right-inner" style={{ left: dividerPos + 4 }} >
           <TasksSection>
             <ColumnHeader titleText="Execute Tasks" />
             <div style={{ padding: "0.5rem 0.5rem 0rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
@@ -65,7 +108,7 @@ const App: FunctionComponent = () => {
           </TasksSection>
         </div>
       </div>
-    </>
+    </div >
   )
 }
 
