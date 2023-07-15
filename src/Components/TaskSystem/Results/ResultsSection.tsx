@@ -25,6 +25,9 @@ const ResultsSection: FunctionComponent<{
 }> = ({ taskState, setTaskState, task }) => {
     const [results, setResults] = useState<string>("");
     const [saved, setSaved] = useState<boolean>(false);
+    // call to start the task
+    // call to fetch the progress
+    // call to fetch the results once progress indicates that results are ready
     const [resultsData, error, loading, fetchResultsData] = useAxiosFetch({
         method: "GET",
         url: `/runtask/${task.id}`,
