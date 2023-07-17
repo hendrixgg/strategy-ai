@@ -113,6 +113,7 @@ const ResultsSection = ({ taskState, setTaskState, task }: {
                 setSaved(false);
                 setResults("");
                 startTask();
+                break;
             case TaskProcessState.executing:
                 setResults("executing...");
                 fetchResultsData();
