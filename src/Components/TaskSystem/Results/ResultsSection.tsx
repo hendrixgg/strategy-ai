@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import { TaskProcessState } from '../TaskProcessState';
@@ -11,27 +11,69 @@ import axios from "axios";
 const saveResults = async (resultsData: any) => {
     const response = await axios.request({
         method: "GET",
-        "url": `/saveoutput/${resultsData.file_name}`
+        "url": `/save-output/${resultsData.file_name}`
     });
     if (response.data.success) {
         console.log("results saved!");
     }
-}
+};
 
-const ResultsSection: FunctionComponent<{
+const subscribeToTask = (taskUuid: string) => {
+    // call axios fetch with:
+    const parameters = {
+        method: "GET",
+        url: "/"
+    };
+    const response = {
+        status: "",
+        message: "",
+        date: "",
+        task_data: {
+            task_type_id: 0,
+            uuid: "",
+            progress_info: "",
+            results: "",
+            files_used: ["", ""],
+            metadata: {},
+        },
+    };
+};
+
+const ResultsSection = ({ taskState, setTaskState, task }: {
     taskState: TaskProcessState,
     setTaskState: Function,
     task: Task,
-}> = ({ taskState, setTaskState, task }) => {
+}) => {
     const [results, setResults] = useState<string>("");
+    // this id uniquely identifies the task that is being run
+    const [uniqueTaskId, setUniqueTaskId] = useState<string>("");
     const [saved, setSaved] = useState<boolean>(false);
+
     // call to start the task
-    // call to fetch the progress
-    // call to fetch the results once progress indicates that results are ready
-    const [resultsData, error, loading, fetchResultsData] = useAxiosFetch({
+    const startTask = () => {
+        // call axios fetch with:
+        const parameters = {
+            method: "GET",
+            url: `/start-task/${task.id}`,
+        };
+    };
+
+    // call to fetch the results
+    const [resultsData, error, loading, fetchResultsData, setParams] = useAxiosFetch({
         method: "GET",
-        url: `/runtask/${task.id}`,
+        url: `/task-results/${uniqueTaskId}`,
     });
+
+
+
+    useEffect(() => {
+        setParams((params) => {
+            return {
+                ...params,
+                url: `/task-progress/${uniqueTaskId}`,
+            };
+        })
+    }, [uniqueTaskId]);
 
     useEffect(() => {
         if (error) {
@@ -56,6 +98,7 @@ const ResultsSection: FunctionComponent<{
         }
     }, [resultsData]);
 
+
     useEffect(() => {
         switch (taskState) {
             case TaskProcessState.selecting:
@@ -66,6 +109,10 @@ const ResultsSection: FunctionComponent<{
                 setSaved(false);
                 setResults("");
                 break;
+            case TaskProcessState.start:
+                setSaved(false);
+                setResults("");
+                startTask();
             case TaskProcessState.executing:
                 setResults("executing...");
                 fetchResultsData();
