@@ -8,14 +8,9 @@ import { api_url } from '../../../api/variables';
 import Button from '../../buttons/Button';
 
 import axios from "axios";
-const saveResults = async (resultsData: any) => {
-    // const response = await axios.request({
-    //     method: "GET",
-    //     "url": `/save_output/${resultsData.file_name}`
-    // });
-    // if (response.data.success) {
-    //     console.log("results saved!");
-    // }
+const saveResults = async (unique_id: string) => {
+    const response = await axios.get(`${api_url}/save_results/${unique_id}`);
+    console.log(response);
 };
 
 const ResultsSection = ({ taskState, setTaskState, task }: {
@@ -71,19 +66,22 @@ const ResultsSection = ({ taskState, setTaskState, task }: {
         }
     }, [taskState]);
 
+    if (taskState < TaskProcessState.executing) {
+        return <></>;
+    }
+
     return (
         <>
-            {taskState > TaskProcessState.start &&
+            <>
                 <div style={{ padding: "0.5rem 0.5rem 0rem", overflowY: "auto", height: "24rem" }}>
                     <ReactMarkdown>
                         {results}
                     </ReactMarkdown>
-                </div>}
-            {taskState == TaskProcessState.complete &&
-                <div style={{ padding: "0.5rem 0.5rem 0rem", height: "fit-oontent" }}>
-                    <Button onClick={() => { saveResults("resultsData"), setSaved(true) }} disabled={saved}>Save</Button>
                 </div>
-            }
+                <div style={{ padding: "0.5rem 0.5rem 0rem", height: "fit-oontent" }}>
+                    <Button onClick={() => { saveResults(uniqueTaskID), setSaved(true) }} disabled={saved || taskState == TaskProcessState.executing}>Save</Button>
+                </div>
+            </>
         </>
     )
 

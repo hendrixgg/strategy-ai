@@ -124,7 +124,7 @@ Lastly, aim to identify 2-3 objetives. If you cannot find objectives on the topi
                     topic=topic
                 )
 
-#                 self.currentResponse.results += f"""#### topic: {topic}
+                self.currentResponse.results += f"""#### topic: {topic}"""
 # ##### context given
 # ```text
 # {messages[0].content}
@@ -135,17 +135,11 @@ Lastly, aim to identify 2-3 objetives. If you cannot find objectives on the topi
 # {messages[1].content}
 # ```
 # """
-                self.currentResponse.results += f"""#### topic: {topic}
-##### human prompt
-```text
-{messages[1].content}
-```
-"""
                 yield self.currentResponse
 
                 messages.append([self.llm.predict_messages(messages)])
                 self.currentResponse.results += f"""
-##### text_response
+##### Text Response
 ```text
 {messages[2][0].content}
 ```
@@ -158,7 +152,7 @@ Lastly, aim to identify 2-3 objetives. If you cannot find objectives on the topi
                     function_call="auto"
                 ))
                 self.currentResponse.results += f"""
-##### function_response
+##### Function Response
 ```text
 {messages[2][1].additional_kwargs.get("function_call").get("arguments")}
 ```
