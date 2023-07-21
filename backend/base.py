@@ -52,8 +52,8 @@ def files():
     return path_to_dict(f".\\strategy_ai\\available_data\\visible_files")
 
 
-@api.route("/task_init/<task_id>")
-def task_init(task_id: int):
+@api.route("/init_task/<task_id>")
+def init_task(task_id: int):
     """Instantiates the new task and returns the initial task info"""
     if task_id != "1":
         return {"status": "error", "message": "task not implemented"}
@@ -69,10 +69,10 @@ def task_init(task_id: int):
 
 @api.route("/task_stream/<unique_id>")
 def task_stream(unique_id: int):
-    """Runs the task and streams the results as the task progresses."""
+    """Runs the task, returns a stream of the results as the task progresses."""
     if unique_id not in tasks.keys():
         return {"status": "error", "message": "task not initialized"}
-    return Response(tasks[unique_id].generate_results_json_bytes(), mimetype="application/json")
+    return Response(tasks[unique_id].generate_results_json_bytes())
 
 
 @api.route("/task_results/<unique_id>")

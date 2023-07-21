@@ -4,41 +4,18 @@ import ReactMarkdown from 'react-markdown';
 import { TaskProcessState } from '../TaskProcessState';
 
 import { Task } from '../Tasks';
-import useAxiosFetch from '../../../hooks/useAxiosFetch';
+import { api_url } from '../../../api/variables';
 import Button from '../../buttons/Button';
 
 import axios from "axios";
 const saveResults = async (resultsData: any) => {
-    const response = await axios.request({
-        method: "GET",
-        "url": `/save-output/${resultsData.file_name}`
-    });
-    if (response.data.success) {
-        console.log("results saved!");
-    }
-};
-
-const subscribeToTask = (taskUuid: string) => {
-    // call axios fetch with:
-    const parameters = {
-        method: "GET",
-        url: `/${taskUuid}`,
-    };
-    const response = {
-        status: "",
-        message: "",
-        date: "",
-        task_data: {
-            task_type_id: 0,
-            uuid: "",
-            progress_info: "",
-            results: "",
-            files_used: ["", ""],
-            metadata: {},
-        },
-    };
-
-    return response;
+    // const response = await axios.request({
+    //     method: "GET",
+    //     "url": `/save_output/${resultsData.file_name}`
+    // });
+    // if (response.data.success) {
+    //     console.log("results saved!");
+    // }
 };
 
 const ResultsSection = ({ taskState, setTaskState, task }: {
@@ -51,59 +28,24 @@ const ResultsSection = ({ taskState, setTaskState, task }: {
     const [uniqueTaskID, setUniqueTaskID] = useState<string>("");
     const [saved, setSaved] = useState<boolean>(false);
 
-    // call to start the task
-    const createTask = useCallback(() => {
-        // call axios fetch with:
-        const parameters = {
-            method: "GET",
-            url: `/start-task/${task.id}`,
-        };
-        const response = {
-            ...
-            task
-        }
-        return
+    const runTask = useCallback(async () => {
+        const startResponse = await axios.get(`${api_url}/init_task/${task.id}`);
+        console.log(startResponse.data);
+        setUniqueTaskID(startResponse.data.task_uuid);
+
+        setTaskState(TaskProcessState.executing);
+        const intervalID = setInterval(async () => {
+            const resultsResponse = await axios.get(`${api_url}/task_results/${startResponse.data.task_uuid}`);
+            setResults(resultsResponse.data.results);
+        }, 500);
+        // this starts running the task on the backend
+        axios.get(`${api_url}/task_stream/${startResponse.data.task_uuid}`).then((response) => {
+            console.log(response);
+            setTaskState(TaskProcessState.complete);
+            clearInterval(intervalID);
+        });
     }, [task.id]);
 
-    // call to fetch the results
-    const [resultsData, error, loading, fetchResultsData, setParams] = useAxiosFetch({
-        method: "GET",
-        url: `/task-results/${uniqueTaskID}`,
-    });
-
-
-
-    useEffect(() => {
-        setParams((params) => {
-            return {
-                ...params,
-                url: `/task-progress/${uniqueTaskID}`,
-            };
-        })
-    }, [uniqueTaskID]);
-
-    useEffect(() => {
-        if (error) {
-            console.log(error);
-            setResults("");
-        }
-    }, [error]);
-
-    useEffect(() => {
-        if (loading) {
-            console.log("retrieving results...");
-            setResults("");
-        }
-    }, [loading]);
-
-    useEffect(() => {
-        if (resultsData && taskState === TaskProcessState.executing) {
-            console.log(resultsData);
-            setTaskState(TaskProcessState.complete);
-        } else if (taskState === TaskProcessState.executing) {
-            setTaskState(TaskProcessState.executing);
-        }
-    }, [resultsData]);
 
 
     useEffect(() => {
@@ -118,29 +60,30 @@ const ResultsSection = ({ taskState, setTaskState, task }: {
                 break;
             case TaskProcessState.start:
                 setSaved(false);
-                setResults("");
-                // startTask();
+                runTask();
                 break;
             case TaskProcessState.executing:
-                setResults("executing...");
-                fetchResultsData();
+                // setResults("executing...");
                 break;
             case TaskProcessState.complete:
-                setResults(resultsData.text);
+                // setResults("complete");
                 break;
         }
     }, [taskState]);
 
     return (
         <>
-            <div style={{ padding: "0.5rem 0.5rem 0rem", overflowY: "auto", height: "24rem" }}>
-                <ReactMarkdown>
-                    {results}
-                </ReactMarkdown>
-            </div>
-            <div style={{ padding: "0.5rem 0.5rem 0rem", height: "fit-oontent" }}>
-                <Button onClick={() => { saveResults(resultsData), setSaved(true) }} disabled={saved}>Save</Button>
-            </div>
+            {taskState > TaskProcessState.start &&
+                <div style={{ padding: "0.5rem 0.5rem 0rem", overflowY: "auto", height: "24rem" }}>
+                    <ReactMarkdown>
+                        {results}
+                    </ReactMarkdown>
+                </div>}
+            {taskState == TaskProcessState.complete &&
+                <div style={{ padding: "0.5rem 0.5rem 0rem", height: "fit-oontent" }}>
+                    <Button onClick={() => { saveResults("resultsData"), setSaved(true) }} disabled={saved}>Save</Button>
+                </div>
+            }
         </>
     )
 

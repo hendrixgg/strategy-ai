@@ -62,17 +62,17 @@ class T1SurfacingTask(BaseTask):
             },
         ]
         system_message_context_template = """Use the following pieces of context to answer the users question.
-        Take note of the sources and include them in the answer in the format: "SOURCES: source1 source2", use "SOURCES" in capital letters regardless of the number of sources.
-        If you don't know the answer, just say that "I don't know", don't try to make up an answer.
+Take note of the sources and include them in the answer in the format: "SOURCES: source1 source2", use "SOURCES" in capital letters regardless of the number of sources.
+If you don't know the answer, just say that "I don't know", don't try to make up an answer.
 
-        ----------------
-        {context}
-        """
+----------------
+{context}
+"""
 
         list_objectives_prompt_template = """Provide a list of this company's objectives addressing {topic}, in an organized format.
-        If there is a function provided, use the function.
-        Lastly, aim to identify 2-3 objetives. If you cannot find objectives on the topic of {topic}, list some relevant suggestions based on the context.
-        """
+If there is a function provided, use the function.
+Lastly, aim to identify 2-3 objetives. If you cannot find objectives on the topic of {topic}, list some relevant suggestions based on the context.
+"""
         self.promptTemplate = ChatPromptTemplate.from_messages([
             SystemMessagePromptTemplate.from_template(
                 system_message_context_template),
@@ -124,26 +124,32 @@ class T1SurfacingTask(BaseTask):
                     topic=topic
                 )
 
-                self.currentResponse.results += f"""#### topic: {topic}
-                ##### context given
-                ```text
-                {messages[0].content}
-                ```
+#                 self.currentResponse.results += f"""#### topic: {topic}
+# ##### context given
+# ```text
+# {messages[0].content}
+# ```
 
-                ##### human prompt
-                ```text
-                {messages[1].content}
-                ```
-                """
+# ##### human prompt
+# ```text
+# {messages[1].content}
+# ```
+# """
+                self.currentResponse.results += f"""#### topic: {topic}
+##### human prompt
+```text
+{messages[1].content}
+```
+"""
                 yield self.currentResponse
 
                 messages.append([self.llm.predict_messages(messages)])
                 self.currentResponse.results += f"""
-                ##### text_response
-                ```text
-                {messages[2][0].content}
-                ```
-                """
+##### text_response
+```text
+{messages[2][0].content}
+```
+"""
                 yield self.currentResponse
 
                 messages[2].append(self.llm.predict_messages(
@@ -152,11 +158,11 @@ class T1SurfacingTask(BaseTask):
                     function_call="auto"
                 ))
                 self.currentResponse.results += f"""
-                ##### function_response
-                ```text
-                {messages[2][1].additional_kwargs.get("function_call").get("arguments")}
-                ```
-                """
+##### function_response
+```text
+{messages[2][1].additional_kwargs.get("function_call").get("arguments")}
+```
+"""
                 yield self.currentResponse
 
                 self.detailedResults[category][topic] = {

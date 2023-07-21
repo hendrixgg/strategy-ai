@@ -1,8 +1,6 @@
 import React, { FunctionComponent, useEffect, useState, useRef, useCallback } from 'react';
 import './App.css';
 
-import 'split-pane-react/esm/themes/default.css';
-
 import FilesSection from './Components/FileSystem/FilesSection';
 
 import { TaskProcessState } from './Components/TaskSystem/TaskProcessState';
@@ -92,19 +90,15 @@ const App: FunctionComponent = () => {
               <div className="row3">
                 <Button
                   disabled={taskState !== TaskProcessState.ready}
-                  onClick={() => setTaskState(TaskProcessState.executing)}>
+                  onClick={() => setTaskState(TaskProcessState.start)}>
                   START
                 </Button>
               </div>
             </div>
             <ColumnHeader titleText="Results" />
-            {taskState !== TaskProcessState.selecting && taskState !== TaskProcessState.ready &&
-              <>
-                <div style={{ padding: "0.5rem 0.5rem 0rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                  <ResultsSection taskState={taskState} setTaskState={setTaskState} task={task} />
-                </div>
-              </>
-            }
+            <div style={{ padding: "0.5rem 0.5rem 0rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+              <ResultsSection taskState={taskState} setTaskState={setTaskState} task={task} />
+            </div>
           </TasksSection>
         </div>
       </div>
