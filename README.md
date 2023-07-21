@@ -54,5 +54,6 @@ The more documents uploaded the better the system will be able to provide insigh
     1. followed the steps in the article up to [here](https://dev.to/nagatodev/how-to-connect-flask-to-reactjs-1k8i#:~:text=backend/__pycache__-,Connecting,-the%20API%20endpoint)
     1. next step: continue from the above link
     1. had to modify some stuff in the vite.config.ts file
+    1. run "pip3 freeze" to see all the required dependencies to be installed
 1. install react-markdown to show the results from the Tasks being run
     1. run "npm install react-markdown"

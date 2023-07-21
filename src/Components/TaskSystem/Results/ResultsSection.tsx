@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import { TaskProcessState } from '../TaskProcessState';
@@ -22,7 +22,7 @@ const subscribeToTask = (taskUuid: string) => {
     // call axios fetch with:
     const parameters = {
         method: "GET",
-        url: "/"
+        url: `/${taskUuid}`,
     };
     const response = {
         status: "",
@@ -37,6 +37,8 @@ const subscribeToTask = (taskUuid: string) => {
             metadata: {},
         },
     };
+
+    return response;
 };
 
 const ResultsSection = ({ taskState, setTaskState, task }: {
@@ -45,23 +47,28 @@ const ResultsSection = ({ taskState, setTaskState, task }: {
     task: Task,
 }) => {
     const [results, setResults] = useState<string>("");
-    // this id uniquely identifies the task that is being run
-    const [uniqueTaskId, setUniqueTaskId] = useState<string>("");
+    // this id uniquely identifies the task that is being run at this time
+    const [uniqueTaskID, setUniqueTaskID] = useState<string>("");
     const [saved, setSaved] = useState<boolean>(false);
 
     // call to start the task
-    const startTask = () => {
+    const createTask = useCallback(() => {
         // call axios fetch with:
         const parameters = {
             method: "GET",
             url: `/start-task/${task.id}`,
         };
-    };
+        const response = {
+            ...
+            task
+        }
+        return
+    }, [task.id]);
 
     // call to fetch the results
     const [resultsData, error, loading, fetchResultsData, setParams] = useAxiosFetch({
         method: "GET",
-        url: `/task-results/${uniqueTaskId}`,
+        url: `/task-results/${uniqueTaskID}`,
     });
 
 
@@ -70,10 +77,10 @@ const ResultsSection = ({ taskState, setTaskState, task }: {
         setParams((params) => {
             return {
                 ...params,
-                url: `/task-progress/${uniqueTaskId}`,
+                url: `/task-progress/${uniqueTaskID}`,
             };
         })
-    }, [uniqueTaskId]);
+    }, [uniqueTaskID]);
 
     useEffect(() => {
         if (error) {
@@ -112,7 +119,7 @@ const ResultsSection = ({ taskState, setTaskState, task }: {
             case TaskProcessState.start:
                 setSaved(false);
                 setResults("");
-                startTask();
+                // startTask();
                 break;
             case TaskProcessState.executing:
                 setResults("executing...");

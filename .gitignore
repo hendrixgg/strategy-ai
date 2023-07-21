@@ -26,3 +26,6 @@ dist-ssr
 # python build files
 backend/env
 backend/__pycache__
+
+# secret environment variables
+.env
