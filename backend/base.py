@@ -1,5 +1,8 @@
 from dataclasses import asdict
 import json
+import os
+import time
+import asyncio
 
 from flask import Flask, Response
 from flask_cors import CORS
@@ -27,13 +30,20 @@ CORS(api, origins="*")
 tasks: dict[str, BaseTask] = dict()
 
 # set up AI objects, documents, vector store, llm
-available_docuements_directory = "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data"
-methodology_documents_directory = f"{available_docuements_directory}\\hidden_files\\methodology_files"
-client_documents_directory = f"{available_docuements_directory}\\visible_files\\client_files"
-ai_documents_directory = f"{available_docuements_directory}\\visible_files\\ai_files"
+available_documents_directory = os.path.join(
+    os.getcwd(), "strategy_ai", "available_data")
 
-ai_output_directory = f"{available_docuements_directory}\\hidden_files\\ai_output"
-vector_store_save_directory = f"{available_docuements_directory}\\hidden_files\\vector_store_saves"
+methodology_documents_directory = os.path.join(
+    available_documents_directory, "hidden_files", "methodology_files")
+client_documents_directory = os.path.join(
+    available_documents_directory, "visible_files", "client_files")
+ai_documents_directory = os.path.join(
+    available_documents_directory, "visible_files", "ai_files")
+
+ai_output_directory = os.path.join(
+    available_documents_directory, "hidden_files", "ai_output")
+vector_store_save_directory = os.path.join(
+    available_documents_directory, "hidden_files", "vector_store_saves")
 
 documents = DocStore(dict({
     "Methodology Documents": DocumentSource(name="Pm2 Methodology Documents", directory_path=methodology_documents_directory),
@@ -41,15 +51,14 @@ documents = DocStore(dict({
     "AI Documents": DocumentSource(name="AI Generated Documents", directory_path=ai_documents_directory)
 }))
 
-vectorStore = FAISSVectorStore(
-    documents.splitDocuments)
+vectorStore = FAISSVectorStore(documents.splitDocuments)
 
 llm = ChatOpenAI(model="gpt-3.5-turbo-0613", temperature=0)
 
 
 @api.route("/files")
 def files():
-    return path_to_dict(f".\\strategy_ai\\available_data\\visible_files")
+    return path_to_dict(os.getcwd(), os.path.join("strategy_ai", "available_data", "visible_files"))
 
 
 @api.route("/init_task/<task_id>")
@@ -59,7 +68,7 @@ def init_task(task_id: int):
         return {"status": "error", "message": "task not implemented"}
     newTask = T1SurfacingTask(
         contextVectorStore=vectorStore,
-        availableDataFolder=available_docuements_directory,
+        availableDataFolder=available_documents_directory,
         llm=llm
     )
     tasks[newTask.currentResponse.task_uuid] = newTask
@@ -72,7 +81,17 @@ def task_stream(unique_id: int):
     """Runs the task, returns a stream of the results as the task progresses."""
     if unique_id not in tasks.keys():
         return {"status": "error", "message": "task not initialized"}
-    return Response(tasks[unique_id].generate_results_json_bytes())
+    return Response(tasks[unique_id].generate_results_json_bytes(saveDirectory=ai_output_directory))
+
+
+@api.route("/test_stream/<length>")
+def test_stream(length):
+    def generator():
+        for i in range(int(length)):
+            jsonString = json.dumps(
+                {"type": "results_text", "body": f"{i}"}) + "\n"
+            yield bytes(jsonString, encoding="ascii")
+    return Response(generator())
 
 
 @api.route("/task_results/<unique_id>")
@@ -83,14 +102,14 @@ def task_results(unique_id: str):
     return asdict(tasks[unique_id].currentResponse)
 
 
-@api.route("/save_results/<unique_id>")
+@api.route("/save_results/<unique_id>", methods=["POST"])
 def save_results(unique_id: str):
     if unique_id not in tasks.keys():
         return {"status": "error", "message": "task not initialized"}
     with open(f"{ai_documents_directory}\\Strategy_Surfacing_{tasks[unique_id].currentResponse.date.replace(':', '-')}_{tasks[unique_id].currentResponse.task_uuid}.md", "x") as f:
         print(tasks[unique_id].currentResponse.results, file=f)
 
-    return {"status": "success"}
+    return {"status": "success", "message": "task results saved"}
 
 
 def recursive_dict_types(d: dict):
@@ -103,12 +122,15 @@ def recursive_dict_types(d: dict):
     return d_types
 
 
-# if __name__ == "__main__":
-#     newTask = T1SurfacingTask(
-#         contextVectorStore=vectorStore,
-#         availableDataFolder=available_docuements_directory,
-#         llm=llm
-#     )
-#     newTask.currentResponse.update()
-#     with open(f"{ai_documents_directory}\\Strategy_Surfacing_{newTask.currentResponse.date.replace(':', '-')}_{newTask.currentResponse.task_uuid}.md", "x") as f:
-#         print("test", file=f)
+if __name__ == "__main__":
+    newTask = T1SurfacingTask(
+        contextVectorStore=vectorStore,
+        availableDataFolder=available_documents_directory,
+        llm=llm
+    )
+    # print(newTask.currentResponse.files_available)
+    for result in newTask.generate_results_json_bytes():
+        print(result)
+    #     newTask.currentResponse.update()
+    #     with open(f"{ai_documents_directory}\\Strategy_Surfacing_{newTask.currentResponse.date.replace(':', '-')}_{newTask.currentResponse.task_uuid}.md", "x") as f:
+    #         print("test", file=f)

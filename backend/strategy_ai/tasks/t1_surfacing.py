@@ -1,7 +1,10 @@
+import asyncio
+import time
+
 from dotenv import load_dotenv
 
 from langchain.chat_models import ChatOpenAI
-from langchain.schema import HumanMessage, AIMessage, ChatMessage, SystemMessage
+from langchain.schema import HumanMessage, AIMessage, ChatMessage, SystemMessage, BaseMessage
 from langchain.prompts.chat import (
     ChatPromptTemplate,
     SystemMessagePromptTemplate,
@@ -15,13 +18,90 @@ from strategy_ai.tasks.task import BaseTask
 from strategy_ai.tasks.task import TaskStatus
 
 load_dotenv(verbose=True)
+""" 
+# could use these functions to run the api calls on the topics asynchronously
+# would have to store the instance of each task run in 
+# would also have to switch the 
+    async def run_topic(self, category: str, topic: str):
+        async with asyncio.TaskGroup() as taskGroup:
+            async def set_context_prompt():
+                self.detailedResults["body"][category]["body"][topic]["body"][0]["body"] = SystemMessagePromptTemplate.from_template(
+                    self.system_message_prompt_template).format(context=self.vectorStore.formatted_context(topic))
+
+            async def set_human_prompt():
+                self.detailedResults["body"][category]["body"][topic]["body"][1]["body"] = HumanMessagePromptTemplate.from_template(
+                    self.list_objectives_prompt_template).format(topic=topic)
+
+            taskGroup.create_task(set_context_prompt())
+            taskGroup.create_task(set_human_prompt())
+
+        async with asyncio.TaskGroup() as taskGroup:
+            messages = [message["body"] for message in self.detailedResults["body"]
+                        [category]["body"][topic]["body"][0:2]]
+
+            async def set_text_response():
+                self.detailedResults["body"][category]["body"][topic]["body"][2][0]["body"] = self.llm.predict_messages(
+                    messages)
+
+            async def set_function_response():
+                self.detailedResults["body"][category]["body"][topic]["body"][2][1]["body"] = self.llm.predict_messages(
+                    messages=messages,
+                    functions=self.functionDescriptions,
+                    function_call="auto"
+                )
+            taskGroup.create_task(set_text_response())
+            taskGroup.create_task(set_function_response())
+
+    async def run_topics(self):
+        async with asyncio.TaskGroup() as taskGroup:
+            for category, categoryInfo in self.detailedResults["body"].items():
+                for topicName, topicInfo in categoryInfo["body"].items():
+                    taskGroup.create_task(
+                        self.run_topic(category, topicName))
+"""
 
 
 class T1SurfacingTask(BaseTask):
     def __init__(self, contextVectorStore: FAISSVectorStore, availableDataFolder: str, llm=ChatOpenAI(model="gpt-3.5-turbo-0613", temperature=0)):
+        """If the saveDirectory is provided, the results will be saved at the end of running the task"""
         super().__init__(1, "t1_surfacing", availableDataFolder)
         self.vectorStore = contextVectorStore
         self.llm = llm
+        self.objectiveCategories = {
+            "Financial": [
+                "Increasing Revenue",
+                "Cost Reduction",
+                "Asset Optimization",
+            ],
+            "Customer": [
+                "Improving the Brand",
+                "Customer Service",
+                "Product Service/Functionality",
+            ],
+            "Internal": [
+                "Operational Excellence",
+                "Product Innovation",
+                "Regulatory Compliance",
+                "Customer Intimacy",
+            ],
+            "Enabler": [
+                "Strategic Assets",
+                "Building a Climate for Action",
+                "Attracting, Retaining, and Developing Talent",
+            ]
+        }
+        self.system_message_prompt_template = """Use the following pieces of context to answer the users question.
+Take note of the sources and include them in the answer in the format: "SOURCES: source1 source2", use "SOURCES" in capital letters regardless of the number of sources.
+If you don't know the answer, just say that "I don't know", don't try to make up an answer.
+
+----------------
+{context}
+"""
+
+        self.list_objectives_prompt_template = """Provide a list of this company's objectives addressing {topic}, in an organized format.
+If there is a function provided, use the function.
+Lastly, aim to identify 2-3 objetives. If you cannot find objectives on the topic of {topic}, list some relevant suggestions based on the context.
+"""
         self.functionDescriptions = [
             {
                 "name": "display_formatted_objectives",
@@ -61,120 +141,99 @@ class T1SurfacingTask(BaseTask):
                 "required": ["objectives_list"],
             },
         ]
-        system_message_context_template = """Use the following pieces of context to answer the users question.
-Take note of the sources and include them in the answer in the format: "SOURCES: source1 source2", use "SOURCES" in capital letters regardless of the number of sources.
-If you don't know the answer, just say that "I don't know", don't try to make up an answer.
 
-----------------
-{context}
-"""
+        def topic_messages(topic: str):
+            sys_msg = SystemMessagePromptTemplate.from_template(
+                self.system_message_prompt_template).format(context=self.vectorStore.formatted_context(topic))
+            hmn_msg = HumanMessagePromptTemplate.from_template(
+                self.list_objectives_prompt_template).format(topic=topic)
 
-        list_objectives_prompt_template = """Provide a list of this company's objectives addressing {topic}, in an organized format.
-If there is a function provided, use the function.
-Lastly, aim to identify 2-3 objetives. If you cannot find objectives on the topic of {topic}, list some relevant suggestions based on the context.
-"""
-        self.promptTemplate = ChatPromptTemplate.from_messages([
-            SystemMessagePromptTemplate.from_template(
-                system_message_context_template),
-            HumanMessagePromptTemplate.from_template(
-                list_objectives_prompt_template),
-        ])
-        self.objectiveCategories = {
-            "financial": [
-                "increasing revenue",
-                "cost reduction",
-                "asset optimization",
-            ],
-            "customer": [
-                "improving the brand",
-                "Customer Service",
-                "Product Service/Functionality",
-            ],
-            "internal": [
-                "Operational Excellence",
-                "Product Innovation",
-                "Regulatory Compliance",
-                "Customer Intimacy",
-            ],
-            "enabler": [
-                "Strategic Assets",
-                "building a climate for action",
-                "attracting, retaining, and developing talent",
+            return [
+                {
+                    "type": "SystemMessage",
+                    "title": "Context",
+                    "body": sys_msg,
+                },
+                {
+                    "type": "HumanMessage",
+                    "title": "Human Prompt",
+                    "body": hmn_msg,
+                },
+                [
+                    {
+                        "type": "text_response",
+                        "title": "Text Response",
+                        "body": None,
+                        "task": None,
+                        "coro": self.llm.apredict_messages(messages=[sys_msg, hmn_msg]),
+                    },
+                    {
+                        "type": "function_response",
+                        "title": "Function Response",
+                        "body": None,
+                        "task": None,
+                        "coro": self.llm.apredict_messages(
+                            messages=[sys_msg, hmn_msg],
+                            functions=self.functionDescriptions,
+                            function_call="auto"),
+                    },
+                ],
             ]
+
+        def category_topics(topics: list[str]):
+            return {
+                topic: {
+                    "title": f"topic: {topic}",
+                    "body": topic_messages(topic),
+                }
+                for topic in topics
+            }
+        self.detailedResults = {
+            "title": "Company Objectives",
+            "body": {
+                category: {
+                    "title": f"Category: {category}",
+                    "body": category_topics(topics),
+                }
+                for category, topics in self.objectiveCategories.items()
+            }
         }
         self.currentResponse.status = TaskStatus.READY
-        self.detailedResults = {}
 
-    def generate_results(self):
+    async def generate_results(self, saveDirectory: str | None = None):
         for response in super().generate_results():
             yield response
 
-        self.currentResponse.results += "## Company Objectives\n"
-        self.currentResponse.message = f"Running task {self.currentResponse.task_name}, uuid: {self.currentResponse.task_uuid}."
-        yield self.currentResponse
-        for category, topics in self.objectiveCategories.items():
-            self.currentResponse.results += f"### Category: {category}\n"
-            self.currentResponse.progress_info += f"{category} objectives complete:\n"
-            yield self.currentResponse
+        prefix = "## "
+        yield {"type": "message", "body": f"Running task {self.currentResponse.task_name}, uuid: {self.currentResponse.task_uuid}."}
+        yield {"type": "results_text", "body": prefix + self.detailedResults["title"]}
+        for categoryInfo in self.detailedResults["body"].values():
+            for topicInfo in categoryInfo["body"].values():
+                for message in topicInfo["body"][2]:
+                    message["task"] = asyncio.create_task(message["coro"])
+        for category, categoryInfo in self.detailedResults["body"].items():
+            prefix = "### "
+            yield {"type": "progress_info", "body": f"{category} objectives complete:"}
+            yield {"type": "results_text", "body": prefix + categoryInfo["title"]}
+            for topic, topicInfo in categoryInfo["body"].items():
+                prefix = "#### "
+                yield {"type": "results_text", "body": prefix + topicInfo["title"]}
+                prefix = "##### "
+                for aiMessage in topicInfo["body"][2]:
+                    yield {"type": "results_text", "body": prefix + aiMessage["title"]}
+                    # if this was async: wait until the coroutine has completed the text response for this topic
+                    topicInfo["body"][2][0]["body"] = await topicInfo["body"][2][0]["task"]
+                    del aiMessage["task"], aiMessage["coro"]
+                    if aiMessage["type"] == "text_response":
+                        yield {"type": "results_text", "body": "```text\n" + topicInfo["body"][2][0]["body"].content + "\n```"}
+                    elif aiMessage["type"] == "function_response":
+                        yield {"type": "results_text", "body": "```json\n" + topicInfo["body"][2][1]["body"].additional_kwargs.get(
+                            "function_call").get("arguments") + "\n```"}
 
-            self.detailedResults[category] = {}
-            for topic in topics:
-                messages = self.promptTemplate.format_messages(
-                    context=self.vectorStore.formatted_context(topic),
-                    topic=topic
-                )
-
-                self.currentResponse.results += f"""#### topic: {topic}"""
-# ##### context given
-# ```text
-# {messages[0].content}
-# ```
-
-# ##### human prompt
-# ```text
-# {messages[1].content}
-# ```
-# """
-                yield self.currentResponse
-
-                messages.append([self.llm.predict_messages(messages)])
-                self.currentResponse.results += f"""
-##### Text Response
-```text
-{messages[2][0].content}
-```
-"""
-                yield self.currentResponse
-
-                messages[2].append(self.llm.predict_messages(
-                    messages=messages[0:2],
-                    functions=self.functionDescriptions,
-                    function_call="auto"
-                ))
-                self.currentResponse.results += f"""
-##### Function Response
-```text
-{messages[2][1].additional_kwargs.get("function_call").get("arguments")}
-```
-"""
-                yield self.currentResponse
-
-                self.detailedResults[category][topic] = {
-                    "context_given": messages[0],
-                    "human_question": messages[1],
-                    "text_response": messages[2][0],
-                    "function_response": messages[2][1],
-                }
-                self.currentResponse.progress_info += f"- {topic}\n"
-                yield self.currentResponse
+                yield {"type": "progress_info", "body": f"- {topic}"}
 
         self.currentResponse.status = TaskStatus.FINISHED
-        self.currentResponse.message = f"Finished task {self.currentResponse.task_name}, uuid: {self.currentResponse.task_uuid}."
-        yield self.currentResponse
 
-    def save_results(self, filePath: str):
-        if self.currentResponse.status != TaskStatus.FINISHED:
-            raise Exception(
-                "Cannot save the results yet because task is not finished")
-        with open(filePath, "w") as f:
-            print(self.currentResponse.results, file=f)
+        self.save(saveDirectory) if saveDirectory else 0
+
+        yield {"type": "message", "body": f"Finished task {self.currentResponse.task_name}, uuid: {self.currentResponse.task_uuid}."}
