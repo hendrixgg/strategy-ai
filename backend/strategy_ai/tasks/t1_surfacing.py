@@ -180,7 +180,7 @@ Lastly, aim to identify 2-3 objetives. If you cannot find objectives on the topi
                 prefix = "##### "
                 for aiMessage in topicInfo["body"][2]:
                     yield {"type": "results_text", "body": prefix + aiMessage["title"]}
-                    # if this was async: wait until the coroutine has completed the text response for this topic
+                    # wait until the coroutine has completed the text response for this topic
                     aiMessage["body"] = await aiMessage["task"]
                     del aiMessage["task"], aiMessage["coro"]
                     if aiMessage["type"] == "text_response":
