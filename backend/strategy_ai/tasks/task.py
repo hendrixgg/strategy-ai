@@ -24,6 +24,7 @@ class TaskStatus(AutoConvertEnum):
 
 
 def iter_over_async(ait, loop):
+    """This function will take an async iterator and return a sync iterator that will iterate over the async iterator."""
     ait = ait.__aiter__()
 
     async def get_next():
@@ -40,6 +41,7 @@ def iter_over_async(ait, loop):
 
 
 def sync_generator(asyncGen, asyncEventLoop=asyncio.get_event_loop()):
+    """This function will take an async generator and return a sync generator that will iterate over the async generator."""
     return iter_over_async(asyncGen, asyncEventLoop)
 
 
@@ -88,6 +90,7 @@ class BaseTask(ABC):
 
     @abstractmethod
     def generate_results(self):
+        """This function will return a generator that will yield json strings that can be sent to the frontend."""
         if self.currentResponse.status == TaskStatus.PREPARING:
             raise Exception(
                 f"Not ready to run task {self.currentResponse.task_name}, uuid: {self.currentResponse.task_uuid}.")
@@ -103,7 +106,14 @@ class BaseTask(ABC):
         self.currentResponse.status = TaskStatus.RUNNING
         yield {"type": "message", "body": self.currentResponse.message}
 
-    def generate_results_json_bytes(self, asyncEventLoop=asyncio.new_event_loop(), saveDirectory: str | None = None):
+    def generate_results_json_bytes(self, asyncEventLoop=None, saveDirectory: str | None = None):
+        """This function will return a generator that will yield json strings that can be sent to the frontend.
+        """
+        if asyncEventLoop is None:
+            try:
+                asyncEventLoop = asyncio.get_event_loop()
+            except RuntimeError:
+                asyncEventLoop = asyncio.new_event_loop()
         for result in sync_generator(self.generate_results(saveDirectory), asyncEventLoop):
             self.runHistory.append((datetime.datetime.now(), result))
             match result["type"]:
@@ -118,10 +128,11 @@ class BaseTask(ABC):
             yield bytes(jsonString, encoding="ascii")
 
     def save(self, directory: str):
-        """Inside the given directory, this function will create it's own directory that will contain:
-         - the task's detailed results (pickle file ".pkl")
-         - the task's run history (csv file ".csv")
-         - the readable copy of the results (markdown text file ".md").
+        """This function will save the results of the task to the given directory.
+            Inside the given directory, the save file will contain:
+            - the task's detailed results (pickle file ".pkl")
+            - the task's run history (csv file ".csv")
+            - the readable copy of the results (markdown text file ".md").
          """
         if self.currentResponse.status != TaskStatus.FINISHED:
             raise Exception(

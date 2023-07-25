@@ -18,47 +18,6 @@ from strategy_ai.tasks.task import BaseTask
 from strategy_ai.tasks.task import TaskStatus
 
 load_dotenv(verbose=True)
-""" 
-# could use these functions to run the api calls on the topics asynchronously
-# would have to store the instance of each task run in 
-# would also have to switch the 
-    async def run_topic(self, category: str, topic: str):
-        async with asyncio.TaskGroup() as taskGroup:
-            async def set_context_prompt():
-                self.detailedResults["body"][category]["body"][topic]["body"][0]["body"] = SystemMessagePromptTemplate.from_template(
-                    self.system_message_prompt_template).format(context=self.vectorStore.formatted_context(topic))
-
-            async def set_human_prompt():
-                self.detailedResults["body"][category]["body"][topic]["body"][1]["body"] = HumanMessagePromptTemplate.from_template(
-                    self.list_objectives_prompt_template).format(topic=topic)
-
-            taskGroup.create_task(set_context_prompt())
-            taskGroup.create_task(set_human_prompt())
-
-        async with asyncio.TaskGroup() as taskGroup:
-            messages = [message["body"] for message in self.detailedResults["body"]
-                        [category]["body"][topic]["body"][0:2]]
-
-            async def set_text_response():
-                self.detailedResults["body"][category]["body"][topic]["body"][2][0]["body"] = self.llm.predict_messages(
-                    messages)
-
-            async def set_function_response():
-                self.detailedResults["body"][category]["body"][topic]["body"][2][1]["body"] = self.llm.predict_messages(
-                    messages=messages,
-                    functions=self.functionDescriptions,
-                    function_call="auto"
-                )
-            taskGroup.create_task(set_text_response())
-            taskGroup.create_task(set_function_response())
-
-    async def run_topics(self):
-        async with asyncio.TaskGroup() as taskGroup:
-            for category, categoryInfo in self.detailedResults["body"].items():
-                for topicName, topicInfo in categoryInfo["body"].items():
-                    taskGroup.create_task(
-                        self.run_topic(category, topicName))
-"""
 
 
 class T1SurfacingTask(BaseTask):
@@ -222,12 +181,12 @@ Lastly, aim to identify 2-3 objetives. If you cannot find objectives on the topi
                 for aiMessage in topicInfo["body"][2]:
                     yield {"type": "results_text", "body": prefix + aiMessage["title"]}
                     # if this was async: wait until the coroutine has completed the text response for this topic
-                    topicInfo["body"][2][0]["body"] = await topicInfo["body"][2][0]["task"]
+                    aiMessage["body"] = await aiMessage["task"]
                     del aiMessage["task"], aiMessage["coro"]
                     if aiMessage["type"] == "text_response":
-                        yield {"type": "results_text", "body": "```text\n" + topicInfo["body"][2][0]["body"].content + "\n```"}
+                        yield {"type": "results_text", "body": "```text\n" + aiMessage["body"].content + "\n```"}
                     elif aiMessage["type"] == "function_response":
-                        yield {"type": "results_text", "body": "```json\n" + topicInfo["body"][2][1]["body"].additional_kwargs.get(
+                        yield {"type": "results_text", "body": "```json\n" + aiMessage["body"].additional_kwargs.get(
                             "function_call").get("arguments") + "\n```"}
 
                 yield {"type": "progress_info", "body": f"- {topic}"}
