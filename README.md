@@ -8,12 +8,14 @@
 1. In the left terminal open the vite react app by running: "npm run dev"
 
 ## What is This For?
-This is an app designed to take your company's strategy documents and identify the core strategy of your business across the multiple perspectives, including:
+This is an app designed to take company's strategy documents and identify the core strategy of the business across the multiple perspectives, including:
 
 - Financial
 - Customer
 - Internal
 - Enabling
+
+This is currently just an internal piece of software that can be shown as a demo to clients, this software is not planned to be distributed.
 
 ## What Types of Documents Can Be Uploaded?
 The more documents uploaded the better the system will be able to provide insights into your strategy.
