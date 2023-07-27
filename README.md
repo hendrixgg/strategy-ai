@@ -59,7 +59,8 @@ The more documents uploaded the better the system will be able to provide insigh
     1. played around a bit by editing App.tsx
 1. install react-markdown to show the results from the Tasks being run
     1. run "npm install react-markdown"
-1. I did not log all the work I did here up to 2023-07-27, after this day, I began loggin the work done on the UI here
+1. I did not log all the work I did here up to 2023-07-27, after this day, I began loggin the work done on the UI here\
+
 #### Backend
 Set up backend using **python**, but realize that all of the same functionality could be implemented with **node.js** since langchain is supported there also, this would allow the whole system to be javascript based but I'm not sure if this makes that much of a difference and I have worked a lot more with python in the past compared to node.js.
 1. followed the steps in the article up to [here](https://dev.to/nagatodev/how-to-connect-flask-to-reactjs-1k8i#:~:text=backend/__pycache__-,Connecting,-the%20API%20endpoint)
@@ -113,8 +114,8 @@ Set up backend using **python**, but realize that all of the same functionality 
         1. defined the prompt template sequence for each objective with asynchronous calls to the llm
         1. defined the structure to store the surfaced objectives from each category
         1. implemented *abstractmethod* generate_results
-    1. risk management framework - **NOT DONE YET**
-1. implement Assessment Task (Task 2) **NOT DONE YET**
+    1. risk management framework - **NOT STARTED**
+1. implement Assessment Task (Task 2) **NOT STARTED**
 
 
 ### New features to do (extra) 
