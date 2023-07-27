@@ -16,7 +16,7 @@ from strategy_ai.ai_core.data_sets.doc_store import DocStore, DocumentSource
 from strategy_ai.ai_core.data_sets.vector_store import FAISSVectorStore
 from strategy_ai.tasks.path_to_json import path_to_dict
 from strategy_ai.tasks.task import BaseTask
-from strategy_ai.tasks.t1_surfacing import T1SurfacingTask
+from strategy_ai.tasks.t1_surfacing import Task1SurfacingTask
 
 # nltk.download("punkt")
 
@@ -67,7 +67,7 @@ def init_task(task_id: int):
     """Instantiates the new task and returns the initial task info"""
     if task_id != "1":
         return {"status": "error", "message": "task not implemented"}
-    newTask = T1SurfacingTask(
+    newTask = Task1SurfacingTask(
         contextVectorStore=vectorStore,
         availableDataFolder=available_documents_directory,
         llm=llm
@@ -124,7 +124,7 @@ def recursive_dict_types(d: dict):
 
 
 if __name__ == "__main__":
-    newTask = T1SurfacingTask(
+    newTask = Task1SurfacingTask(
         contextVectorStore=vectorStore,
         availableDataFolder=available_documents_directory,
         llm=llm

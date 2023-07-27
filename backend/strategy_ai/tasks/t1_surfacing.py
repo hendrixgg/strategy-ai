@@ -20,7 +20,7 @@ from strategy_ai.tasks.task import TaskStatus
 load_dotenv(verbose=True)
 
 
-class T1SurfacingTask(BaseTask):
+class Task1SurfacingTask(BaseTask):
     def __init__(self, contextVectorStore: FAISSVectorStore, availableDataFolder: str, llm=ChatOpenAI(model="gpt-3.5-turbo-0613", temperature=0)):
         """If the saveDirectory is provided, the results will be saved at the end of running the task"""
         super().__init__(1, "t1_surfacing", availableDataFolder)
