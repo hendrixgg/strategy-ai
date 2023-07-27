@@ -47,7 +47,8 @@ vector_store_save_directory = os.path.join(
 
 documents = DocStore(dict({
     "Methodology Documents": DocumentSource(name="Pm2 Methodology Documents", directory_path=methodology_documents_directory),
-    "Client Documents": DocumentSource(name="Documents from aFe", directory_path=client_documents_directory),
+    "Client Documents": DocumentSource(name="Client Documents", directory_path=client_documents_directory),
+    "Website Documents": DocumentSource(name="Website Documents", filePaths=[os.path.join(available_documents_directory, "visible_files", "weblinks.txt")]),
     "AI Documents": DocumentSource(name="AI Generated Documents", directory_path=ai_documents_directory)
 }))
 

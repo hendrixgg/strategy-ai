@@ -1,6 +1,6 @@
 import os
 
-from typing import Any
+from typing import Any, List, Literal, Sequence, Set, Tuple, Union
 
 from langchain.docstore.document import Document
 from langchain.embeddings.openai import OpenAIEmbeddings
@@ -16,7 +16,7 @@ from langchain.vectorstores import FAISS
 
 
 class FAISSVectorStore():
-    def __init__(self, splitDocuments, vectorStoreSavePath: str = ""):
+    def __init__(self, splitDocuments: List[Document], vectorStoreSavePath: str = ""):
         self.embeddings = OpenAIEmbeddings(
             model="text-embedding-ada-002",  # str
             deployment="text-embedding-ada-002",  # str
