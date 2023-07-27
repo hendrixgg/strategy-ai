@@ -23,28 +23,6 @@ class TaskStatus(AutoConvertEnum):
     FINISHED: str = "finished"
 
 
-def iter_over_async(ait, loop):
-    """This function will take an async iterator and return a sync iterator that will iterate over the async iterator."""
-    ait = ait.__aiter__()
-
-    async def get_next():
-        try:
-            obj = await ait.__anext__()
-            return False, obj
-        except StopAsyncIteration:
-            return True, None
-    while True:
-        done, obj = loop.run_until_complete(get_next())
-        if done:
-            break
-        yield obj
-
-
-def sync_generator(asyncGen, asyncEventLoop=asyncio.get_event_loop()):
-    """This function will take an async generator and return a sync generator that will iterate over the async generator."""
-    return iter_over_async(asyncGen, asyncEventLoop)
-
-
 @dataclass
 class TaskResponse():
     """Class for keeping track of the task api responses"""
@@ -70,7 +48,7 @@ class TaskResponse():
 class BaseTask(ABC):
     def __init__(self, task_type: int, task_name: str, availableDataFolder: str):
         """must provide the task type and name.
-        you also need to implement the generate_results method
+        You also need to implement the generate_results method
         which is an iterator that will output the results of 
         running the task as it progresses"""
         self.currentResponse = TaskResponse(
@@ -118,12 +96,7 @@ class BaseTask(ABC):
         - progress_info: will be appended to the currentResponse.progress_info variable preceded by a newline character.
         - message: will be set to the currentResponse.message variable.
         """
-        if asyncEventLoop is None:
-            try:
-                asyncEventLoop = asyncio.get_event_loop()
-            except RuntimeError:
-                asyncEventLoop = asyncio.new_event_loop()
-        for result in sync_generator(self.generate_results(saveDirectory), asyncEventLoop):
+        for result in self.generate_results(saveDirectory):
             self.runHistory.append((datetime.datetime.now(), result))
             match result["type"]:
                 case "results_text":

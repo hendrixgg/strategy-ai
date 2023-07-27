@@ -1,5 +1,6 @@
 import asyncio
 import time
+from typing import Generator
 
 from dotenv import load_dotenv
 
@@ -21,7 +22,8 @@ load_dotenv(verbose=True)
 
 
 class Task1SurfacingTask(BaseTask):
-    def __init__(self, contextVectorStore: FAISSVectorStore, availableDataFolder: str, llm=ChatOpenAI(model="gpt-3.5-turbo-0613", temperature=0)):
+    def __init__(self, contextVectorStore: FAISSVectorStore, availableDataFolder: str, llm=ChatOpenAI(model="gpt-3.5-turbo-0613", temperature=0), asyncEventLoop=asyncio.get_event_loop()):
+        self.asyncEventLoop = asyncEventLoop
         """If the saveDirectory is provided, the results will be saved at the end of running the task"""
         super().__init__(1, "t1_surfacing", availableDataFolder)
         self.vectorStore = contextVectorStore
@@ -61,45 +63,43 @@ If you don't know the answer, just say that "I don't know", don't try to make up
 If there is a function provided, use the function.
 Lastly, aim to identify 2-3 objetives. If you cannot find objectives on the topic of {topic}, list some relevant suggestions based on the context.
 """
-        self.functionDescriptions = [
-            {
-                "name": "display_formatted_objectives",
-                "description": "given a list of objectives for a business in the format of [Verb] [Outcome] [Definition] [Source], print it to the screen.",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "objectives_list": {
-                            "type": "array",
-                            "minItems": 1,
-                            "description": "a list of all the formatted objectives, including the source file for each objective or a direct quote",
-                            "items": {
-                                "title": "Objective",
-                                "type": "object",
-                                "properties": {
-                                    "Verb": {
-                                        "type": "string",
-                                        "decription": "A single word describing an action. A verb in present tense, not present continous tense, just present tense",
-                                    },
-                                    "Outcome": {
-                                        "type": "string",
-                                        "decription": "One or 2 words which are the outcome of this objective",
-                                    },
-                                    "Definition": {
-                                        "type": "string",
-                                        "description": "Definition should anser these two questions in two sentences: What is the objective working to achieve? Why is the objective important to the business?",
-                                    },
-                                    "Source": {
-                                        "type": "string",
-                                        "description": "the complete file name in which this objective was found, or directly quoted text",
-                                    },
+        self.objectiveFormat = {
+            "name": "display_formatted_objectives",
+            "description": "given a list of objectives for a business in the format of [Verb] [Outcome] [Definition] [Source], print it to the screen.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "objectives_list": {
+                        "type": "array",
+                        "minItems": 1,
+                        "description": "a list of all the formatted objectives, including the source file for each objective or a direct quote",
+                        "items": {
+                            "title": "Objective",
+                            "type": "object",
+                            "properties": {
+                                "Verb": {
+                                    "type": "string",
+                                    "decription": "A single word describing an action. A verb in present tense, not present continous tense, just present tense",
+                                },
+                                "Outcome": {
+                                    "type": "string",
+                                    "decription": "One or 2 words which are the outcome of this objective",
+                                },
+                                "Definition": {
+                                    "type": "string",
+                                    "description": "Definition should anser these two questions in two sentences: What is the objective working to achieve? Why is the objective important to the business?",
+                                },
+                                "Source": {
+                                    "type": "string",
+                                    "description": "the complete file name where this objective was found, or directly quoted text",
                                 },
                             },
                         },
                     },
                 },
-                "required": ["objectives_list"],
             },
-        ]
+            "required": ["objectives_list"],
+        }
 
         def topic_messages(topic: str):
             sys_msg = SystemMessagePromptTemplate.from_template(
@@ -133,7 +133,7 @@ Lastly, aim to identify 2-3 objetives. If you cannot find objectives on the topi
                         "task": None,
                         "coro": self.llm.apredict_messages(
                             messages=[sys_msg, hmn_msg],
-                            functions=self.functionDescriptions,
+                            functions=[self.objectiveFormat],
                             function_call="auto"),
                     },
                 ],
@@ -147,6 +147,7 @@ Lastly, aim to identify 2-3 objetives. If you cannot find objectives on the topi
                 }
                 for topic in topics
             }
+
         self.detailedResults = {
             "title": "Company Objectives",
             "body": {
@@ -159,9 +160,11 @@ Lastly, aim to identify 2-3 objetives. If you cannot find objectives on the topi
         }
         self.currentResponse.status = TaskStatus.READY
 
-    async def generate_results(self, saveDirectory: str | None = None):
+    def generate_results(self, saveDirectory: str | None = None) -> Generator[dict, None, None]:
         for response in super().generate_results():
             yield response
+
+        asyncEventLoop = asyncio.new_event_loop()
 
         prefix = "## "
         yield {"type": "message", "body": f"Running task {self.currentResponse.task_name}, uuid: {self.currentResponse.task_uuid}."}
@@ -169,7 +172,8 @@ Lastly, aim to identify 2-3 objetives. If you cannot find objectives on the topi
         for categoryInfo in self.detailedResults["body"].values():
             for topicInfo in categoryInfo["body"].values():
                 for message in topicInfo["body"][2]:
-                    message["task"] = asyncio.create_task(message["coro"])
+                    message["task"] = asyncEventLoop.create_task(
+                        message["coro"])
         for category, categoryInfo in self.detailedResults["body"].items():
             prefix = "### "
             yield {"type": "progress_info", "body": f"{category} objectives complete:"}
@@ -181,7 +185,8 @@ Lastly, aim to identify 2-3 objetives. If you cannot find objectives on the topi
                 for aiMessage in topicInfo["body"][2]:
                     yield {"type": "results_text", "body": prefix + aiMessage["title"]}
                     # wait until the coroutine has completed the text response for this topic
-                    aiMessage["body"] = await aiMessage["task"]
+                    aiMessage["body"] = asyncEventLoop.run_until_complete(
+                        aiMessage["task"])
                     del aiMessage["task"], aiMessage["coro"]
                     if aiMessage["type"] == "text_response":
                         yield {"type": "results_text", "body": "```text\n" + aiMessage["body"].content + "\n```"}
