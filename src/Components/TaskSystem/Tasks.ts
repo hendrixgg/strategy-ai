@@ -14,12 +14,12 @@ export const Tasks: Array<Task> = [
     {
         id: 1,
         name: "Strategy Surfacing",
-        description: "Surface the key elements of the business strategy based on the provided documents. Simplify the strategy down to a list of objectives",
+        description: "Surface the key elements of the business strategy based on the provided documents. Simplify the strategy down to a list of objectives. This currently only assesses strategy for performance, not for risk management purposes.",
     },
     {
         id: 2,
         name: "Strategy Assessment",
-        description: "Assess the previously surfaced strategy to identify areas where strategy could be improved.",
+        description: "Assess the organization's ability to execute on their strategy.",
     },
     {
         id: 3,
