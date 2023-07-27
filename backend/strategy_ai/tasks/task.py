@@ -107,7 +107,16 @@ class BaseTask(ABC):
         yield {"type": "message", "body": self.currentResponse.message}
 
     def generate_results_json_bytes(self, asyncEventLoop=None, saveDirectory: str | None = None):
-        """This function will return a generator that will yield json strings that can be sent to the frontend.
+        """This function will run the task, returning a generator that will yield json strings preceded by newline characters that can be sent to the frontend. All results will be saved with this task and stored in the saveDirectory upon completion.
+
+        Additional things to note:
+        - This function will also update the currentResponse object as the task progresses.
+        - This function will append each json string to the runHistory object.
+
+        The json strings will have the following format:
+        - result_text: will be appended to the currentResponse.results variable preceded by a newline character.
+        - progress_info: will be appended to the currentResponse.progress_info variable preceded by a newline character.
+        - message: will be set to the currentResponse.message variable.
         """
         if asyncEventLoop is None:
             try:
@@ -129,10 +138,11 @@ class BaseTask(ABC):
 
     def save(self, directory: str):
         """This function will save the results of the task to the given directory.
-            Inside the given directory, the save file will contain:
-            - the task's detailed results (pickle file ".pkl")
-            - the task's run history (csv file ".csv")
-            - the readable copy of the results (markdown text file ".md").
+
+        Inside the given directory, the save file will contain:
+        - the task's detailed results (pickle file ".pkl")
+        - the task's run history (csv file ".csv")
+        - the readable copy of the results (markdown text file ".md").
          """
         if self.currentResponse.status != TaskStatus.FINISHED:
             raise Exception(
@@ -147,7 +157,7 @@ class BaseTask(ABC):
 
         with open(file=os.path.join(new_directory, "runHistory.csv"), mode="w", newline="\n") as f:
             for time, entry in self.runHistory:
-                print(f"{time},{entry}", file=f)
+                print(f'{time},"{entry}"', file=f)
 
         with open(file=os.path.join(new_directory, "readableResults.md"), mode="w", newline="\n") as f:
             print(self.currentResponse.results, file=f)
