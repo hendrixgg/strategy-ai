@@ -1,22 +1,16 @@
-from dataclasses import asdict
 import json
 import os
-import time
-import asyncio
-
-from flask import Flask, Response
-from flask_cors import CORS
-
-from langchain.chat_models import ChatOpenAI
+from dataclasses import asdict
 
 from dotenv import load_dotenv
-
-from strategy_ai.tasks.task import TaskStatus
+from flask import Flask, Response
+from flask_cors import CORS
+from langchain.chat_models import ChatOpenAI
 from strategy_ai.ai_core.data_sets.doc_store import DocStore, DocumentSource
 from strategy_ai.ai_core.data_sets.vector_store import FAISSVectorStore
 from strategy_ai.tasks.path_to_json import path_to_dict
-from strategy_ai.tasks.task import BaseTask
 from strategy_ai.tasks.t1_surfacing import Task1SurfacingTask
+from strategy_ai.tasks.task import BaseTask, TaskStatus
 
 # nltk.download("punkt")
 
@@ -27,9 +21,12 @@ api = Flask(__name__)
 CORS(api, origins="*")
 
 # key: str = task uuid, value: BaseTask
+# This stores the tasks that have been initalized in this session
 tasks: dict[str, BaseTask] = dict()
 
-# set up AI objects, documents, vector store, llm
+
+# File system
+# For now these directories are hardcoded, but in the future they could be accessed from a database
 available_documents_directory = os.path.join(
     os.getcwd(), "strategy_ai", "available_data")
 
@@ -85,16 +82,6 @@ def task_stream(unique_id: int):
     return Response(tasks[unique_id].generate_results_json_bytes(saveDirectory=ai_output_directory))
 
 
-@api.route("/test_stream/<length>")
-def test_stream(length):
-    def generator():
-        for i in range(int(length)):
-            jsonString = json.dumps(
-                {"type": "results_text", "body": f"{i}"}) + "\n"
-            yield bytes(jsonString, encoding="ascii")
-    return Response(generator())
-
-
 @api.route("/task_results/<unique_id>")
 def task_results(unique_id: str):
     """Returns the results of the task at the current time."""
@@ -112,8 +99,22 @@ def save_results(unique_id: str):
 
     return {"status": "success", "message": "task results saved"}
 
+# testing funcitons are below
+
+
+@api.route("/test_stream/<length>")
+def test_stream(length):
+    """Returns a stream of json objects with the type "results_text" and the body as the number of the object."""
+    def generator():
+        for i in range(int(length)):
+            jsonString = json.dumps(
+                {"type": "results_text", "body": f"{i}"}) + "\n"
+            yield bytes(jsonString, encoding="ascii")
+    return Response(generator())
+
 
 def recursive_dict_types(d: dict):
+    """Returns a dictionary with the same structure as the input dictionary, but with the types of the values instead of the values themselves."""
     d_types = {}
     for key, value in d.items():
         if type(value) == dict:
