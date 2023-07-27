@@ -1,6 +1,5 @@
 import asyncio
-import time
-from typing import Generator
+from typing import Iterator, List
 
 from dotenv import load_dotenv
 
@@ -139,7 +138,7 @@ Lastly, aim to identify 2-3 objetives. If you cannot find objectives on the topi
                 ],
             ]
 
-        def category_topics(topics: list[str]):
+        def category_topics(topics: List[str]):
             return {
                 topic: {
                     "title": f"topic: {topic}",
@@ -160,7 +159,7 @@ Lastly, aim to identify 2-3 objetives. If you cannot find objectives on the topi
         }
         self.currentResponse.status = TaskStatus.READY
 
-    def generate_results(self, saveDirectory: str | None = None) -> Generator[dict, None, None]:
+    def generate_results(self, saveDirectory: str | None = None) -> Iterator[dict]:
         for response in super().generate_results():
             yield response
 

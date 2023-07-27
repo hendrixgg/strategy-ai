@@ -84,7 +84,7 @@ class BaseTask(ABC):
         self.currentResponse.status = TaskStatus.RUNNING
         yield {"type": "message", "body": self.currentResponse.message}
 
-    def generate_results_json_bytes(self, asyncEventLoop=None, saveDirectory: str | None = None):
+    def generate_results_json_bytes(self, saveDirectory: str | None = None):
         """This function will run the task, returning a generator that will yield json strings preceded by newline characters that can be sent to the frontend. All results will be saved with this task and stored in the saveDirectory upon completion.
 
         Additional things to note:
