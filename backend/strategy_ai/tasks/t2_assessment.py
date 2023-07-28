@@ -1,3 +1,4 @@
+from task import BaseTask
 """I have not thought through how we would do this activity, so this gives you some space to have some fun!
 
 The simple example to work through is that which I talked about on the call today where we want a 20% growth in sales.
@@ -18,9 +19,9 @@ If the target level is infeasible, I would like the tool to identify what it thi
 """
 
 # Simple solution:
-"""First you specify a timeframe to do the analysis, lets pick a **year**.
+"""Specify a timeframe to do the analysis, lets pick a **year**.
 
-Given a department or business function look at the targets from the last year. 
+Given a department or business function and key results achieved last year. 
 
 1. Calculate the change required to reach the new target.
 2. Bring up some objectives from last year and some possible new objectives that could be used to reach the new target.
