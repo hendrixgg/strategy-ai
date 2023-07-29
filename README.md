@@ -72,6 +72,7 @@ Set up backend using **python**, but realize that all of the same functionality 
     - python-dotenv
     - tiktoken
     - openai
+    - pydantic
     1. run "pip3 freeze" to see all the dependencies currently installed
     1. run "pip install -r requirements.txt" to install python modules
 1. had to modify some stuff in the vite.config.ts file
