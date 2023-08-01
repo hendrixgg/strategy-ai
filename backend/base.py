@@ -1,3 +1,5 @@
+import openai
+from langchain.schema import HumanMessage, SystemMessage, AIMessage, FunctionMessage
 import json
 import os
 from dataclasses import asdict
@@ -9,7 +11,8 @@ from langchain.chat_models import ChatOpenAI
 from strategy_ai.ai_core.data_sets.doc_store import DocStore, DocumentSource
 from strategy_ai.ai_core.data_sets.vector_store import FAISSVectorStore
 from strategy_ai.tasks.path_to_json import path_to_dict
-from strategy_ai.tasks.t1_surfacing import Task1SurfacingTask
+from strategy_ai.tasks.t1_surfacing import Task1Surfacing
+from strategy_ai.tasks.t2_assessment import Task2Assessment
 from strategy_ai.tasks.task import BaseTask, TaskStatus
 
 # nltk.download("punkt")
@@ -64,7 +67,7 @@ def init_task(task_id: int):
     """Instantiates the new task and returns the initial task info"""
     if task_id != "1":
         return {"status": "error", "message": "task not implemented"}
-    newTask = Task1SurfacingTask(
+    newTask = Task1Surfacing(
         contextVectorStore=vectorStore,
         availableDataFolder=available_documents_directory,
         llm=llm
@@ -125,14 +128,48 @@ def recursive_dict_types(d: dict):
 
 
 if __name__ == "__main__":
-    newTask = Task1SurfacingTask(
+    newTask = Task2Assessment(
         contextVectorStore=vectorStore,
         availableDataFolder=available_documents_directory,
         llm=llm
     )
-    # print(newTask.currentResponse.files_available)
-    for result in newTask.generate_results_json_bytes():
+    for result in newTask.generate_results():
         print(result)
+    # print(newTask.currentResponse.files_available)
+    # for result in newTask.generate_results_json_bytes():
+    #     print(result)
     #     newTask.currentResponse.update()
     #     with open(f"{ai_documents_directory}\\Strategy_Surfacing_{newTask.currentResponse.date.replace(':', '-')}_{newTask.currentResponse.task_uuid}.md", "x") as f:
     #         print("test", file=f)
+    # goals = [
+    #     "increase sales revenue by 20% compared to last year (from 10M to 12M)"]
+    # business_expert_system_message_template = "You are a business expert and you are helping a company achieve the following goal: {goal}"
+    # list_actions_prompt_template = "List actions that could be taken to achieve the following goal: {goal}"
+    # use_formatting_function_prompt = "TIP: Use the {function_name} function to format your response to the user."
+    # formattedActionsList = {
+    #     "name": "formatted_actions_list",
+    #     "description": "Use this function to output the formatted list of actions to the user.",
+    #     "parameters": {
+    #         "type": "object",
+    #         "properties": {
+    #             "actions_list": {
+    #                 "title": "Actions List",
+    #                 "type": "array",
+    #                 "items": {"type": "string"},
+    #             },
+    #         },
+    #     },
+    #     "required": ["actions_list"],
+    # }
+    # list_of_actions = llm.predict_messages([
+    #     SystemMessage(
+    #         content=business_expert_system_message_template.format(goal=goals[0])),
+    #     HumanMessage(
+    #         content=list_actions_prompt_template.format(goal=goals[0])),
+    #     SystemMessage(
+    #         content=use_formatting_function_prompt.format(function_name=formattedActionsList.get("name")))
+    # ],
+    #     functions=[formattedActionsList], function_call={"name": formattedActionsList.get("name")})
+
+    # print([list_of_actions])
+    # print([AIMessage(content="test")])

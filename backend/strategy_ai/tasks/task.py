@@ -6,21 +6,18 @@ import datetime
 import json
 import pickle
 import os
-import asyncio
 
 from strategy_ai.tasks.path_to_json import path_to_dict
 
 
-class AutoConvertEnum(Enum):
-    def __get__(self, instance, owner):
-        return self.value
-
-
-class TaskStatus(AutoConvertEnum):
+class TaskStatus(Enum):
     PREPARING: str = "preparing"
     READY: str = "ready"
     RUNNING: str = "running"
     FINISHED: str = "finished"
+
+    def __get__(self, instance, owner):
+        return self.value
 
 
 @dataclass
@@ -94,7 +91,7 @@ class BaseTask(ABC):
         The json strings will have the following format:
         - result_text: will be appended to the currentResponse.results variable preceded by a newline character.
         - progress_info: will be appended to the currentResponse.progress_info variable preceded by a newline character.
-        - message: will be set to the currentResponse.message variable.
+        - message: will be assign to the currentResponse.message variable.
         """
         for result in self.generate_results(saveDirectory):
             self.runHistory.append((datetime.datetime.now(), result))

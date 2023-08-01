@@ -12,6 +12,7 @@ from langchain.prompts.chat import (
     AIMessagePromptTemplate
 )
 
+from strategy_ai.ai_core import openai_chat
 from strategy_ai.ai_core.data_sets.vector_store import FAISSVectorStore
 
 from strategy_ai.tasks.task import BaseTask
@@ -20,7 +21,7 @@ from strategy_ai.tasks.task import TaskStatus
 load_dotenv(verbose=True)
 
 
-class Task1SurfacingTask(BaseTask):
+class Task1Surfacing(BaseTask):
     def __init__(self, contextVectorStore: FAISSVectorStore, availableDataFolder: str, llm=ChatOpenAI(model="gpt-3.5-turbo-0613", temperature=0)):
         """If the saveDirectory is provided, the results will be saved at the end of running the task"""
         super().__init__(1, "t1_surfacing", availableDataFolder)
@@ -49,7 +50,7 @@ class Task1SurfacingTask(BaseTask):
                 "Attracting, Retaining, and Developing Talent",
             ]
         }
-        self.system_message_prompt_template = """Use the following pieces of context to answer the users question.
+        self.system_message_prompt_template = """Use the following pieces of context to answer the user's question.
 Take note of the sources and include them in the answer in the format: "SOURCES: source1 source2", use "SOURCES" in capital letters regardless of the number of sources.
 If you don't know the answer, just say that "I don't know", don't try to make up an answer.
 
@@ -99,7 +100,7 @@ Lastly, aim to identify 2-3 objetives. If you cannot find objectives on the topi
             "required": ["objectives_list"],
         }
 
-        def topic_messages(topic: str):
+        def topic_messages(topic: str) -> List:
             sys_msg = SystemMessagePromptTemplate.from_template(
                 self.system_message_prompt_template).format(context=self.vectorStore.formatted_context(topic))
             hmn_msg = HumanMessagePromptTemplate.from_template(
@@ -107,25 +108,25 @@ Lastly, aim to identify 2-3 objetives. If you cannot find objectives on the topi
 
             return [
                 {
-                    "type": "SystemMessage",
+                    "type": openai_chat.MessageRole.SYSTEM,
                     "title": "Context",
                     "body": sys_msg,
                 },
                 {
-                    "type": "HumanMessage",
+                    "type": openai_chat.MessageRole.HUMAN,
                     "title": "Human Prompt",
                     "body": hmn_msg,
                 },
                 [
                     {
-                        "type": "text_response",
+                        "type": openai_chat.MessageRole.ASSISTANT,
                         "title": "Text Response",
                         "body": None,
                         "task": None,
                         "coro": self.llm.apredict_messages(messages=[sys_msg, hmn_msg]),
                     },
                     {
-                        "type": "function_response",
+                        "type": openai_chat.MessageRole.ASSISTANT,
                         "title": "Function Response",
                         "body": None,
                         "task": None,
