@@ -133,7 +133,7 @@ Beside each point answer the following questions:
             return {
                 action: {
                     "title": f"Action: {action}",
-                    "body": action_info(goal),
+                    "body": action_info(action),
                 } for action in actions_that_would_help_achieve_goal(goal)
             }
 
