@@ -133,7 +133,7 @@ if __name__ == "__main__":
         availableDataFolder=available_documents_directory,
         llm=llm
     )
-    for result in newTask.generate_results():
+    for result in newTask.generate_results(saveDirectory=ai_output_directory):
         print(result)
     # print(newTask.currentResponse.files_available)
     # for result in newTask.generate_results_json_bytes():

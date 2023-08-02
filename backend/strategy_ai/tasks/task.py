@@ -26,7 +26,7 @@ class TaskResponse():
     status: TaskStatus
     message: str
     date: str
-    task_uuid: str
+    id: str
     task_type_id: int
     task_name: str
     # Should be what you would print to the console indicating what progress has been made so far, this variable can change over the course of running the task.
@@ -60,7 +60,7 @@ class BaseTask(ABC):
             files_available=path_to_dict(availableDataFolder, ""),
             metadata=dict(),
         )
-        self.runHistory: list[dict] = []
+        self.runHistory: list[tuple[datetime.datetime, dict]] = []
         self.detailedResults = {}
 
     @abstractmethod

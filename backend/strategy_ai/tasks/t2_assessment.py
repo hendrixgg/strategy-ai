@@ -43,7 +43,7 @@ assume each department has all of it's objectives
 2. Bring up some objectives from last year and some possible new objectives that could be used to reach the new target.
 3. compare the key results from last year to the new target and what the new key results would need to be in order to achieve the new target.
 
-goal is given:
+goal/objective is given:
 - name: <verb> <outcome>
 
 assume:
@@ -160,6 +160,12 @@ Beside each point answer the following questions:
                 prefix = "#### "
                 yield prefix + actionInfo.get("title")
                 yield actionInfo.get("body")[2].content
+
+        self.currentResponse.status = TaskStatus.FINISHED
+
+        self.save(saveDirectory) if saveDirectory else 0
+
+        yield {"type": "message", "body": f"Finished task {self.currentResponse.task_name}, uuid: {self.currentResponse.task_uuid}."}
 
 
 # Sophisticated solution:
