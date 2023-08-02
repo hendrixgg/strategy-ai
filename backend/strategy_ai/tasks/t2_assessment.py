@@ -8,7 +8,7 @@ from langchain.schema import HumanMessage, SystemMessage, AIMessage, FunctionMes
 from strategy_ai.ai_core import openai_chat
 from strategy_ai.ai_core.data_sets.vector_store import FAISSVectorStore
 from strategy_ai.tasks.task import BaseTask
-from strategy_ai.tasks.task import TaskStatus
+from strategy_ai.tasks.task import TaskData, TaskState
 
 """I have not thought through how we would do this activity, so this gives you some space to have some fun!
 
@@ -62,8 +62,95 @@ assume:
 """
 
 
+def task2_init(task: TaskData, vector_store: FAISSVectorStore, llm: ChatOpenAI):
+    goals = [
+        "increase sales revenue by 20% compared to last year (from 10M to 12M)"]
+    business_expert_system_message_template = "You are a business expert and you are helping a company achieve the following goal: {goal}"
+    list_actions_prompt_template = "List actions that could be taken to achieve the following goal: {goal}"
+    use_formatting_function_prompt = "TIP: Use the {function_name} function to format your response to the user."
+    formattedActionsList = {
+        "name": "formatted_actions_list",
+        "description": "Use this function to output the formatted list of actions to the user.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "actions_list": {
+                    "title": "Actions List",
+                    "type": "array",
+                    "items": {"type": "string"},
+                },
+            },
+        },
+        "required": ["actions_list"],
+    }
+    providing_context_system_message_template = """Use the following pieces of context to answer the user's question.
+Take note of the sources and include them in the answer in the format: "SOURCES: source1 source2", use "SOURCES" in capital letters regardless of the number of sources.
+If you don't know the answer, just say that "I don't know", don't try to make up an answer.
+
+----------------
+{context}
+"""
+    look_into_action_prompt_template = """List all the things that the company is doing or has planned to do to carry out the following action: {action}.
+Beside each point answer the following questions:
+- will this make a difference (refer to what the company has done in previous years and what their competitors are doing)?
+- what additional resources does the company require to carry this out?
+- what regulations need to be followed?
+- what similar things have competing businesses done?
+"""
+
+    summarize_actions_prompt_template = """Based the actions listed below, provide a short summary indicating whether or not it is feasible for "{goal}" to be achieved. \n Actions and pertinent info:\n{actions_and_info}"""
+
+    def actions_that_would_help_achieve_goal(goal: str) -> List[str]:
+        """As of now, this assumes that the goal is always: increase sales revenue by X% compared to last year"""
+        list_of_actions = [
+            "increase headcount",
+            "increase price",
+            "enter new markets",
+            "introduce new products",
+            "combination",
+            "increase customer retention / decrease churn",
+        ]
+        # list_of_actions = self.llm.predict_messages([
+        #     SystemMessage(content=self.business_expert_system_message_template.format(goal=goal)),
+        #     HumanMessage(content=self.list_actions_prompt_template.format(goal=goal)),
+        #     SystemMessage(self.use_formatting_function_prompt.format(function_name=self.formattedActionsList.get("name"))),
+        # ], functions=[self.formattedActionsList], function_call="auto").additional_kwargs.get(
+        #                 "function_call").get("arguments").get("actions_list")
+        return list_of_actions
+
+    def action_info(action: str) -> AIMessage:
+        human_message = HumanMessage(
+            content=self.look_into_action_prompt_template.format(action=action))
+        system_message = SystemMessage(content=self.providing_context_system_message_template.format(
+            context=self.vectorStore.formatted_context(human_message.content)))
+        return [system_message, human_message, self.llm.predict_messages([system_message, human_message])]
+
+    def goal_summary(goal: str) -> str:
+        return {
+            action: {
+                "title": f"Action: {action}",
+                "body": action_info(action),
+            } for action in actions_that_would_help_achieve_goal(goal)
+        }
+
+    self.detailedResults = {
+        "title": "Feasibility Assessment on the company's goals",
+        "body": {
+            goal: {
+                "title": f"Goal Assessment for: {goal}",
+                "body": goal_summary(goal),
+            } for goal in self.goals
+        }
+    }
+
+
+def task2_generate_results(task: TaskData):
+    yield {"type": "message", "body": "Hello World!"}
+
+
 class Task2Assessment(BaseTask):
     def __init__(self, contextVectorStore: FAISSVectorStore, availableDataFolder: str, llm=ChatOpenAI(model="gpt-3.5-turbo-0613", temperature=0)):
+        """If the saveDirectory is provided, the results will be saved at the end of running the task"""
         super().__init__(2, "t2_assessment", availableDataFolder)
         self.vectorStore = contextVectorStore
         self.llm = llm
@@ -146,8 +233,6 @@ Beside each point answer the following questions:
                 } for goal in self.goals
             }
         }
-
-        self.currentResponse.status = TaskStatus.READY
 
     def generate_results(self, saveDirectory: str | None = None) -> Iterator[dict]:
         for response in super().generate_results():

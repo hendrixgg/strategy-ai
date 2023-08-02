@@ -13,7 +13,7 @@ from strategy_ai.ai_core.data_sets.vector_store import FAISSVectorStore
 from strategy_ai.tasks.path_to_json import path_to_dict
 from strategy_ai.tasks.t1_surfacing import Task1Surfacing
 from strategy_ai.tasks.t2_assessment import Task2Assessment
-from strategy_ai.tasks.task import BaseTask, TaskStatus
+from strategy_ai.tasks.task import TaskData, TaskTypeEnum, task_init, task_generate_results_with_processing, dict_iter_ndjson_bytes
 
 # nltk.download("punkt")
 
@@ -23,9 +23,9 @@ load_dotenv(verbose=True)
 api = Flask(__name__)
 CORS(api, origins="*")
 
-# key: str = task uuid, value: BaseTask
+# key: str = task uuid, value: TaskData
 # This stores the tasks that have been initalized in this session
-tasks: dict[str, BaseTask] = dict()
+tasks: dict[str, TaskData] = dict()
 
 
 # File system
@@ -62,19 +62,27 @@ def files():
     return path_to_dict(os.getcwd(), os.path.join("strategy_ai", "available_data", "visible_files"))
 
 
-@api.route("/init_task/<task_id>")
-def init_task(task_id: int):
-    """Instantiates the new task and returns the initial task info"""
-    if task_id != "1":
-        return {"status": "error", "message": "task not implemented"}
-    newTask = Task1Surfacing(
-        contextVectorStore=vectorStore,
-        availableDataFolder=available_documents_directory,
-        llm=llm
-    )
-    tasks[newTask.currentResponse.task_uuid] = newTask
+task_type_id_to_task_type = [
+    0,
+    TaskTypeEnum.SURFACING,
+    TaskTypeEnum.ASSESSMENT
+]
 
-    return asdict(newTask.currentResponse)
+
+@api.route("/init_task/<task_type_id>")
+def init_task(task_type_id: str):
+    """Instantiates the new task and returns the initial task info"""
+    task_type_id = int(task_type_id)
+    if task_type_id < 1 or 2 < task_type_id:
+        return {"status": "error", "message": "task not implemented"}
+
+    newTask = TaskData(task_type=task_type_id_to_task_type[task_type_id], files_available=path_to_dict(
+        available_documents_directory))
+    task_init(newTask, vector_store=vectorStore, llm=llm)
+
+    tasks[newTask.id] = newTask
+
+    return newTask.json(exclude={"detailed_results"})
 
 
 @api.route("/task_stream/<unique_id>")
@@ -82,7 +90,7 @@ def task_stream(unique_id: int):
     """Runs the task, returns a stream of the results as the task progresses."""
     if unique_id not in tasks.keys():
         return {"status": "error", "message": "task not initialized"}
-    return Response(tasks[unique_id].generate_results_json_bytes(saveDirectory=ai_output_directory))
+    return Response(dict_iter_ndjson_bytes(task_generate_results_with_processing(tasks[unique_id])))
 
 
 @api.route("/task_results/<unique_id>")
@@ -94,7 +102,7 @@ def task_results(unique_id: str):
 
 
 @api.route("/save_results/<unique_id>", methods=["POST"])
-def save_results(unique_id: str):
+def save_results_to_ui(unique_id: str):
     if unique_id not in tasks.keys():
         return {"status": "error", "message": "task not initialized"}
     with open(f"{ai_documents_directory}\\Strategy_Surfacing_{tasks[unique_id].currentResponse.date.replace(':', '-')}_{tasks[unique_id].currentResponse.task_uuid}.md", "x") as f:
