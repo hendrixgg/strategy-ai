@@ -119,12 +119,12 @@ Lastly, aim to identify 2-3 objetives. If you cannot find objectives on the topi
                 },
                 {
                     "type": openai_chat.MessageRole.ASSISTANT,
-                    "title": "Function Response",
+                    "title": "Formatted Response",
                     "body": None,
                     "async": llm.apredict_messages(
                         messages=[sys_msg, hmn_msg],
                         functions=[objectives_format],
-                        function_call="auto"),
+                        function_call={"name": "output_formatted_objectives"}),
                 },
             ],
         ]
@@ -151,7 +151,8 @@ Lastly, aim to identify 2-3 objetives. If you cannot find objectives on the topi
 
 
 def task1_generate_results(task: TaskData):
-
+    """ Generate the results for the task.
+    """
     prefix = "## "
     yield {"type": "message", "body": f"Running task {task.task_type.name}, uuid: {task.id}."}
     yield {"type": "results_text", "body": prefix + task.detailed_results["title"]}
@@ -165,6 +166,7 @@ def task1_generate_results(task: TaskData):
                 message["async"] = asyncEventLoop.create_task(
                     message["async"])
 
+    # generating the results
     for category, categoryInfo in task.detailed_results["body"].items():
         prefix = "### "
         yield {"type": "progress_info", "body": f"{category} objectives complete:"}
