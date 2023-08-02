@@ -184,7 +184,7 @@ def task_generate_results_with_processing(task: TaskData, save_directory: str | 
     Args:
         `task`: TaskData instance to be referenced. This is the task that is being run.
 
-        `task_results_generator`: A function that takes in a TaskData instance and returns a generator that yields dictionaries that can both be used to update `task` and can be sent to the frontend.
+        `save_directory`: A string representing the directory to save the results to. If None, the results will not be saved.
 
     Returns:
         A generator of dicts which are all the results of the task.
@@ -203,6 +203,7 @@ def task_generate_results_with_processing(task: TaskData, save_directory: str | 
             case _:
                 Exception(f"Unknown result type: {result['type']}.")
         task.date_recent = datetime.datetime.now()
+        task.run_history.append((task.date_recent, result))
         yield result
 
     if save_directory is not None:
