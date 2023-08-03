@@ -15,6 +15,8 @@ from strategy_ai.tasks.task_models import TaskData, TaskState, TaskTypeEnum
 
 load_dotenv(verbose=True)
 
+# all asserts should be impossible if the code has no bugs
+
 
 def task_save(task: TaskData, directory: str) -> None:
     """This function will save the results of the task to the given directory.
@@ -514,5 +516,4 @@ def task_generate_results_with_processing(task: TaskData, save_directory: str | 
 def dict_iter_ndjson_bytes(dict_iter: Iterator[dict]) -> Iterator[bytes]:
     """This function will take an iterator over dictionaries, convert each dictionary to a json string, add a newline, and convert to bytes.
     """
-    for d in dict_iter:
-        yield bytes(json.dumps(d) + "\n", encoding="ascii")
+    yield from (bytes(json.dumps(d) + "\n", encoding="ascii") for d in dict_iter)
