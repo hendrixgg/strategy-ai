@@ -2,8 +2,8 @@ import os
 import json
 
 
-def path_to_dict(rootPath: str, path: str):
-    fullPath = os.path.join(rootPath, path)
+def path_to_dict(rootPath: str, path: str = "") -> dict:
+    fullPath = os.path.join(rootPath, path) if path != "" else rootPath
     d = {'name': os.path.basename(fullPath), 'path': path, 'root': rootPath}
     if os.path.isdir(fullPath):
         d['type'] = "directory"
