@@ -1,8 +1,5 @@
-import openai
-from langchain.schema import HumanMessage, SystemMessage, AIMessage, FunctionMessage
 import json
 import os
-from dataclasses import asdict
 
 from dotenv import load_dotenv
 from flask import Flask, Response
@@ -82,7 +79,7 @@ def init_task(task_type_id: str):
 
     tasks[newTask.id] = newTask
 
-    return newTask.json(exclude={"detailed_results"})
+    return newTask.json(include=["id", "task_type", "date_recent"])
 
 
 @api.route("/task_stream/<unique_id>")
@@ -98,15 +95,15 @@ def task_results(unique_id: str):
     """Returns the results of the task at the current time."""
     if unique_id not in tasks.keys():
         return {"status": "error", "message": "task not initialized"}
-    return asdict(tasks[unique_id].currentResponse)
+    return tasks[unique_id].json()
 
 
 @api.route("/save_results/<unique_id>", methods=["POST"])
 def save_results_to_ui(unique_id: str):
     if unique_id not in tasks.keys():
         return {"status": "error", "message": "task not initialized"}
-    with open(f"{ai_documents_directory}\\Strategy_Surfacing_{tasks[unique_id].currentResponse.date.replace(':', '-')}_{tasks[unique_id].currentResponse.task_uuid}.md", "x") as f:
-        print(tasks[unique_id].currentResponse.results, file=f)
+    with open(f"{ai_documents_directory}\\{tasks[unique_id].task_type.value.name}_{str(tasks[unique_id].date_recent).replace(':', '-')}_{unique_id}.md", "x") as f:
+        print(tasks[unique_id].results_text, file=f)
 
     return {"status": "success", "message": "task results saved"}
 
@@ -143,32 +140,6 @@ if __name__ == "__main__":
     task_init(newTask, vector_store=vectorStore, llm=llm)
     for result in task_generate_results_with_processing(newTask, save_directory=ai_output_directory):
         print(result)
-    # print(newTask.currentResponse.files_available)
-    # for result in newTask.generate_results_json_bytes():
-    #     print(result)
-    #     newTask.currentResponse.update()
-    #     with open(f"{ai_documents_directory}\\Strategy_Surfacing_{newTask.currentResponse.date.replace(':', '-')}_{newTask.currentResponse.task_uuid}.md", "x") as f:
-    #         print("test", file=f)
-    # goals = [
-    #     "increase sales revenue by 20% compared to last year (from 10M to 12M)"]
-    # business_expert_system_message_template = "You are a business expert and you are helping a company achieve the following goal: {goal}"
-    # list_actions_prompt_template = "List actions that could be taken to achieve the following goal: {goal}"
-    # use_formatting_function_prompt = "TIP: Use the {function_name} function to format your response to the user."
-    # formattedActionsList = {
-    #     "name": "formatted_actions_list",
-    #     "description": "Use this function to output the formatted list of actions to the user.",
-    #     "parameters": {
-    #         "type": "object",
-    #         "properties": {
-    #             "actions_list": {
-    #                 "title": "Actions List",
-    #                 "type": "array",
-    #                 "items": {"type": "string"},
-    #             },
-    #         },
-    #     },
-    #     "required": ["actions_list"],
-    # }
     # list_of_actions = llm.predict_messages([
     #     SystemMessage(
     #         content=business_expert_system_message_template.format(goal=goals[0])),
