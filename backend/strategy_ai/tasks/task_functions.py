@@ -188,7 +188,7 @@ Lastly, aim to identify 2-3 objetives. If you cannot find objectives on the topi
     }
 
 
-def _task_init_assessment(task: TaskData, vector_store: FAISSVectorStore, llm=ChatOpenAI(model="gpt-3.5-turbo-0613", temperature=0)):
+def _task_init_assessment(task: TaskData, vector_store: FAISSVectorStore, llm=ChatOpenAI(model="gpt-3.5-turbo-0613", temperature=0)) -> None:
     """This function is only called within task_init() and is used to initialize the tasks where task.task_type == TaskTypeEnum.ASSESSMENT."""
     # For now, the goals are just hard coded. Normally the goals would start as an empty list and the llm and vector store would be used to generate the goals.
     goals = [
@@ -348,7 +348,7 @@ def task_init(task: TaskData, vector_store: FAISSVectorStore, llm: ChatOpenAI) -
     task.state = TaskState.READY
 
 
-def _task_generate_results_surfacing(task: TaskData):
+def _task_generate_results_surfacing(task: TaskData) -> Iterator[dict]:
     """ Generate the results for the task.
     """
     prefix = "## "
@@ -391,7 +391,7 @@ def _task_generate_results_surfacing(task: TaskData):
             yield {"type": "progress_info", "body": f"- {topic}"}
 
 
-def _task_generate_results_assessment(task: TaskData):
+def _task_generate_results_assessment(task: TaskData) -> Iterator[dict]:
     """This function is used to generate the results of the task."""
     prefix = "## "
     yield {"type": "message", "body": f"Running task {task.task_type.name}, uuid: {task.id}."}
