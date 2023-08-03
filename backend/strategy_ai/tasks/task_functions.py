@@ -12,6 +12,7 @@ from strategy_ai.ai_core import openai_chat
 from strategy_ai.ai_core.data_sets.vector_store import FAISSVectorStore
 
 from strategy_ai.tasks.task_models import TaskData, TaskState, TaskTypeEnum
+from strategy_ai.tasks.asyncio_utility import add_success_callback
 
 load_dotenv(verbose=True)
 
@@ -237,24 +238,27 @@ Beside each point answer the following questions:
             {
                 "type": openai_chat.MessageRole.SYSTEM,
                 "title": "Context",
-                "body": system_message,
+                "body": system_message.content,
             },
             {
                 "type": openai_chat.MessageRole.HUMAN,
                 "title": "Human Message",
-                "body": human_message,
+                "body": human_message.content,
             },
             [
                 {
                     "type": openai_chat.MessageRole.ASSISTANT,
                     "title": "Text Response",
                     "body": None,
-                    "async": llm.apredict_messages([system_message, human_message]),
+                    "task": None,
+                    "coro": llm.apredict_messages([system_message, human_message]),
                 },
                 {
                     "type": openai_chat.MessageRole.ASSISTANT,
                     "title": "Formatted Response",
                     "body": None,
+                    "task": None,
+                    "coro": None,
                 },
             ]
         ]
@@ -296,10 +300,12 @@ Beside each point answer the following questions:
             goal: {
                 "title": f"Goal Assessment for: {goal}",
                 "body": goal_summary,
-                "async": get_actions(goal),
+                "task": None,
+                "coro": get_actions(goal),
             } for goal in goals
         },
-        "async": None,
+        "task": None,
+        "coro": None,
     }
 
 
@@ -350,12 +356,12 @@ def _task_generate_results_surfacing(task: TaskData):
     yield {"type": "results_text", "body": prefix + task.detailed_results["title"]}
 
     # creating all the async tasks
-    asyncEventLoop = asyncio.new_event_loop()
+    async_event_loop = asyncio.new_event_loop()
     for categoryInfo in task.detailed_results["body"].values():
         for topicInfo in categoryInfo["body"].values():
             # iterate over list of messages for the different responses from the AI
             for message in topicInfo["body"][2]:
-                message["task"] = asyncEventLoop.create_task(
+                message["task"] = async_event_loop.create_task(
                     message["coro"])
 
     # generating the results
@@ -371,7 +377,7 @@ def _task_generate_results_surfacing(task: TaskData):
             for aiMessage in topicInfo["body"][2]:
                 yield {"type": "results_text", "body": prefix + aiMessage["title"]}
                 # wait until the coroutine has completed
-                aiMessage["body"] = asyncEventLoop.run_until_complete(
+                aiMessage["body"] = async_event_loop.run_until_complete(
                     aiMessage["task"])
                 del aiMessage["task"], aiMessage["coro"]
                 if aiMessage["title"] == "Formatted Response":
@@ -392,39 +398,41 @@ def _task_generate_results_assessment(task: TaskData):
     yield {"type": "results_text", "body": prefix + task.detailed_results["title"]}
 
     # creating all the async tasks
-    async_event_loop = asyncio.new_event_loop()
-    for goal, goal_info in task.detailed_results["body"].items():
+    async_event_loop = asyncio.get_event_loop()
+    for goal, goal_dict in task.detailed_results["body"].items():
         # this callback adds the llm calls about the actions to the even loop
-        def add_actions_to_event_loop(goal_actions):
-            # before this line goal_info["body"] is the function goal_summary
+        async def goal_subtasks():
+            # before this line goal_dict["body"] is the function goal_summary
             # calling it creates the summary which is a dict of action-info pairs
-            goal_info["body"] = goal_info["body"](goal_actions)
-            for action_info in goal_info["body"].values():
+            goal_dict["body"] = goal_dict["body"](await goal_dict["coro"])
+            for action_info in goal_dict["body"].values():
                 # iterate over list of messages for the responses from the AI
                 for message in action_info["body"][2]:
-                    if message["async"] is not None:
-                        message["async"] = async_event_loop.create_task(
-                            message["async"])
-        goal_info["async"] = async_event_loop.create_task(goal_info["async"])
-        goal_info["async"].add_done_callback(add_actions_to_event_loop)
+                    if message["coro"] is not None:
+                        message["task"] = async_event_loop.create_task(
+                            message["coro"])
 
-    for goal, goal_info in task.detailed_results["body"].items():
+        goal_dict["task"] = async_event_loop.create_task(
+            goal_subtasks())
+
+    for goal, goal_dict in task.detailed_results["body"].items():
         prefix = "### "
         yield {"type": "progress_info", "body": f"{goal}; actions assessed:"}
-        yield {"type": "results_text", "body": prefix + goal_info["title"]}
+        yield {"type": "results_text", "body": prefix + goal_dict["title"]}
         # wait for the goal actions to be created
-        async_event_loop.run_until_complete(goal_info["async"])
+        async_event_loop.run_until_complete(
+            goal_dict["task"])
         # to ensure the results are pickleable
-        del goal_info["async"]
-        for action_info in goal_info["body"].values():
+        del goal_dict["task"], goal_dict["coro"]
+        for action_info in goal_dict["body"].values():
             prefix = "#### "
             yield {"type": "results_text", "body": prefix + action_info["title"]}
             # wait for the action to be assessed
             action_info["body"][2][0]["body"] = async_event_loop.run_until_complete(
-                action_info["body"][2][0]["async"])
+                action_info["body"][2][0]["task"]).content
             # to ensure the results are pickleable
-            del action_info["body"][2][0]["async"]
-            yield {"type": "results_text", "body": action_info["body"][2].content}
+            del action_info["body"][2][0]["task"], action_info["body"][2][0]["coro"]
+            yield {"type": "results_text", "body": action_info["body"][2][0]["body"]}
 
 
 def task_generate_results(task: TaskData) -> Iterator[dict]:
@@ -462,8 +470,7 @@ def task_generate_results(task: TaskData) -> Iterator[dict]:
 
     assert task.state == TaskState.RUNNING, f"Task {task.task_type.value.name} state should not have changed while running, uuid: {task.id}, state: {task.state}."
 
-    yield {"type": "message", "body": f"Finished task {task.task_type.value.name}, uuid: {task.id}."}
-    yield {"type": "message", "body": f"Task {task.task_type.value.name}, uuid: {task.id} took {task.date_recent - task.date_start}."}
+    yield {"type": "message", "body": f"Finished task {task.task_type.value.name}, uuid: {task.id}. It took {task.date_recent - task.date_start}."}
     task.state = TaskState.FINISHED
 
 

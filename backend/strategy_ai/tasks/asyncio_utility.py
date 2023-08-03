@@ -22,3 +22,9 @@ def iter_over_async(ait: AsyncIterator[Any], asyncEventLoop: asyncio.AbstractEve
 def sync_generator(asyncGen, asyncEventLoop=asyncio.get_event_loop()):
     """This function will take an async generator and return a sync generator that will iterate over the async generator."""
     return iter_over_async(asyncGen, asyncEventLoop)
+
+
+async def add_success_callback(future, callback):
+    result = await future
+    await callback(result)
+    return result
