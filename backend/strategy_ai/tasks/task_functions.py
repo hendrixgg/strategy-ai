@@ -358,7 +358,7 @@ def _task_generate_results_surfacing(task: TaskData) -> Iterator[dict]:
     yield {"type": "results_text", "body": prefix + task.detailed_results["title"]}
 
     # creating all the async tasks
-    async_event_loop = asyncio.new_event_loop()
+    async_event_loop = asyncio.get_event_loop()
     for categoryInfo in task.detailed_results["body"].values():
         for topicInfo in categoryInfo["body"].values():
             # iterate over list of messages for the different responses from the AI
