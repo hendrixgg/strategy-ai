@@ -14,5 +14,5 @@ def path_to_dict(rootPath: str, path: str = "") -> dict:
     return d
 
 
-def path_to_json(rootPath: str, path: str):
-    return json.dumps(path_to_dict(rootPath, path))
+def path_to_json(rootPath: str, path: str = "") -> str:
+    return json.dumps(path_to_dict(rootPath, path), indent=4)
