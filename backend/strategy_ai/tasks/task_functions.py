@@ -12,7 +12,6 @@ from strategy_ai.ai_core import openai_chat
 from strategy_ai.ai_core.data_sets.vector_store import FAISSVectorStore
 
 from strategy_ai.tasks.task_models import TaskData, TaskState, TaskTypeEnum
-from strategy_ai.tasks.asyncio_utility import add_success_callback
 
 load_dotenv(verbose=True)
 

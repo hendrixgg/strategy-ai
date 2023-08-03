@@ -115,9 +115,7 @@ def test_stream(length):
     """Returns a stream of json objects with the type "results_text" and the body as the number of the object."""
     def generator():
         for i in range(int(length)):
-            jsonString = json.dumps(
-                {"type": "results_text", "body": f"{i}"}) + "\n"
-            yield bytes(jsonString, encoding="ascii")
+            yield bytes(json.dumps({"type": "results_text", "body": f"{i}"}) + "\n", encoding="ascii")
     return Response(generator())
 
 
