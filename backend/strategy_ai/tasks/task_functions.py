@@ -402,7 +402,7 @@ def _task_generate_results_assessment(task: TaskData) -> Iterator[dict]:
     # creating all the async tasks
     async_event_loop = asyncio.get_event_loop()
     for goal, goal_dict in task.detailed_results["body"].items():
-        # this callback adds the llm calls about the actions to the even loop
+        # this callback gets the actions about the goal and adds the llm calls to get more detail on the actions to the even loop.
         async def goal_subtasks():
             # before this line goal_dict["body"] is the function goal_summary
             # calling it creates the summary which is a dict of action-info pairs
@@ -422,8 +422,7 @@ def _task_generate_results_assessment(task: TaskData) -> Iterator[dict]:
         yield {"type": "progress_info", "body": f"{goal}; actions assessed:"}
         yield {"type": "results_text", "body": prefix + goal_dict["title"]}
         # wait for the goal actions to be created
-        async_event_loop.run_until_complete(
-            goal_dict["task"])
+        async_event_loop.run_until_complete(goal_dict["task"])
         # to ensure the results are pickleable
         del goal_dict["task"], goal_dict["coro"]
         for action, action_dict in goal_dict["body"].items():
