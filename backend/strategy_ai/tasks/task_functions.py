@@ -426,15 +426,16 @@ def _task_generate_results_assessment(task: TaskData) -> Iterator[dict]:
             goal_dict["task"])
         # to ensure the results are pickleable
         del goal_dict["task"], goal_dict["coro"]
-        for action_info in goal_dict["body"].values():
+        for action, action_dict in goal_dict["body"].items():
             prefix = "#### "
-            yield {"type": "results_text", "body": prefix + action_info["title"]}
+            yield {"type": "results_text", "body": prefix + action_dict["title"]}
             # wait for the action to be assessed
-            action_info["body"][2][0]["body"] = async_event_loop.run_until_complete(
-                action_info["body"][2][0]["task"]).content
+            action_dict["body"][2][0]["body"] = async_event_loop.run_until_complete(
+                action_dict["body"][2][0]["task"]).content
             # to ensure the results are pickleable
-            del action_info["body"][2][0]["task"], action_info["body"][2][0]["coro"]
-            yield {"type": "results_text", "body": action_info["body"][2][0]["body"]}
+            del action_dict["body"][2][0]["task"], action_dict["body"][2][0]["coro"]
+            yield {"type": "results_text", "body": action_dict["body"][2][0]["body"]}
+            yield {"type": "progress_info", "body": f"- {action}"}
 
 
 def task_generate_results(task: TaskData) -> Iterator[dict]:
