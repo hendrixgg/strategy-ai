@@ -11,9 +11,8 @@ from langchain.chat_models import ChatOpenAI
 from strategy_ai.ai_core.data_sets.doc_store import DocStore, DocumentSource
 from strategy_ai.ai_core.data_sets.vector_store import FAISSVectorStore
 from strategy_ai.tasks.path_to_json import path_to_dict
-from strategy_ai.tasks.t1_surfacing import Task1Surfacing
-from strategy_ai.tasks.t2_assessment import Task2Assessment
-from strategy_ai.tasks.task import TaskData, TaskTypeEnum, task_init, task_generate_results_with_processing, dict_iter_ndjson_bytes
+from strategy_ai.tasks.task_models import TaskData, TaskTypeEnum
+from strategy_ai.tasks.task_functions import task_init, task_generate_results_with_processing, dict_iter_ndjson_bytes
 
 # nltk.download("punkt")
 
@@ -76,8 +75,9 @@ def init_task(task_type_id: str):
     if task_type_id < 1 or 2 < task_type_id:
         return {"status": "error", "message": "task not implemented"}
 
-    newTask = TaskData(task_type=task_type_id_to_task_type[task_type_id], files_available=path_to_dict(
-        available_documents_directory))
+    newTask = TaskData(
+        task_type=task_type_id_to_task_type[task_type_id],
+        files_available=path_to_dict("", available_documents_directory))
     task_init(newTask, vector_store=vectorStore, llm=llm)
 
     tasks[newTask.id] = newTask
@@ -90,7 +90,7 @@ def task_stream(unique_id: int):
     """Runs the task, returns a stream of the results as the task progresses."""
     if unique_id not in tasks.keys():
         return {"status": "error", "message": "task not initialized"}
-    return Response(dict_iter_ndjson_bytes(task_generate_results_with_processing(tasks[unique_id])))
+    return Response(dict_iter_ndjson_bytes(task_generate_results_with_processing(tasks[unique_id], save_directory=ai_output_directory)))
 
 
 @api.route("/task_results/<unique_id>")
@@ -136,12 +136,11 @@ def recursive_dict_types(d: dict):
 
 
 if __name__ == "__main__":
-    newTask = Task2Assessment(
-        contextVectorStore=vectorStore,
-        availableDataFolder=available_documents_directory,
-        llm=llm
-    )
-    for result in newTask.generate_results(saveDirectory=ai_output_directory):
+    newTask = TaskData(
+        task_type=TaskTypeEnum.ASSESSMENT,
+        files_available=path_to_dict("", available_documents_directory))
+    task_init(newTask, vector_store=vectorStore, llm=llm)
+    for result in task_generate_results_with_processing(newTask, save_directory=ai_output_directory):
         print(result)
     # print(newTask.currentResponse.files_available)
     # for result in newTask.generate_results_json_bytes():
