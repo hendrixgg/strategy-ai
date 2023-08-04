@@ -8,6 +8,8 @@ from dotenv import load_dotenv
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage, AIMessage, FunctionMessage
 
+from langchain.chains import create_citation_fuzzy_match_chain
+
 from strategy_ai.ai_core import openai_chat
 from strategy_ai.ai_core.data_sets.vector_store import FAISSVectorStore
 
@@ -230,17 +232,20 @@ Beside each point answer the following questions:
 """
 
     # summarize_actions_prompt_template = """Based the actions listed below, provide a short summary indicating whether or not it is feasible for "{goal}" to be achieved. \nActions and pertinent info:\n{actions_and_info}"""
+    action_info_with_citations = create_citation_fuzzy_match_chain(llm)
 
     def action_info(action: str) -> list[dict | list]:
         human_message = HumanMessage(
             content=look_into_action_prompt_template.format(action=action))
-        system_message = SystemMessage(content=providing_context_system_message_template.format(
-            context=vector_store.formatted_context(human_message.content)))
+        context = providing_context_system_message_template.format(
+            context=vector_store.formatted_context(human_message.content))
+        # system_message = SystemMessage(content=providing_context_system_message_template.format(
+        #     context=vector_store.formatted_context(human_message.content)))
         return [
             {
                 "type": openai_chat.MessageRole.SYSTEM,
                 "title": "Context",
-                "body": system_message.content,
+                "body": context,
             },
             {
                 "type": openai_chat.MessageRole.HUMAN,
@@ -253,7 +258,8 @@ Beside each point answer the following questions:
                     "title": "Text Response",
                     "body": None,
                     "task": None,
-                    "coro": llm.apredict_messages([system_message, human_message]),
+                    # TODO: NEED TO FIX THE QUESTION AND ANSWER WITH CITATION OUTPUT
+                    "coro": action_info_with_citations.arun(question=human_message.content, context=context),
                 },
                 {
                     "type": openai_chat.MessageRole.ASSISTANT,
