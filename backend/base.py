@@ -79,7 +79,7 @@ def init_task(task_type_id: str):
 
     tasks[newTask.id] = newTask
 
-    return newTask.json(include=["id", "task_type", "date_recent"])
+    return newTask.json(include={"id", "task_type", "date_recent"})
 
 
 @api.route("/task_stream/<unique_id>")
