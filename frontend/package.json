@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "start-backend": "cd backend && env\\Scripts\\activate.bat && set FLASK_DEBUG=1 && flask run --debugger",
+    "dev-backend": "cd backend && env\\Scripts\\activate.bat && set FLASK_DEBUG=1 && flask run --debugger",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"

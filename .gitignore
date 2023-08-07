@@ -25,7 +25,10 @@ dist-ssr
 
 # python build files
 env/
-**/__pycache__
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 
 # secret environment variables
 *.env

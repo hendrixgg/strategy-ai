@@ -8,7 +8,7 @@
     1. python packages (see backend/requirements.txt)
 1. Create a file in the backend directory titled ".env" containing OPENAI_API_KEY="your api key here"
 1. Open up split cmd terminals  
-1. In one terminal start the python server by running: "npm run start-backend"
+1. In one terminal start the python server by running: "npm run dev-backend"
 1. In the other terminal open the vite react app by running: "npm run dev"
 
 ## What is This For?
