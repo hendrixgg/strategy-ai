@@ -1,0 +1,1221 @@
+{
+    "task_type": {
+        "name": "t2_assessment",
+        "id": 2
+    },
+    "files_available": {
+        "name": "available_data",
+        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data",
+        "root": "",
+        "type": "directory",
+        "children": [
+            {
+                "name": "hidden_files",
+                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files",
+                "root": "",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "ai_output",
+                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output",
+                        "root": "",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "t1_surfacing-167896a7-5a3f-4367-a8f1-3be00e5eea78",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-167896a7-5a3f-4367-a8f1-3be00e5eea78",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-167896a7-5a3f-4367-a8f1-3be00e5eea78\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-167896a7-5a3f-4367-a8f1-3be00e5eea78\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-167896a7-5a3f-4367-a8f1-3be00e5eea78\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t1_surfacing-1cc55761-e54e-4c59-9918-3540a8850204",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-1cc55761-e54e-4c59-9918-3540a8850204",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-1cc55761-e54e-4c59-9918-3540a8850204\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-1cc55761-e54e-4c59-9918-3540a8850204\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-1cc55761-e54e-4c59-9918-3540a8850204\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t1_surfacing-20bbc244-5695-4ecf-9b6e-4e17311c484f",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-20bbc244-5695-4ecf-9b6e-4e17311c484f",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-20bbc244-5695-4ecf-9b6e-4e17311c484f\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-20bbc244-5695-4ecf-9b6e-4e17311c484f\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-20bbc244-5695-4ecf-9b6e-4e17311c484f\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t1_surfacing-2641a823-40d8-4ee0-9838-bf99a13328eb",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-2641a823-40d8-4ee0-9838-bf99a13328eb",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-2641a823-40d8-4ee0-9838-bf99a13328eb\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-2641a823-40d8-4ee0-9838-bf99a13328eb\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-2641a823-40d8-4ee0-9838-bf99a13328eb\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t1_surfacing-2cddd632-4cf0-43cb-ad37-06c2aad528ae",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-2cddd632-4cf0-43cb-ad37-06c2aad528ae",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-2cddd632-4cf0-43cb-ad37-06c2aad528ae\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-2cddd632-4cf0-43cb-ad37-06c2aad528ae\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-2cddd632-4cf0-43cb-ad37-06c2aad528ae\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t1_surfacing-6367bf8f-43e0-4fd0-bc3a-a418d6894284",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-6367bf8f-43e0-4fd0-bc3a-a418d6894284",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-6367bf8f-43e0-4fd0-bc3a-a418d6894284\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-6367bf8f-43e0-4fd0-bc3a-a418d6894284\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-6367bf8f-43e0-4fd0-bc3a-a418d6894284\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t1_surfacing-704f3828-a665-4023-8b65-42a32395d8c2",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-704f3828-a665-4023-8b65-42a32395d8c2",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-704f3828-a665-4023-8b65-42a32395d8c2\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-704f3828-a665-4023-8b65-42a32395d8c2\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-704f3828-a665-4023-8b65-42a32395d8c2\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t1_surfacing-7e5f6aae-d233-48cc-a2aa-de4396c2b109",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-7e5f6aae-d233-48cc-a2aa-de4396c2b109",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-7e5f6aae-d233-48cc-a2aa-de4396c2b109\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-7e5f6aae-d233-48cc-a2aa-de4396c2b109\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-7e5f6aae-d233-48cc-a2aa-de4396c2b109\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t1_surfacing-8f4a3dd3-74cd-4fbf-8f96-3cc778282019",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-8f4a3dd3-74cd-4fbf-8f96-3cc778282019",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-8f4a3dd3-74cd-4fbf-8f96-3cc778282019\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-8f4a3dd3-74cd-4fbf-8f96-3cc778282019\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-8f4a3dd3-74cd-4fbf-8f96-3cc778282019\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t1_surfacing-97adf6a1-8955-4bfd-9f8a-528f8729e49e",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-97adf6a1-8955-4bfd-9f8a-528f8729e49e",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-97adf6a1-8955-4bfd-9f8a-528f8729e49e\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-97adf6a1-8955-4bfd-9f8a-528f8729e49e\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-97adf6a1-8955-4bfd-9f8a-528f8729e49e\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t1_surfacing-b27d5268-e39b-47ac-8623-15cfcafc65a5",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-b27d5268-e39b-47ac-8623-15cfcafc65a5",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-b27d5268-e39b-47ac-8623-15cfcafc65a5\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-b27d5268-e39b-47ac-8623-15cfcafc65a5\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-b27d5268-e39b-47ac-8623-15cfcafc65a5\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t1_surfacing-cde8cab3-7f31-4715-9661-53854a0a6b88",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-cde8cab3-7f31-4715-9661-53854a0a6b88",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-cde8cab3-7f31-4715-9661-53854a0a6b88\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-cde8cab3-7f31-4715-9661-53854a0a6b88\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-cde8cab3-7f31-4715-9661-53854a0a6b88\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t1_surfacing-e0fe7e9a-84a2-40ee-8267-03973c511b0d",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-e0fe7e9a-84a2-40ee-8267-03973c511b0d",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-e0fe7e9a-84a2-40ee-8267-03973c511b0d\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-e0fe7e9a-84a2-40ee-8267-03973c511b0d\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-e0fe7e9a-84a2-40ee-8267-03973c511b0d\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t1_surfacing-f156b6f0-42eb-40a9-a181-aee80d897b9b",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-f156b6f0-42eb-40a9-a181-aee80d897b9b",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-f156b6f0-42eb-40a9-a181-aee80d897b9b\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-f156b6f0-42eb-40a9-a181-aee80d897b9b\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-f156b6f0-42eb-40a9-a181-aee80d897b9b\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t2_assessment-1da434d2-b3dc-45af-af20-324ae47bff5b",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-1da434d2-b3dc-45af-af20-324ae47bff5b",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-1da434d2-b3dc-45af-af20-324ae47bff5b\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-1da434d2-b3dc-45af-af20-324ae47bff5b\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-1da434d2-b3dc-45af-af20-324ae47bff5b\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t2_assessment-1f7a3b6e-43d7-4da2-b978-36f385545907",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-1f7a3b6e-43d7-4da2-b978-36f385545907",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-1f7a3b6e-43d7-4da2-b978-36f385545907\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-1f7a3b6e-43d7-4da2-b978-36f385545907\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-1f7a3b6e-43d7-4da2-b978-36f385545907\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t2_assessment-2fdc0e14-2ea8-4bff-a12f-2c9bf82407cb",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-2fdc0e14-2ea8-4bff-a12f-2c9bf82407cb",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.pkl",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-2fdc0e14-2ea8-4bff-a12f-2c9bf82407cb\\detailedResults.pkl",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-2fdc0e14-2ea8-4bff-a12f-2c9bf82407cb\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-2fdc0e14-2ea8-4bff-a12f-2c9bf82407cb\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t2_assessment-3a6d582c-e20d-4286-8c03-0c53c30c477f",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-3a6d582c-e20d-4286-8c03-0c53c30c477f",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-3a6d582c-e20d-4286-8c03-0c53c30c477f\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-3a6d582c-e20d-4286-8c03-0c53c30c477f\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-3a6d582c-e20d-4286-8c03-0c53c30c477f\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t2_assessment-4cf86a51-1b14-40ee-818d-c80c6c74b5e3",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-4cf86a51-1b14-40ee-818d-c80c6c74b5e3",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-4cf86a51-1b14-40ee-818d-c80c6c74b5e3\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-4cf86a51-1b14-40ee-818d-c80c6c74b5e3\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-4cf86a51-1b14-40ee-818d-c80c6c74b5e3\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t2_assessment-4e68922c-8b00-4377-8ef5-ad31e2c5be77",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-4e68922c-8b00-4377-8ef5-ad31e2c5be77",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-4e68922c-8b00-4377-8ef5-ad31e2c5be77\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-4e68922c-8b00-4377-8ef5-ad31e2c5be77\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-4e68922c-8b00-4377-8ef5-ad31e2c5be77\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t2_assessment-5548801a-3deb-4ea8-aa7f-6428a29d69ed",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-5548801a-3deb-4ea8-aa7f-6428a29d69ed",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-5548801a-3deb-4ea8-aa7f-6428a29d69ed\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-5548801a-3deb-4ea8-aa7f-6428a29d69ed\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-5548801a-3deb-4ea8-aa7f-6428a29d69ed\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t2_assessment-7927af09-9f54-4e07-bb4f-629f1172a2ce",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-7927af09-9f54-4e07-bb4f-629f1172a2ce",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-7927af09-9f54-4e07-bb4f-629f1172a2ce\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-7927af09-9f54-4e07-bb4f-629f1172a2ce\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-7927af09-9f54-4e07-bb4f-629f1172a2ce\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t2_assessment-880f3fb2-77e1-422e-bd15-81fa33bb6f96",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-880f3fb2-77e1-422e-bd15-81fa33bb6f96",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-880f3fb2-77e1-422e-bd15-81fa33bb6f96\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-880f3fb2-77e1-422e-bd15-81fa33bb6f96\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-880f3fb2-77e1-422e-bd15-81fa33bb6f96\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t2_assessment-8d6d5704-beac-4976-824a-4f8855be391b",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-8d6d5704-beac-4976-824a-4f8855be391b",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-8d6d5704-beac-4976-824a-4f8855be391b\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-8d6d5704-beac-4976-824a-4f8855be391b\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-8d6d5704-beac-4976-824a-4f8855be391b\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t2_assessment-8d915603-1623-4dc8-90d1-8ec0a8177956",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-8d915603-1623-4dc8-90d1-8ec0a8177956",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.pkl",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-8d915603-1623-4dc8-90d1-8ec0a8177956\\detailedResults.pkl",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-8d915603-1623-4dc8-90d1-8ec0a8177956\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-8d915603-1623-4dc8-90d1-8ec0a8177956\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t2_assessment-8f51754b-ee70-4cc3-ba36-b3364f47c255",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-8f51754b-ee70-4cc3-ba36-b3364f47c255",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-8f51754b-ee70-4cc3-ba36-b3364f47c255\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-8f51754b-ee70-4cc3-ba36-b3364f47c255\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-8f51754b-ee70-4cc3-ba36-b3364f47c255\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t2_assessment-93b1aab1-a3b6-4e07-92d3-e4f3d64ae2b1",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-93b1aab1-a3b6-4e07-92d3-e4f3d64ae2b1",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-93b1aab1-a3b6-4e07-92d3-e4f3d64ae2b1\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-93b1aab1-a3b6-4e07-92d3-e4f3d64ae2b1\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-93b1aab1-a3b6-4e07-92d3-e4f3d64ae2b1\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t2_assessment-9800483c-0000-4e85-99d6-8ef80646725f",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-9800483c-0000-4e85-99d6-8ef80646725f",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-9800483c-0000-4e85-99d6-8ef80646725f\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-9800483c-0000-4e85-99d6-8ef80646725f\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-9800483c-0000-4e85-99d6-8ef80646725f\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t2_assessment-acff38f3-569b-4447-8732-2ad1c110c936",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-acff38f3-569b-4447-8732-2ad1c110c936",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-acff38f3-569b-4447-8732-2ad1c110c936\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-acff38f3-569b-4447-8732-2ad1c110c936\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-acff38f3-569b-4447-8732-2ad1c110c936\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t2_assessment-bd783ea5-2c6b-489b-9102-fbb76d086beb",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-bd783ea5-2c6b-489b-9102-fbb76d086beb",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.pkl",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-bd783ea5-2c6b-489b-9102-fbb76d086beb\\detailedResults.pkl",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-bd783ea5-2c6b-489b-9102-fbb76d086beb\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-bd783ea5-2c6b-489b-9102-fbb76d086beb\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t2_assessment-bd7ea657-852c-4367-8231-83a139ef69e2",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-bd7ea657-852c-4367-8231-83a139ef69e2",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-bd7ea657-852c-4367-8231-83a139ef69e2\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-bd7ea657-852c-4367-8231-83a139ef69e2\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-bd7ea657-852c-4367-8231-83a139ef69e2\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t2_assessment-c304125b-00f3-458b-ba5a-969e045e960f",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-c304125b-00f3-458b-ba5a-969e045e960f",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-c304125b-00f3-458b-ba5a-969e045e960f\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-c304125b-00f3-458b-ba5a-969e045e960f\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-c304125b-00f3-458b-ba5a-969e045e960f\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t2_assessment-c40bff15-eb97-45d9-be05-8491899c1774",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-c40bff15-eb97-45d9-be05-8491899c1774",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-c40bff15-eb97-45d9-be05-8491899c1774\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-c40bff15-eb97-45d9-be05-8491899c1774\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-c40bff15-eb97-45d9-be05-8491899c1774\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t2_assessment-c5d8a3cc-4802-4d48-9f0d-547b9bcd3d82",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-c5d8a3cc-4802-4d48-9f0d-547b9bcd3d82",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.pkl",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-c5d8a3cc-4802-4d48-9f0d-547b9bcd3d82\\detailedResults.pkl",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-c5d8a3cc-4802-4d48-9f0d-547b9bcd3d82\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-c5d8a3cc-4802-4d48-9f0d-547b9bcd3d82\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t2_assessment-cc43bbef-86bc-455f-b990-710ce00de5d6",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-cc43bbef-86bc-455f-b990-710ce00de5d6",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-cc43bbef-86bc-455f-b990-710ce00de5d6\\detailedResults.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-cc43bbef-86bc-455f-b990-710ce00de5d6\\readableResults.md",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t2_assessment-cc43bbef-86bc-455f-b990-710ce00de5d6\\runHistory.csv",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "methodology_files",
+                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files",
+                        "root": "",
+                        "type": "directory",
+                        "children": []
+                    },
+                    {
+                        "name": "vector_store_saves",
+                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\vector_store_saves",
+                        "root": "",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "aFe-Example",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\vector_store_saves\\aFe-Example",
+                                "root": "",
+                                "type": "directory",
+                                "children": [
+                                    {
+                                        "name": "docstore.json",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\vector_store_saves\\aFe-Example\\docstore.json",
+                                        "root": "",
+                                        "type": "file"
+                                    },
+                                    {
+                                        "name": "faiss.index",
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\vector_store_saves\\aFe-Example\\faiss.index",
+                                        "root": "",
+                                        "type": "file"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "visible_files",
+                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files",
+                "root": "",
+                "type": "directory",
+                "children": [
+                    {
+                        "name": "ai_files",
+                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files",
+                        "root": "",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md",
+                                "root": "",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "client_files",
+                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files",
+                        "root": "",
+                        "type": "directory",
+                        "children": [
+                            {
+                                "name": "basic-info.txt",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\basic-info.txt",
+                                "root": "",
+                                "type": "file"
+                            },
+                            {
+                                "name": "goals-for-new-revenue.txt",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\goals-for-new-revenue.txt",
+                                "root": "",
+                                "type": "file"
+                            },
+                            {
+                                "name": "revenue-info.txt",
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\revenue-info.txt",
+                                "root": "",
+                                "type": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "weblinks.txt",
+                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\weblinks.txt",
+                        "root": "",
+                        "type": "file"
+                    }
+                ]
+            }
+        ]
+    },
+    "state": "finished",
+    "message": "Finished task t2_assessment, uuid: 650583d9-7f74-4258-bf97-46177ee88a78. It took 0:00:13.060961.",
+    "date_start": "2023-08-07T14:09:06.397122",
+    "date_recent": "2023-08-07T14:09:19.458083",
+    "id": "650583d9-7f74-4258-bf97-46177ee88a78",
+    "progress_info": "increase sales revenue by 20% compared to last year (from 10M to 12M); actions assessed:\n- increase headcount\n- increase price\n- enter new markets\n- introduce new products\n- combination\n- increase customer retention / decrease churn\n",
+    "detailed_results": {
+        "title": "Feasibility Assessment on the company's goals",
+        "body": {
+            "increase sales revenue by 20% compared to last year (from 10M to 12M)": {
+                "title": "Goal Assessment for: increase sales revenue by 20% compared to last year (from 10M to 12M)",
+                "body": {
+                    "increase headcount": {
+                        "title": "Action: increase headcount",
+                        "body": [
+                            {
+                                "type": "system",
+                                "title": "Context",
+                                "body": "Use the following pieces of context to answer the user's question.\nTake note of the sources and include them in the answer in the format: \"SOURCES: source1 source2\", use \"SOURCES\" in capital letters regardless of the number of sources.\nIf you don't know the answer, just say that \"I don't know\", don't try to make up an answer.\n\n----------------\n\n        # Context Results:\n\n        \n        ## Result No. 1\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md, on page: None\n\n        #### Score (lower is better):\n0.2740669846534729\n\n        #### Content:\n```text\nFeasibility Assessment on the company's goals\n\nGoal Assessment for: increase sales revenue by 20% compared to last year (from 10M to 12M)\n\nAction: increase headcount\n\njson\n{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: increase headcount.\",\n    \"answer\": [\n        {\n            \"fact\": \"TechConnect plans to increase headcount by hiring more employees in various departments.\",\n            \"substring_quote\": [\n                \"Various Departments and Headcount:\"\n            ]\n        }\n    ]\n}\n\nAction: increase price\n\njson\n{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: increase price.\",\n    \"answer\": [\n        {\n            \"fact\": \"TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country.\",\n            \"substring_quote\":\n```\n        \n\n        ## Result No. 2\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md, on page: None\n\n        #### Score (lower is better):\n0.3721802234649658\n\n        #### Content:\n```text\nall the things that the company is doing or has planned to do to carry out the following action: combination.\",\n    \"answer\": [\n        {\n            \"fact\": \"Market Expansion and Penetration: TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country. By forging partnerships with major retailers and carriers, TechConnect aims to ensure its smartphones are easily accessible to consumers nationwide. Aggressive marketing campaigns and promotional activities will help raise brand awareness and drive demand for their products.\",\n            \"substring_quote\": [\n                \"Market Expansion and Penetration:\",\n                \"establish distribution centers\",\n                \"forging partnerships with major retailers and carriers\",\n                \"Aggressive marketing campaigns and promotional activities\"\n            ]\n        },\n        {\n            \"fact\":\n```\n        \n\n        ## Result No. 3\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md, on page: None\n\n        #### Score (lower is better):\n0.400604248046875\n\n        #### Content:\n```text\n\"invest in targeted marketing campaigns\",\n                \"collaborate with influencers, tech reviewers, and media outlets\",\n                \"strategic partnerships with content creators, app developers, and other technology companies\"\n            ]\n        }\n    ]\n}\n\nAction: increase customer retention / decrease churn\n\njson\n{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: increase customer retention / decrease churn.\",\n    \"answer\": [\n        {\n            \"fact\": \"Market Expansion and Penetration: TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country. By forging partnerships with major retailers and carriers, TechConnect aims to ensure its smartphones are easily accessible to consumers nationwide. Aggressive marketing campaigns and promotional activities will help raise\n```\n        \n\n        ## Result No. 4\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md, on page: None\n\n        #### Score (lower is better):\n0.4166949987411499\n\n        #### Content:\n```text\ncenters\",\n                \"forging partnerships with major retailers and carriers\",\n                \"Aggressive marketing campaigns and promotional activities\"\n            ]\n        }\n    ]\n}\n\nAction: introduce new products\n\njson\n{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: introduce new products.\",\n    \"answer\": [\n        {\n            \"fact\": \"Market Expansion and Penetration: TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country. By forging partnerships with major retailers and carriers, TechConnect aims to ensure its smartphones are easily accessible to consumers nationwide. Aggressive marketing campaigns and promotional activities will help raise brand awareness and drive demand for their products.\",\n            \"substring_quote\": [\n                \"Market Expansion and\n```\n        \n        \n"
+                            },
+                            {
+                                "type": "user",
+                                "title": "Human Message",
+                                "body": "List all the things that the company is doing or has planned to do to carry out the following action: increase headcount.\nBeside each point answer the following questions:\n- will this make a difference (refer to what the company has done in previous years and what their competitors are doing)?\n- what additional resources does the company require to carry this out?\n- what regulations need to be followed?\n- what similar things have competing businesses done?\n"
+                            },
+                            [
+                                {
+                                    "type": "assistant",
+                                    "title": "Text Response",
+                                    "body": "{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: increase headcount.\",\n    \"answer\": [\n        {\n            \"fact\": \"TechConnect plans to increase headcount by hiring more employees in various departments.\",\n            \"substring_quote\": [\n                \"Various Departments and Headcount:\"\n            ]\n        }\n    ]\n}"
+                                },
+                                {
+                                    "type": "assistant",
+                                    "title": "Formatted Response",
+                                    "body": null,
+                                    "task": null,
+                                    "coro": null
+                                }
+                            ]
+                        ]
+                    },
+                    "increase price": {
+                        "title": "Action: increase price",
+                        "body": [
+                            {
+                                "type": "system",
+                                "title": "Context",
+                                "body": "Use the following pieces of context to answer the user's question.\nTake note of the sources and include them in the answer in the format: \"SOURCES: source1 source2\", use \"SOURCES\" in capital letters regardless of the number of sources.\nIf you don't know the answer, just say that \"I don't know\", don't try to make up an answer.\n\n----------------\n\n        # Context Results:\n\n        \n        ## Result No. 1\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md, on page: None\n\n        #### Score (lower is better):\n0.32495349645614624\n\n        #### Content:\n```text\nFeasibility Assessment on the company's goals\n\nGoal Assessment for: increase sales revenue by 20% compared to last year (from 10M to 12M)\n\nAction: increase headcount\n\njson\n{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: increase headcount.\",\n    \"answer\": [\n        {\n            \"fact\": \"TechConnect plans to increase headcount by hiring more employees in various departments.\",\n            \"substring_quote\": [\n                \"Various Departments and Headcount:\"\n            ]\n        }\n    ]\n}\n\nAction: increase price\n\njson\n{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: increase price.\",\n    \"answer\": [\n        {\n            \"fact\": \"TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country.\",\n            \"substring_quote\":\n```\n        \n\n        ## Result No. 2\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md, on page: None\n\n        #### Score (lower is better):\n0.3683149814605713\n\n        #### Content:\n```text\nall the things that the company is doing or has planned to do to carry out the following action: combination.\",\n    \"answer\": [\n        {\n            \"fact\": \"Market Expansion and Penetration: TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country. By forging partnerships with major retailers and carriers, TechConnect aims to ensure its smartphones are easily accessible to consumers nationwide. Aggressive marketing campaigns and promotional activities will help raise brand awareness and drive demand for their products.\",\n            \"substring_quote\": [\n                \"Market Expansion and Penetration:\",\n                \"establish distribution centers\",\n                \"forging partnerships with major retailers and carriers\",\n                \"Aggressive marketing campaigns and promotional activities\"\n            ]\n        },\n        {\n            \"fact\":\n```\n        \n\n        ## Result No. 3\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md, on page: None\n\n        #### Score (lower is better):\n0.40645498037338257\n\n        #### Content:\n```text\ncenters\",\n                \"forging partnerships with major retailers and carriers\",\n                \"Aggressive marketing campaigns and promotional activities\"\n            ]\n        }\n    ]\n}\n\nAction: introduce new products\n\njson\n{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: introduce new products.\",\n    \"answer\": [\n        {\n            \"fact\": \"Market Expansion and Penetration: TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country. By forging partnerships with major retailers and carriers, TechConnect aims to ensure its smartphones are easily accessible to consumers nationwide. Aggressive marketing campaigns and promotional activities will help raise brand awareness and drive demand for their products.\",\n            \"substring_quote\": [\n                \"Market Expansion and\n```\n        \n\n        ## Result No. 4\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md, on page: None\n\n        #### Score (lower is better):\n0.40658748149871826\n\n        #### Content:\n```text\n\"invest in targeted marketing campaigns\",\n                \"collaborate with influencers, tech reviewers, and media outlets\",\n                \"strategic partnerships with content creators, app developers, and other technology companies\"\n            ]\n        }\n    ]\n}\n\nAction: increase customer retention / decrease churn\n\njson\n{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: increase customer retention / decrease churn.\",\n    \"answer\": [\n        {\n            \"fact\": \"Market Expansion and Penetration: TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country. By forging partnerships with major retailers and carriers, TechConnect aims to ensure its smartphones are easily accessible to consumers nationwide. Aggressive marketing campaigns and promotional activities will help raise\n```\n        \n        \n"
+                            },
+                            {
+                                "type": "user",
+                                "title": "Human Message",
+                                "body": "List all the things that the company is doing or has planned to do to carry out the following action: increase price.\nBeside each point answer the following questions:\n- will this make a difference (refer to what the company has done in previous years and what their competitors are doing)?\n- what additional resources does the company require to carry this out?\n- what regulations need to be followed?\n- what similar things have competing businesses done?\n"
+                            },
+                            [
+                                {
+                                    "type": "assistant",
+                                    "title": "Text Response",
+                                    "body": "{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: increase price.\",\n    \"answer\": [\n        {\n            \"fact\": \"TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country.\",\n            \"substring_quote\": [\n                \"TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country.\"\n            ]\n        }\n    ]\n}"
+                                },
+                                {
+                                    "type": "assistant",
+                                    "title": "Formatted Response",
+                                    "body": null,
+                                    "task": null,
+                                    "coro": null
+                                }
+                            ]
+                        ]
+                    },
+                    "enter new markets": {
+                        "title": "Action: enter new markets",
+                        "body": [
+                            {
+                                "type": "system",
+                                "title": "Context",
+                                "body": "Use the following pieces of context to answer the user's question.\nTake note of the sources and include them in the answer in the format: \"SOURCES: source1 source2\", use \"SOURCES\" in capital letters regardless of the number of sources.\nIf you don't know the answer, just say that \"I don't know\", don't try to make up an answer.\n\n----------------\n\n        # Context Results:\n\n        \n        ## Result No. 1\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md, on page: None\n\n        #### Score (lower is better):\n0.3323171138763428\n\n        #### Content:\n```text\nall the things that the company is doing or has planned to do to carry out the following action: combination.\",\n    \"answer\": [\n        {\n            \"fact\": \"Market Expansion and Penetration: TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country. By forging partnerships with major retailers and carriers, TechConnect aims to ensure its smartphones are easily accessible to consumers nationwide. Aggressive marketing campaigns and promotional activities will help raise brand awareness and drive demand for their products.\",\n            \"substring_quote\": [\n                \"Market Expansion and Penetration:\",\n                \"establish distribution centers\",\n                \"forging partnerships with major retailers and carriers\",\n                \"Aggressive marketing campaigns and promotional activities\"\n            ]\n        },\n        {\n            \"fact\":\n```\n        \n\n        ## Result No. 2\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md, on page: None\n\n        #### Score (lower is better):\n0.35670214891433716\n\n        #### Content:\n```text\nFeasibility Assessment on the company's goals\n\nGoal Assessment for: increase sales revenue by 20% compared to last year (from 10M to 12M)\n\nAction: increase headcount\n\njson\n{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: increase headcount.\",\n    \"answer\": [\n        {\n            \"fact\": \"TechConnect plans to increase headcount by hiring more employees in various departments.\",\n            \"substring_quote\": [\n                \"Various Departments and Headcount:\"\n            ]\n        }\n    ]\n}\n\nAction: increase price\n\njson\n{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: increase price.\",\n    \"answer\": [\n        {\n            \"fact\": \"TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country.\",\n            \"substring_quote\":\n```\n        \n\n        ## Result No. 3\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md, on page: None\n\n        #### Score (lower is better):\n0.36022520065307617\n\n        #### Content:\n```text\ncenters\",\n                \"forging partnerships with major retailers and carriers\",\n                \"Aggressive marketing campaigns and promotional activities\"\n            ]\n        }\n    ]\n}\n\nAction: introduce new products\n\njson\n{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: introduce new products.\",\n    \"answer\": [\n        {\n            \"fact\": \"Market Expansion and Penetration: TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country. By forging partnerships with major retailers and carriers, TechConnect aims to ensure its smartphones are easily accessible to consumers nationwide. Aggressive marketing campaigns and promotional activities will help raise brand awareness and drive demand for their products.\",\n            \"substring_quote\": [\n                \"Market Expansion and\n```\n        \n\n        ## Result No. 4\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md, on page: None\n\n        #### Score (lower is better):\n0.3935626745223999\n\n        #### Content:\n```text\nand Emerging Technologies\"\n            ]\n        }\n    ]\n}\n\nAction: enter new markets\n\njson\n{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: enter new markets.\",\n    \"answer\": [\n        {\n            \"fact\": \"Market Expansion and Penetration: TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country. By forging partnerships with major retailers and carriers, TechConnect aims to ensure its smartphones are easily accessible to consumers nationwide. Aggressive marketing campaigns and promotional activities will help raise brand awareness and drive demand for their products.\",\n            \"substring_quote\": [\n                \"Market Expansion and Penetration:\",\n                \"establish distribution centers\",\n                \"forging partnerships with major retailers and carriers\",\n```\n        \n        \n"
+                            },
+                            {
+                                "type": "user",
+                                "title": "Human Message",
+                                "body": "List all the things that the company is doing or has planned to do to carry out the following action: enter new markets.\nBeside each point answer the following questions:\n- will this make a difference (refer to what the company has done in previous years and what their competitors are doing)?\n- what additional resources does the company require to carry this out?\n- what regulations need to be followed?\n- what similar things have competing businesses done?\n"
+                            },
+                            [
+                                {
+                                    "type": "assistant",
+                                    "title": "Text Response",
+                                    "body": "{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: enter new markets.\",\n    \"answer\": [\n        {\n            \"fact\": \"Market Expansion and Penetration: TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country. By forging partnerships with major retailers and carriers, TechConnect aims to ensure its smartphones are easily accessible to consumers nationwide. Aggressive marketing campaigns and promotional activities will help raise brand awareness and drive demand for their products.\",\n            \"substring_quote\": [\n                \"Market Expansion and Penetration:\",\n                \"establish distribution centers\",\n                \"forging partnerships with major retailers and carriers\",\n                \"Aggressive marketing campaigns and promotional activities\"\n            ]\n        }\n    ]\n}"
+                                },
+                                {
+                                    "type": "assistant",
+                                    "title": "Formatted Response",
+                                    "body": null,
+                                    "task": null,
+                                    "coro": null
+                                }
+                            ]
+                        ]
+                    },
+                    "introduce new products": {
+                        "title": "Action: introduce new products",
+                        "body": [
+                            {
+                                "type": "system",
+                                "title": "Context",
+                                "body": "Use the following pieces of context to answer the user's question.\nTake note of the sources and include them in the answer in the format: \"SOURCES: source1 source2\", use \"SOURCES\" in capital letters regardless of the number of sources.\nIf you don't know the answer, just say that \"I don't know\", don't try to make up an answer.\n\n----------------\n\n        # Context Results:\n\n        \n        ## Result No. 1\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md, on page: None\n\n        #### Score (lower is better):\n0.3417032063007355\n\n        #### Content:\n```text\ncenters\",\n                \"forging partnerships with major retailers and carriers\",\n                \"Aggressive marketing campaigns and promotional activities\"\n            ]\n        }\n    ]\n}\n\nAction: introduce new products\n\njson\n{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: introduce new products.\",\n    \"answer\": [\n        {\n            \"fact\": \"Market Expansion and Penetration: TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country. By forging partnerships with major retailers and carriers, TechConnect aims to ensure its smartphones are easily accessible to consumers nationwide. Aggressive marketing campaigns and promotional activities will help raise brand awareness and drive demand for their products.\",\n            \"substring_quote\": [\n                \"Market Expansion and\n```\n        \n\n        ## Result No. 2\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md, on page: None\n\n        #### Score (lower is better):\n0.35480445623397827\n\n        #### Content:\n```text\nall the things that the company is doing or has planned to do to carry out the following action: combination.\",\n    \"answer\": [\n        {\n            \"fact\": \"Market Expansion and Penetration: TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country. By forging partnerships with major retailers and carriers, TechConnect aims to ensure its smartphones are easily accessible to consumers nationwide. Aggressive marketing campaigns and promotional activities will help raise brand awareness and drive demand for their products.\",\n            \"substring_quote\": [\n                \"Market Expansion and Penetration:\",\n                \"establish distribution centers\",\n                \"forging partnerships with major retailers and carriers\",\n                \"Aggressive marketing campaigns and promotional activities\"\n            ]\n        },\n        {\n            \"fact\":\n```\n        \n\n        ## Result No. 3\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md, on page: None\n\n        #### Score (lower is better):\n0.3559989035129547\n\n        #### Content:\n```text\nFeasibility Assessment on the company's goals\n\nGoal Assessment for: increase sales revenue by 20% compared to last year (from 10M to 12M)\n\nAction: increase headcount\n\njson\n{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: increase headcount.\",\n    \"answer\": [\n        {\n            \"fact\": \"TechConnect plans to increase headcount by hiring more employees in various departments.\",\n            \"substring_quote\": [\n                \"Various Departments and Headcount:\"\n            ]\n        }\n    ]\n}\n\nAction: increase price\n\njson\n{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: increase price.\",\n    \"answer\": [\n        {\n            \"fact\": \"TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country.\",\n            \"substring_quote\":\n```\n        \n\n        ## Result No. 4\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\goals-for-new-revenue.txt, on page: None\n\n        #### Score (lower is better):\n0.40677568316459656\n\n        #### Content:\n```text\nTo achieve their revenue goals, TechConnect has devised a comprehensive strategy that encompasses various aspects of their business. Here's a more detailed breakdown of how they plan to reach their revenue milestones:\n\n**1. Market Expansion and Penetration:** TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country. By forging partnerships with major retailers and carriers, TechConnect aims to ensure its smartphones are easily accessible to consumers nationwide. Aggressive marketing campaigns and promotional activities will help raise brand awareness and drive demand for their products.\n\n**2. Product Diversification:** TechConnect will continue to innovate and introduce a diverse range of smartphones and smart devices to cater to different customer segments. This includes flagship smartphones with cutting-edge features to attract tech enthusiasts, mid-range devices\n```\n        \n        \n"
+                            },
+                            {
+                                "type": "user",
+                                "title": "Human Message",
+                                "body": "List all the things that the company is doing or has planned to do to carry out the following action: introduce new products.\nBeside each point answer the following questions:\n- will this make a difference (refer to what the company has done in previous years and what their competitors are doing)?\n- what additional resources does the company require to carry this out?\n- what regulations need to be followed?\n- what similar things have competing businesses done?\n"
+                            },
+                            [
+                                {
+                                    "type": "assistant",
+                                    "title": "Text Response",
+                                    "body": "{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: introduce new products.\",\n    \"answer\": [\n        {\n            \"fact\": \"Market Expansion and Penetration: TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country. By forging partnerships with major retailers and carriers, TechConnect aims to ensure its smartphones are easily accessible to consumers nationwide. Aggressive marketing campaigns and promotional activities will help raise brand awareness and drive demand for their products.\",\n            \"substring_quote\": [\n                \"Market Expansion and Penetration:\",\n                \"establish distribution centers\",\n                \"forging partnerships with major retailers and carriers\",\n                \"Aggressive marketing campaigns and promotional activities\"\n            ]\n        }\n    ]\n}"
+                                },
+                                {
+                                    "type": "assistant",
+                                    "title": "Formatted Response",
+                                    "body": null,
+                                    "task": null,
+                                    "coro": null
+                                }
+                            ]
+                        ]
+                    },
+                    "combination": {
+                        "title": "Action: combination",
+                        "body": [
+                            {
+                                "type": "system",
+                                "title": "Context",
+                                "body": "Use the following pieces of context to answer the user's question.\nTake note of the sources and include them in the answer in the format: \"SOURCES: source1 source2\", use \"SOURCES\" in capital letters regardless of the number of sources.\nIf you don't know the answer, just say that \"I don't know\", don't try to make up an answer.\n\n----------------\n\n        # Context Results:\n\n        \n        ## Result No. 1\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md, on page: None\n\n        #### Score (lower is better):\n0.3218715786933899\n\n        #### Content:\n```text\nall the things that the company is doing or has planned to do to carry out the following action: combination.\",\n    \"answer\": [\n        {\n            \"fact\": \"Market Expansion and Penetration: TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country. By forging partnerships with major retailers and carriers, TechConnect aims to ensure its smartphones are easily accessible to consumers nationwide. Aggressive marketing campaigns and promotional activities will help raise brand awareness and drive demand for their products.\",\n            \"substring_quote\": [\n                \"Market Expansion and Penetration:\",\n                \"establish distribution centers\",\n                \"forging partnerships with major retailers and carriers\",\n                \"Aggressive marketing campaigns and promotional activities\"\n            ]\n        },\n        {\n            \"fact\":\n```\n        \n\n        ## Result No. 2\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md, on page: None\n\n        #### Score (lower is better):\n0.36530056595802307\n\n        #### Content:\n```text\nFeasibility Assessment on the company's goals\n\nGoal Assessment for: increase sales revenue by 20% compared to last year (from 10M to 12M)\n\nAction: increase headcount\n\njson\n{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: increase headcount.\",\n    \"answer\": [\n        {\n            \"fact\": \"TechConnect plans to increase headcount by hiring more employees in various departments.\",\n            \"substring_quote\": [\n                \"Various Departments and Headcount:\"\n            ]\n        }\n    ]\n}\n\nAction: increase price\n\njson\n{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: increase price.\",\n    \"answer\": [\n        {\n            \"fact\": \"TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country.\",\n            \"substring_quote\":\n```\n        \n\n        ## Result No. 3\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md, on page: None\n\n        #### Score (lower is better):\n0.39408785104751587\n\n        #### Content:\n```text\ndemand for their products.\",\n            \"substring_quote\": [\n                \"Market Expansion and Penetration:\",\n                \"establish distribution centers\",\n                \"forging partnerships with major retailers and carriers\",\n                \"Aggressive marketing campaigns and promotional activities\"\n            ]\n        },\n        {\n            \"fact\": \"Product Diversification: TechConnect will continue to innovate and introduce a diverse range of smartphones and smart devices to cater to different customer segments. This includes flagship smartphones with cutting-edge features to attract tech enthusiasts, mid-range devices\",\n            \"substring_quote\": [\n                \"Product Diversification:\",\n                \"innovate and introduce a diverse range of smartphones and smart devices\"\n            ]\n        }\n    ]\n}\n\nAction: combination\n\njson\n{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action:\n```\n        \n\n        ## Result No. 4\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md, on page: None\n\n        #### Score (lower is better):\n0.40131720900535583\n\n        #### Content:\n```text\ncenters\",\n                \"forging partnerships with major retailers and carriers\",\n                \"Aggressive marketing campaigns and promotional activities\"\n            ]\n        }\n    ]\n}\n\nAction: introduce new products\n\njson\n{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: introduce new products.\",\n    \"answer\": [\n        {\n            \"fact\": \"Market Expansion and Penetration: TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country. By forging partnerships with major retailers and carriers, TechConnect aims to ensure its smartphones are easily accessible to consumers nationwide. Aggressive marketing campaigns and promotional activities will help raise brand awareness and drive demand for their products.\",\n            \"substring_quote\": [\n                \"Market Expansion and\n```\n        \n        \n"
+                            },
+                            {
+                                "type": "user",
+                                "title": "Human Message",
+                                "body": "List all the things that the company is doing or has planned to do to carry out the following action: combination.\nBeside each point answer the following questions:\n- will this make a difference (refer to what the company has done in previous years and what their competitors are doing)?\n- what additional resources does the company require to carry this out?\n- what regulations need to be followed?\n- what similar things have competing businesses done?\n"
+                            },
+                            [
+                                {
+                                    "type": "assistant",
+                                    "title": "Text Response",
+                                    "body": "{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: combination.\",\n    \"answer\": [\n        {\n            \"fact\": \"Market Expansion and Penetration: TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country. By forging partnerships with major retailers and carriers, TechConnect aims to ensure its smartphones are easily accessible to consumers nationwide. Aggressive marketing campaigns and promotional activities will help raise brand awareness and drive demand for their products.\",\n            \"substring_quote\": [\n                \"Market Expansion and Penetration:\",\n                \"establish distribution centers\",\n                \"forging partnerships with major retailers and carriers\",\n                \"Aggressive marketing campaigns and promotional activities\"\n            ]\n        }\n    ]\n}"
+                                },
+                                {
+                                    "type": "assistant",
+                                    "title": "Formatted Response",
+                                    "body": null,
+                                    "task": null,
+                                    "coro": null
+                                }
+                            ]
+                        ]
+                    },
+                    "increase customer retention / decrease churn": {
+                        "title": "Action: increase customer retention / decrease churn",
+                        "body": [
+                            {
+                                "type": "system",
+                                "title": "Context",
+                                "body": "Use the following pieces of context to answer the user's question.\nTake note of the sources and include them in the answer in the format: \"SOURCES: source1 source2\", use \"SOURCES\" in capital letters regardless of the number of sources.\nIf you don't know the answer, just say that \"I don't know\", don't try to make up an answer.\n\n----------------\n\n        # Context Results:\n\n        \n        ## Result No. 1\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md, on page: None\n\n        #### Score (lower is better):\n0.2974238395690918\n\n        #### Content:\n```text\n\"invest in targeted marketing campaigns\",\n                \"collaborate with influencers, tech reviewers, and media outlets\",\n                \"strategic partnerships with content creators, app developers, and other technology companies\"\n            ]\n        }\n    ]\n}\n\nAction: increase customer retention / decrease churn\n\njson\n{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: increase customer retention / decrease churn.\",\n    \"answer\": [\n        {\n            \"fact\": \"Market Expansion and Penetration: TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country. By forging partnerships with major retailers and carriers, TechConnect aims to ensure its smartphones are easily accessible to consumers nationwide. Aggressive marketing campaigns and promotional activities will help raise\n```\n        \n\n        ## Result No. 2\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md, on page: None\n\n        #### Score (lower is better):\n0.3647562861442566\n\n        #### Content:\n```text\nFeasibility Assessment on the company's goals\n\nGoal Assessment for: increase sales revenue by 20% compared to last year (from 10M to 12M)\n\nAction: increase headcount\n\njson\n{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: increase headcount.\",\n    \"answer\": [\n        {\n            \"fact\": \"TechConnect plans to increase headcount by hiring more employees in various departments.\",\n            \"substring_quote\": [\n                \"Various Departments and Headcount:\"\n            ]\n        }\n    ]\n}\n\nAction: increase price\n\njson\n{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: increase price.\",\n    \"answer\": [\n        {\n            \"fact\": \"TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country.\",\n            \"substring_quote\":\n```\n        \n\n        ## Result No. 3\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\t2_assessment_2023-08-07 12-30-28.462666_5548801a-3deb-4ea8-aa7f-6428a29d69ed.md, on page: None\n\n        #### Score (lower is better):\n0.3888266086578369\n\n        #### Content:\n```text\nall the things that the company is doing or has planned to do to carry out the following action: combination.\",\n    \"answer\": [\n        {\n            \"fact\": \"Market Expansion and Penetration: TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country. By forging partnerships with major retailers and carriers, TechConnect aims to ensure its smartphones are easily accessible to consumers nationwide. Aggressive marketing campaigns and promotional activities will help raise brand awareness and drive demand for their products.\",\n            \"substring_quote\": [\n                \"Market Expansion and Penetration:\",\n                \"establish distribution centers\",\n                \"forging partnerships with major retailers and carriers\",\n                \"Aggressive marketing campaigns and promotional activities\"\n            ]\n        },\n        {\n            \"fact\":\n```\n        \n\n        ## Result No. 4\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\goals-for-new-revenue.txt, on page: None\n\n        #### Score (lower is better):\n0.41560739278793335\n\n        #### Content:\n```text\nTo achieve their revenue goals, TechConnect has devised a comprehensive strategy that encompasses various aspects of their business. Here's a more detailed breakdown of how they plan to reach their revenue milestones:\n\n**1. Market Expansion and Penetration:** TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country. By forging partnerships with major retailers and carriers, TechConnect aims to ensure its smartphones are easily accessible to consumers nationwide. Aggressive marketing campaigns and promotional activities will help raise brand awareness and drive demand for their products.\n\n**2. Product Diversification:** TechConnect will continue to innovate and introduce a diverse range of smartphones and smart devices to cater to different customer segments. This includes flagship smartphones with cutting-edge features to attract tech enthusiasts, mid-range devices\n```\n        \n        \n"
+                            },
+                            {
+                                "type": "user",
+                                "title": "Human Message",
+                                "body": "List all the things that the company is doing or has planned to do to carry out the following action: increase customer retention / decrease churn.\nBeside each point answer the following questions:\n- will this make a difference (refer to what the company has done in previous years and what their competitors are doing)?\n- what additional resources does the company require to carry this out?\n- what regulations need to be followed?\n- what similar things have competing businesses done?\n"
+                            },
+                            [
+                                {
+                                    "type": "assistant",
+                                    "title": "Text Response",
+                                    "body": "{\n    \"question\": \"List all the things that the company is doing or has planned to do to carry out the following action: increase customer retention / decrease churn.\",\n    \"answer\": [\n        {\n            \"fact\": \"Market Expansion and Penetration: TechConnect's primary focus is on expanding its market presence in the US. The company will establish distribution centers strategically located in key regions across the country. By forging partnerships with major retailers and carriers, TechConnect aims to ensure its smartphones are easily accessible to consumers nationwide. Aggressive marketing campaigns and promotional activities will help raise brand awareness and drive demand for their products.\",\n            \"substring_quote\": [\n                \"Market Expansion and Penetration:\",\n                \"establish distribution centers\",\n                \"forging partnerships with major retailers and carriers\",\n                \"Aggressive marketing campaigns and promotional activities\"\n            ]\n        },\n        {\n            \"fact\": \"Collaboration with Influencers, Tech Reviewers, and Media Outlets: TechConnect plans to collaborate with influencers, tech reviewers, and media outlets to increase brand visibility and credibility. This strategy aims to reach a wider audience and build trust among potential customers.\",\n            \"substring_quote\": [\n                \"Collaborate with influencers, tech reviewers, and media outlets\"\n            ]\n        },\n        {\n            \"fact\": \"Strategic Partnerships with Content Creators, App Developers, and Other Technology Companies: TechConnect intends to form strategic partnerships with content creators, app developers, and other technology companies. These partnerships will allow TechConnect to offer unique and innovative features to its customers, enhancing the overall user experience and increasing customer loyalty.\",\n            \"substring_quote\": [\n                \"Strategic partnerships with content creators, app developers, and other technology companies\"\n            ]\n        }\n    ]\n}"
+                                },
+                                {
+                                    "type": "assistant",
+                                    "title": "Formatted Response",
+                                    "body": null,
+                                    "task": null,
+                                    "coro": null
+                                }
+                            ]
+                        ]
+                    }
+                }
+            }
+        },
+        "task": null,
+        "coro": null
+    }
+}
