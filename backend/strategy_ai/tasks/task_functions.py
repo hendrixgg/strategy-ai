@@ -258,7 +258,6 @@ Beside each point answer the following questions:
                     "title": "Text Response",
                     "body": None,
                     "task": None,
-                    # TODO: NEED TO FIX THE QUESTION AND ANSWER WITH CITATION OUTPUT
                     "coro": action_info_with_citations.arun(question=human_message.content, context=context),
                 },
                 {
@@ -356,7 +355,7 @@ def task_init(task: TaskData, vector_store: FAISSVectorStore, llm: ChatOpenAI) -
     task.state = TaskState.READY
 
 
-def _task_generate_results_surfacing(task: TaskData) -> Iterator[dict]:
+def _task_generate_results_surfacing(task: TaskData, api_call_timeout: int) -> Iterator[dict]:
     """ Generate the results for the task.
     """
     prefix = "## "
@@ -386,7 +385,7 @@ def _task_generate_results_surfacing(task: TaskData) -> Iterator[dict]:
                 yield {"type": "results_text", "body": prefix + aiMessage["title"]}
                 # wait until the coroutine has completed
                 aiMessage["body"] = async_event_loop.run_until_complete(
-                    aiMessage["task"])
+                    asyncio.wait_for(aiMessage["task"], api_call_timeout))
                 del aiMessage["task"], aiMessage["coro"]
                 if aiMessage["title"] == "Formatted Response":
                     aiMessage["body"] = json.loads(aiMessage["body"].additional_kwargs.get(
@@ -399,7 +398,7 @@ def _task_generate_results_surfacing(task: TaskData) -> Iterator[dict]:
             yield {"type": "progress_info", "body": f"- {topic}"}
 
 
-def _task_generate_results_assessment(task: TaskData) -> Iterator[dict]:
+def _task_generate_results_assessment(task: TaskData, api_call_timeout: int) -> Iterator[dict]:
     """This function is used to generate the results of the task."""
     prefix = "## "
     yield {"type": "message", "body": f"Running task {task.task_type.name}, uuid: {task.id}."}
@@ -413,9 +412,9 @@ def _task_generate_results_assessment(task: TaskData) -> Iterator[dict]:
             # before this line goal_dict["body"] is the function goal_summary
             # calling it creates the summary which is a dict of action-info pairs
             goal_dict["body"] = goal_dict["body"](await goal_dict["coro"])
-            for action_info in goal_dict["body"].values():
+            for action_dict in goal_dict["body"].values():
                 # iterate over list of messages for the responses from the AI
-                for message in action_info["body"][2]:
+                for message in action_dict["body"][2]:
                     if message["coro"] is not None:
                         message["task"] = async_event_loop.create_task(
                             message["coro"])
@@ -428,22 +427,23 @@ def _task_generate_results_assessment(task: TaskData) -> Iterator[dict]:
         yield {"type": "progress_info", "body": f"{goal}; actions assessed:"}
         yield {"type": "results_text", "body": prefix + goal_dict["title"]}
         # wait for the goal actions to be created
-        async_event_loop.run_until_complete(goal_dict["task"])
-        # to ensure the results are pickleable
+        async_event_loop.run_until_complete(
+            asyncio.wait_for(goal_dict["task"], api_call_timeout))
+        # to ensure the results are pickleable, remove coroutines and tasks
         del goal_dict["task"], goal_dict["coro"]
         for action, action_dict in goal_dict["body"].items():
             prefix = "#### "
             yield {"type": "results_text", "body": prefix + action_dict["title"]}
             # wait for the action to be assessed
             action_dict["body"][2][0]["body"] = async_event_loop.run_until_complete(
-                action_dict["body"][2][0]["task"]).content
+                asyncio.wait_for(action_dict["body"][2][0]["task"], api_call_timeout)).json(indent=4)
             # to ensure the results are pickleable
             del action_dict["body"][2][0]["task"], action_dict["body"][2][0]["coro"]
-            yield {"type": "results_text", "body": action_dict["body"][2][0]["body"]}
+            yield {"type": "results_text", "body": f'```json\n{action_dict["body"][2][0]["body"]}\n```'}
             yield {"type": "progress_info", "body": f"- {action}"}
 
 
-def task_generate_results(task: TaskData) -> Iterator[dict]:
+def task_generate_results(task: TaskData, api_call_timeout: int = 30) -> Iterator[dict]:
     """This function will return a generator that will yield the dictionaries that can be sent to the frontend.
 
     Tasks should only be run once, and this function should only be called once per task.
@@ -470,9 +470,9 @@ def task_generate_results(task: TaskData) -> Iterator[dict]:
     # you must ensure that after these results are generated, that the task.detailed_results are pickleable (i.e. no lambda functions)
     match task.task_type:
         case TaskTypeEnum.SURFACING:
-            yield from _task_generate_results_surfacing(task)
+            yield from _task_generate_results_surfacing(task, api_call_timeout)
         case TaskTypeEnum.ASSESSMENT:
-            yield from _task_generate_results_assessment(task)
+            yield from _task_generate_results_assessment(task, api_call_timeout)
         case _:
             assert False, f"Task type {task.task_type.value.name} not implemented."
 
@@ -482,7 +482,7 @@ def task_generate_results(task: TaskData) -> Iterator[dict]:
     task.state = TaskState.FINISHED
 
 
-def task_generate_results_with_processing(task: TaskData, save_directory: str | None = None) -> Iterator[dict]:
+def task_generate_results_with_processing(task: TaskData, api_call_timeout: int = 30, save_directory: str | None = None) -> Iterator[dict]:
     """This function will update the task as the results are generated and yielded.
 
     Args:
@@ -499,7 +499,7 @@ def task_generate_results_with_processing(task: TaskData, save_directory: str | 
     Raises:
         Exception: if one of the results generated has the wrong result type.
     """
-    for result in task_generate_results(task):
+    for result in task_generate_results(task, api_call_timeout):
         match result["type"]:
             case "results_text":
                 task.results_text += result["body"] + "\n"

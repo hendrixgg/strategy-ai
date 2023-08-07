@@ -132,7 +132,7 @@ def recursive_dict_types(d: dict):
 
 if __name__ == "__main__":
     newTask = TaskData(
-        task_type=TaskTypeEnum.SURFACING,
+        task_type=TaskTypeEnum.ASSESSMENT,
         files_available=path_to_dict(available_documents_directory)
     )
     task_init(newTask, vector_store=vectorStore, llm=llm)
