@@ -16,6 +16,7 @@ This is currently just software that can used internally and also be shown as a 
 
 Requirements:
 
+- [Notion Page](https://concrete-sesame-1f5.notion.site/Strategy-AI-Installation-d1923c86e26b4a388c9995f3f4c5217e?pvs=4) (if you want to see the images)
 - [github link](https://github.com/hendrixgg/strategy-ai)
 - Node.js and npm (gives you the option to install python along with it)
 - OpenAI api key
