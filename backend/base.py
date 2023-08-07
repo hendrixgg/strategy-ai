@@ -130,14 +130,14 @@ def recursive_dict_types(d: dict):
     return d_types
 
 
-if __name__ == "__main__":
-    newTask = TaskData(
-        task_type=TaskTypeEnum.ASSESSMENT,
-        files_available=path_to_dict(available_documents_directory)
-    )
-    task_init(newTask, vector_store=vectorStore, llm=llm)
-    for result in task_generate_results_with_processing(newTask, save_directory=ai_output_directory):
-        print(result)
+# if __name__ == "__main__":
+#     newTask = TaskData(
+#         task_type=TaskTypeEnum.ASSESSMENT,
+#         files_available=path_to_dict(available_documents_directory)
+#     )
+#     task_init(newTask, vector_store=vectorStore, llm=llm)
+#     for result in task_generate_results_with_processing(newTask, save_directory=ai_output_directory):
+#         print(result)
     # list_of_actions = llm.predict_messages([
     #     SystemMessage(
     #         content=business_expert_system_message_template.format(goal=goals[0])),
