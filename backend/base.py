@@ -77,13 +77,13 @@ def init_task(task_type_id: str):
         files_available=path_to_dict("", available_documents_directory))
     task_init(newTask, vector_store=vectorStore, llm=llm)
 
-    tasks[newTask.id] = newTask
+    tasks[str(newTask.id)] = newTask
 
     return newTask.json(include={"id", "task_type", "date_recent"})
 
 
 @api.route("/task_stream/<unique_id>")
-def task_stream(unique_id: int):
+def task_stream(unique_id: str):
     """Runs the task, returns a stream of the results as the task progresses."""
     if unique_id not in tasks.keys():
         return {"status": "error", "message": "task not initialized"}
@@ -93,9 +93,9 @@ def task_stream(unique_id: int):
 @api.route("/task_results/<unique_id>")
 def task_results(unique_id: str):
     """Returns the results of the task at the current time."""
-    if unique_id not in tasks.keys():
+    if unique_id not in tasks:
         return {"status": "error", "message": "task not initialized"}
-    return tasks[unique_id].json()
+    return tasks[unique_id].json(exclude={"detailed_results"})
 
 
 @api.route("/save_results/<unique_id>", methods=["POST"])

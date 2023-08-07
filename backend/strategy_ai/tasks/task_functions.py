@@ -363,7 +363,7 @@ def _task_generate_results_surfacing(task: TaskData, api_call_timeout: int) -> I
     yield {"type": "results_text", "body": prefix + task.detailed_results["title"]}
 
     # creating all the async tasks
-    async_event_loop = asyncio.get_event_loop()
+    async_event_loop = asyncio.new_event_loop()
     for categoryInfo in task.detailed_results["body"].values():
         for topicInfo in categoryInfo["body"].values():
             # iterate over list of messages for the different responses from the AI
@@ -405,7 +405,7 @@ def _task_generate_results_assessment(task: TaskData, api_call_timeout: int) -> 
     yield {"type": "results_text", "body": prefix + task.detailed_results["title"]}
 
     # creating all the async tasks
-    async_event_loop = asyncio.get_event_loop()
+    async_event_loop = asyncio.new_event_loop()
     for goal, goal_dict in task.detailed_results["body"].items():
         # this callback gets the actions about the goal and adds the llm calls to get more detail on the actions to the even loop.
         async def goal_subtasks():

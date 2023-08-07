@@ -97,7 +97,7 @@ const App: FunctionComponent = () => {
             </div>
             <ColumnHeader titleText="Results" />
             <div style={{ padding: "0.5rem 0.5rem 0rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-              <ResultsSection taskState={taskState} setTaskState={setTaskState} task={task} />
+              <ResultsSection taskState={taskState} setTaskState={setTaskState} selectedTask={task} />
             </div>
           </TasksSection>
         </div>

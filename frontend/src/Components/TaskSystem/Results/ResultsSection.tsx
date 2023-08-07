@@ -16,12 +16,18 @@ interface TaskStreamResponse {
 interface TaskData {
     date: string,
     files_available: FileDirectory | null,
-    metadata: any,
     progress_info: string,
-    status: string,
-    task_name: string,
-    task_type_id: number,
-    task_uuid: string,
+    state: string,
+    task_type: {
+        id: number,
+        name: string,
+    },
+    date_start: string,
+    date_recent: string,
+    id: string,
+    results_text: string,
+    run_history: [string, any][],
+    detailed_results: any,
 }
 
 const saveResults = async (unique_id: string) => {
@@ -29,10 +35,10 @@ const saveResults = async (unique_id: string) => {
     console.log(await response.json());
 };
 
-const ResultsSection = ({ taskState, setTaskState, task }: {
+const ResultsSection = ({ taskState, setTaskState, selectedTask }: {
     taskState: TaskProcessState,
     setTaskState: Function,
-    task: Task,
+    selectedTask: Task,
 }) => {
     const [results, setResults] = useState<string>("");
     // this id uniquely identifies the task that is being run at this time
@@ -41,18 +47,23 @@ const ResultsSection = ({ taskState, setTaskState, task }: {
     const [taskData, setTaskData] = useState<TaskData>({
         date: "",
         files_available: null,
-        metadata: {},
         progress_info: "",
-        status: "",
-        task_name: "",
-        task_type_id: 0,
-        task_uuid: "",
+        state: "",
+        task_type: {
+            id: 0,
+            name: "",
+        },
+        date_start: "",
+        date_recent: "",
+        id: "",
+        results_text: "",
+        run_history: [],
+        detailed_results: {},
     });
 
     const runTask = useCallback(async () => {
         // initalize the new task on the backend
-        const initResponse = await fetch(`${api_url}/init_task/${task.id}`, { method: "GET" });
-        const newTask = await initResponse.json();
+        const newTask: TaskData = await (await fetch(`${api_url}/init_task/${selectedTask.id}`, { method: "GET" })).json();
         setTaskData(newTask);
 
 
@@ -87,17 +98,18 @@ const ResultsSection = ({ taskState, setTaskState, task }: {
                     // console.log(resultsTexts)
                     setResults((text) => [text, ...resultsTexts].join("\n"));
                 }
+
             } catch (error) {
                 console.error("Error while streaming:", error);
             }
         };
 
         setTaskState(TaskProcessState.executing);
-        await handleStream(`${api_url}/task_stream/${newTask.task_uuid}`, streamAbortController);
+        await handleStream(`${api_url}/task_stream/${newTask.id}`, streamAbortController);
         // await handleStream(`${api_url}/test_stream/100`, streamAbortController);
         setStreamAbortController(new AbortController());
         setTaskState(TaskProcessState.complete);
-    }, [task.id]);
+    }, [selectedTask.id]);
 
 
 
@@ -135,7 +147,7 @@ const ResultsSection = ({ taskState, setTaskState, task }: {
                 </ReactMarkdown>
             </div>
             <div style={{ padding: "0.5rem 0.5rem 0rem", height: "fit-content" }}>
-                <Button onClick={() => { saveResults(taskData.task_uuid), setSaved(true) }} disabled={saved || taskState == TaskProcessState.executing}>Save</Button>
+                <Button onClick={() => { saveResults(taskData.id), setSaved(true) }} disabled={saved || taskState == TaskProcessState.executing}>Save</Button>
             </div>
         </>
     );
