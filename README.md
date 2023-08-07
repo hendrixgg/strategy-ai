@@ -1,5 +1,15 @@
 # strategy-ai
 
+## What is This For?
+This is an app designed to take company's strategy documents and identify the core strategy of the business across the multiple perspectives, including:
+
+- Financial
+- Customer
+- Internal
+- Enabling
+
+This is currently just software that can used internally and also be shown as a demo to clients, this software is not planned to be distributed.
+
 ## How to run?
 
 ### Installation
@@ -10,10 +20,11 @@ Requirements:
 - Node.js and npm (gives you the option to install python along with it)
 - OpenAI api key
 1. Ensure that you have Node.js and NPM installed so that you can build the project
-    1. go to: https://nodejs.org/en/download
-    2. download the installer for your operating system
-    3. run the installer (say yes to everything and check that box at the end where it mentions Chocolatey)
-    4. when the command prompt opens up, press enter and proceed with the installation
+    1. check if it is installed by opening a cmd terminal and typing: “node -v” or “npm -v”
+    2. if not installed go to: https://nodejs.org/en/download
+    3. download the installer for your operating system
+    4. run the installer (say yes to everything and check that box at the end where it mentions Chocolatey)
+    5. when the command prompt opens up, press enter and proceed with the installation
 2. now get the repository, either:
     1. without git:
         1. download the zip file from the website: https://github.com/hendrixgg/strategy-ai
@@ -89,7 +100,7 @@ Requirements:
 12. all copies of results (whether you pressed save or not) can be found in the folder: backed/strategy_ai/available_data/hidden_files/ai_output
 13. you can edit all your uploaded files in the folder: backed/strategy_ai/available_data/visible_files
 
-### Development environment
+### Running Development Environment
 1. Ensure that all dependencies are installed
     1. node_modules (npm install)
     1. python packages (see backend/requirements.txt)
@@ -97,16 +108,6 @@ Requirements:
 1. Open up split cmd terminals  
 1. In one terminal start the python server by running: "npm run dev-backend"
 1. In the other terminal open the vite react app by running: "npm run dev"
-
-## What is This For?
-This is an app designed to take company's strategy documents and identify the core strategy of the business across the multiple perspectives, including:
-
-- Financial
-- Customer
-- Internal
-- Enabling
-
-This is currently just software that can used internally and also be shown as a demo to clients, this software is not planned to be distributed.
 
 ## What Types of Documents Can Be Uploaded?
 The more documents uploaded the better the system will be able to provide insights into your strategy.
