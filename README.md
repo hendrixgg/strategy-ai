@@ -15,10 +15,10 @@ This is currently just software that can used internally and also be shown as a 
 ### Installation
 
 Requirements:
-
 - [github link](https://github.com/hendrixgg/strategy-ai)
 - Node.js and npm (gives you the option to install python along with it)
 - OpenAI api key
+
 1. Ensure that you have Node.js and NPM installed so that you can build the project
     1. check if it is installed by opening a cmd terminal and running: “node -v” or “npm -v”
     2. if not installed go to: https://nodejs.org/en/download
@@ -27,9 +27,9 @@ Requirements:
     5. when the command prompt opens up, press enter and proceed with the installation
 2. now get the repository, either:
     1. without git:
-        1. download the zip file from the website: https://github.com/hendrixgg/strategy-ai
+        1. download the zip file from the website: [https://github.com/hendrixgg/strategy-ai](https://github.com/hendrixgg/strategy-ai)
             
-            ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0b18457e-e0d7-436a-b30b-76a8d55b50ff/Untitled.png)
+            ![Image showing the buttone to download the zip file after following the above link](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0b18457e-e0d7-436a-b30b-76a8d55b50ff/Untitled.png)
             
         2. extract the compressed folder
         3. copy the folder path, you will need it for next steps
