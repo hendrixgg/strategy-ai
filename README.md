@@ -16,12 +16,11 @@ This is currently just software that can used internally and also be shown as a 
 
 Requirements:
 
-- [Notion Page](https://hendrix-notes.notion.site/Strategy-AI-Installation-d1923c86e26b4a388c9995f3f4c5217e?pvs=4) (if you want to see the images)
 - [github link](https://github.com/hendrixgg/strategy-ai)
 - Node.js and npm (gives you the option to install python along with it)
 - OpenAI api key
 1. Ensure that you have Node.js and NPM installed so that you can build the project
-    1. check if it is installed by opening a cmd terminal and typing: “node -v” or “npm -v”
+    1. check if it is installed by opening a cmd terminal and running: “node -v” or “npm -v”
     2. if not installed go to: https://nodejs.org/en/download
     3. download the installer for your operating system
     4. run the installer (say yes to everything and check that box at the end where it mentions Chocolatey)
@@ -33,73 +32,31 @@ Requirements:
             ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0b18457e-e0d7-436a-b30b-76a8d55b50ff/Untitled.png)
             
         2. extract the compressed folder
-    2. using git clone
-3. open up command prompt in the frontend directory
+        3. copy the folder path, you will need it for next steps
+    2. use git to clone the repository
+3. open up command prompt in the frontend directory (using WINDOWS)
     1. press “Windows Button” > type “cmd” > press “Enter”
-    2. navigate to: “the folder where the repository was extracted to” in the file explorer and “copy the address”
-4. To open the app UI:
-    1. to install the UI dependencies:
+4. To install the UI, run:
+    
+    ```bash
+    cd <path to extracted folder>\frontend && npm install
+    ```
+    
+5. To install the backend:
+    1. install the dependencies (this may take a few minutes) run:
         
         ```bash
-        cd <path to extracted folder> && cd frontend && npm install
+        cd <path to extracted folder>\backend && python -m venv env && env\Scripts\activate && pip install -r requirements.txt
         ```
         
-    2. to run the app ui
-        
-        ```bash
-        npm run dev
-        ```
-        
-    3. A link to http://localhost:5173/ should appear, clicking this will open the ui in the browser
-    4. you will be able to see the look of the UI, however, the files will not show up and you cannot run tasks unless the backend is running also
-5. To run the python backend (WINDOWS):
-    1. repeat **step 3** by opening a new terminal
-    2. to install the dependencies (this may take a few minutes):
-        
-        ```bash
-        cd <path to extracted folder> && cd backend && python -m venv env && env\Scripts\activate && pip install -r requirements.txt
-        ```
-        
-    3. now you need to input your OpenAI api key
+    2. now you need to input your OpenAI api key
         1. open the backend folder
         2. create a file titled “.env”
         3. in the file put: OPENAI_API_KEY = “your api key here”
-        4. save the file
-    4. you now have to decide on the company files you want to use for analysis:
-        1. in the “available-data-scenarios” directory you will see some examples of company files that can be uploaded
-        2. you must copy both the “hidden_files” and “visible_files” folders into the backend/strategy_ai/available_data folder if they are not already there
-        3. you can also upload your own folders and files:
-            1. from the available-data-scenarios/[Template]available_data folder, copy the “hidden_files” and “visible_files” folders into backend/strategy_ai/available_data
-            2. you should only add files to the “visible_files” folder unless you know exactly what you’re doing
-            3. you can add links to websites as sources by listing the links, one link per line, in the “visible_files/weblinks.txt” file
-            4. feel free to delete the “empty.txt” files from the folders, those are just placeholders used to maintain the file tree on github (otherwise empty folders would get deleted)
-    5. to run the backend
-        
-        ```bash
-        cd <path to extracted folder> && cd frontend && npm run dev-backend
-        ```
-        
-6. the backend should now be up and running, you should be able to see the files you have loaded by clicking the refresh button at the top of the File section
-    
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/212a3e8a-06ed-4e92-bd0c-dac9cf574c03/Untitled.png)
-    
-7. you can run a task by selecting one from the drop down menu, and then click the start button
-    
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/92dda2ed-9004-4aca-b499-fa1e1c91f13d/Untitled.png)
-    
-8. You will see the results be generated below
-    
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/976aab56-eb8e-4f1c-8875-a5bfdf9d70bc/Untitled.png)
-    
-9. Once the results are ready, the save button at the bottom will be enabled
-10. If you are happy with the results, you can click the Save button to save a copy of the results (as shown on screen) to the ai_files folder. pressing the refresh button will show that file in the UI.
-    
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f951e941-f8eb-4f5d-8f18-ef2b4513de19/Untitled.png)
-    
-11. These saved files will become available to the AI when running tasks upon a refresh of the backend (by killing and restarting the backend terminal)
-    1. The feature will be added in where the backend does not have to be restarted to make use of the newly saved task results
-12. all copies of results (whether you pressed save or not) can be found in the folder: backed/strategy_ai/available_data/hidden_files/ai_output
-13. you can edit all your uploaded files in the folder: backed/strategy_ai/available_data/visible_files
+        4. paste your actual OpenAI api key within the quotes
+        5. save the file
+
+**The installation is now complete**
 
 ### Running Development Environment
 1. Ensure that all dependencies are installed
