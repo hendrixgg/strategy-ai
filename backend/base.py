@@ -19,11 +19,6 @@ load_dotenv(verbose=True)
 api = Flask(__name__)
 CORS(api, origins="*")
 
-# key: str = task uuid, value: TaskData
-# This stores the tasks that have been initalized in this session
-tasks: dict[str, TaskData] = dict()
-
-
 # File system
 # For now these directories are hardcoded, but in the future they could be accessed from a database
 available_documents_directory = os.path.join(
@@ -41,6 +36,7 @@ ai_output_directory = os.path.join(
 vector_store_save_directory = os.path.join(
     available_documents_directory, "hidden_files", "vector_store_saves")
 
+# loading documents from files
 documents = DocStore(dict({
     "Methodology Documents": DocumentSource(name="Pm2 Methodology Documents", directory_path=methodology_documents_directory),
     "Client Documents": DocumentSource(name="Client Documents", directory_path=client_documents_directory),
@@ -48,21 +44,26 @@ documents = DocStore(dict({
     "AI Documents": DocumentSource(name="AI Generated Documents", directory_path=ai_documents_directory)
 }))
 
+# vector store to allow for quick document similarity search
 vectorStore = FAISSVectorStore(documents.splitDocuments)
 
+# language model for chat
 llm = ChatOpenAI(model="gpt-3.5-turbo-0613", temperature=0)
 
-
-@api.route("/files")
-def files():
-    return path_to_dict(os.getcwd(), os.path.join("strategy_ai", "available_data", "visible_files"))
-
+# key: str = task uuid, value: TaskData
+# This stores the tasks that have been initalized in this session
+tasks: dict[str, TaskData] = dict()
 
 task_type_id_to_task_type = [
     0,
     TaskTypeEnum.SURFACING,
     TaskTypeEnum.ASSESSMENT
 ]
+
+
+@api.route("/files")
+def files():
+    return path_to_dict(os.getcwd(), os.path.join("strategy_ai", "available_data", "visible_files"))
 
 
 @api.route("/init_task/<task_type_id>")

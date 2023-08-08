@@ -18,6 +18,7 @@ from strategy_ai.tasks.task_models import TaskData, TaskState, TaskTypeEnum
 load_dotenv(verbose=True)
 
 # all asserts should be impossible if the code has no bugs
+# functions preceded with a _ are not meant to be called outside of this file
 
 
 def task_save(task: TaskData, directory: str) -> None:
@@ -60,7 +61,7 @@ def task_save(task: TaskData, directory: str) -> None:
 
 
 def _task_init_surfacing(task: TaskData, vector_store: FAISSVectorStore, llm=ChatOpenAI(model="gpt-3.5-turbo-0613", temperature=0)) -> None:
-    """This function is only called within task_init() and is used to initialize the tasks where task.task_type == TaskTypeEnum.SURFACING."""
+    """This function is only called within task_init() and is used to initialize the tasks where `task.task_type` == `TaskTypeEnum.SURFACING`."""
     objectiveCategories = {
         "Financial": [
             "Increasing Revenue",
