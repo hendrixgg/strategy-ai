@@ -394,8 +394,8 @@ def _task_generate_results_surfacing(task: TaskData, api_call_timeout: int) -> I
                 if aiMessage["title"] == "Formatted Response":
                     # try to parse the json, if it fails, try to correct the error and parse again
                     try:
-                        json_str = aiMessage["body"].additional_kwargs.get(
-                            "function_call").get("arguments")
+                        json_str = aiMessage["body"].additional_kwargs.get["function_call"].get(
+                            "arguments")
                         aiMessage["body"] = json.loads(json_str)
                     except json.decoder.JSONDecodeError as e:
                         # try to correct the error by replacing all \ with \\, effectively escaping the invalid escape characters
@@ -404,6 +404,7 @@ def _task_generate_results_surfacing(task: TaskData, api_call_timeout: int) -> I
                                 json_str.replace("\\", "\\\\"))
                             print(traceback.print_exc())
                             print("^^^^^^^^ CORRECTED ERROR ^^^^^^^^")
+                            print("while trying to parse:", json_str)
                         else:
                             raise e
                     yield {"type": "results_text", "body": f"```json\n{json.dumps(aiMessage['body'], indent=4)}\n```"}

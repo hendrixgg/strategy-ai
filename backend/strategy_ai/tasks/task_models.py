@@ -20,6 +20,12 @@ class TaskType(BaseModel):
 
 
 class TaskTypeEnum(Enum):
+    """Enum for the different types of tasks. The current options are:
+
+    `SURFACING`: TaskType = TaskType(name="t1_surfacing", id=1)
+
+    `ASSESSMENT`: TaskType = TaskType(name="t2_assessment", id=2)
+    """
     SURFACING: TaskType = TaskType(name="t1_surfacing", id=1)
     ASSESSMENT: TaskType = TaskType(name="t2_assessment", id=2)
 

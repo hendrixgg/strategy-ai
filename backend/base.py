@@ -1,17 +1,21 @@
-import re
 import json
 import os
-import uuid
 
 from dotenv import load_dotenv
 from flask import Flask, Response
 from flask_cors import CORS
 from langchain.chat_models import ChatOpenAI
-from strategy_ai.ai_core.data_sets.doc_store import DocStore, DocumentSource
-from strategy_ai.ai_core.data_sets.vector_store import FAISSVectorStore
-from strategy_ai.tasks.file_structure import path_to_file_struct
-from strategy_ai.tasks.task_models import TaskData, TaskTypeEnum
-from strategy_ai.tasks.task_functions import task_init, task_generate_results_with_processing, dict_iter_ndjson_bytes
+from strategy_ai import (
+    FAISSVectorStore,
+    DocStore,
+    DocumentSource,
+    TaskData,
+    TaskTypeEnum,
+    task_init,
+    task_generate_results_with_processing,
+    dict_iter_ndjson_bytes,
+    path_to_file_struct,
+)
 
 # nltk.download("punkt")
 
@@ -136,21 +140,21 @@ def recursive_dict_types(d: dict):
     return d_types
 
 
-if __name__ == "__main__":
-    bad_json_str = '{"path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\frontend"}'
-    try:
-        parsed_json = json.loads(bad_json_str)
-    except json.decoder.JSONDecodeError as e:
-        error_message = str(e)
-        print(repr(e))
-        if error_message.startswith("Invalid \\escape:"):
-            parsed_json = json.loads(
-                bad_json_str.replace("\\", "\\\\"))
-            print(
-                f"Corrected the following error: {type(e)} {error_message}")
-        else:
-            raise e
-    print(parsed_json)
+# if __name__ == "__main__":
+#     bad_json_str = '{"path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\frontend"}'
+#     try:
+#         parsed_json = json.loads(bad_json_str)
+#     except json.decoder.JSONDecodeError as e:
+#         error_message = str(e)
+#         print(repr(e))
+#         if error_message.startswith("Invalid \\escape:"):
+#             parsed_json = json.loads(
+#                 bad_json_str.replace("\\", "\\\\"))
+#             print(
+#                 f"Corrected the following error: {type(e)} {error_message}")
+#         else:
+#             raise e
+#     print(parsed_json)
     # newTask = TaskData(
     #     task_type=TaskTypeEnum.ASSESSMENT,
     #     files_available=path_to_file_struct(available_documents_directory),
