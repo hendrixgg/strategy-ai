@@ -396,12 +396,13 @@ def _task_generate_results_surfacing(task: TaskData, api_call_timeout: int) -> I
                     try:
                         json_str = aiMessage["body"].additional_kwargs.get("function_call", {}).get(
                             "arguments")
-                        aiMessage["body"] = json.loads(json_str)
+                        aiMessage["body"] = json.loads(
+                            json_str)["objectives_list"]
                     except json.decoder.JSONDecodeError as e:
                         # try to correct the error by replacing all \ with \\, effectively escaping the invalid escape characters
                         if e.msg.startswith("Invalid \\escape"):
                             aiMessage["body"] = json.loads(
-                                json_str.replace("\\", "\\\\"))
+                                json_str.replace("\\", "\\\\"))["objectives_list"]
                             print(traceback.print_exc())
                             print("^^^^^^^^ CORRECTED ERROR ^^^^^^^^")
                             print("while trying to parse:\n", json_str)

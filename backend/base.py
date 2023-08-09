@@ -141,6 +141,16 @@ def recursive_dict_types(d: dict):
 
 
 # if __name__ == "__main__":
+#     import uuid
+#     newTask = TaskData(
+#         task_type=TaskTypeEnum.SURFACING,
+#         files_available=path_to_file_struct(available_documents_directory),
+#         id=str(uuid.uuid4())
+#     )
+
+#     task_init(newTask, vector_store=vectorStore, llm=llm)
+#     for result in task_generate_results_with_processing(newTask, save_directory=ai_output_directory):
+#         print("result")
 #     bad_json_str = '{"path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\frontend"}'
 #     try:
 #         parsed_json = json.loads(bad_json_str)
@@ -155,15 +165,7 @@ def recursive_dict_types(d: dict):
 #         else:
 #             raise e
 #     print(parsed_json)
-    # newTask = TaskData(
-    #     task_type=TaskTypeEnum.ASSESSMENT,
-    #     files_available=path_to_file_struct(available_documents_directory),
-    #     id=str(uuid.uuid4())
-    # )
     # print(newTask.dict(include={"id", "task_type", "date_recent"}))
-    # task_init(newTask, vector_store=vectorStore, llm=llm)
-    # for result in task_generate_results_with_processing(newTask, save_directory=ai_output_directory):
-    #     print(result)
     # list_of_actions = llm.predict_messages([
     #     SystemMessage(
     #         content=business_expert_system_message_template.format(goal=goals[0])),
