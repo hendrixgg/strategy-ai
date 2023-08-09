@@ -4,6 +4,8 @@ import datetime
 from typing import Optional
 from pydantic import BaseModel, Field
 
+from strategy_ai.tasks.path_to_json import FileStruct
+
 
 class TaskState(Enum):
     PREPARING: str = "preparing"
@@ -25,10 +27,11 @@ class TaskTypeEnum(Enum):
 class TaskData(BaseModel):
     """Class for keeping track of a task's data"""
     # required fields
-    task_type: TaskTypeEnum = Field(description="The type of task",
+    task_type: TaskTypeEnum = Field(...,
+                                    description="The type of task",
                                     frozen=True)
-    files_available: dict = Field(
-        description="A dict representing a folder that contains all the files that were available during the task execution")
+    files_available: FileStruct = Field(...,
+                                        description="A representation of the file structure that contains all the files available during the task execution")
 
     # optional/automatic fields
     state: TaskState = Field(default=TaskState.PREPARING,
@@ -38,7 +41,7 @@ class TaskData(BaseModel):
     date_start: Optional[datetime.datetime] = Field(default=None,
                                                     description="The date the task was started")
     date_recent: datetime.datetime = Field(default_factory=datetime.datetime.now,
-                                           description="The date the task was last updated")
+                                           description="The date the task was last updated, once the task is finished this will be the date the task was finished and it should no longer be updated.")
     id: uuid.UUID = Field(default_factory=uuid.uuid4,
                           description="The unique id of the task")
     progress_info: str = Field(default="",
@@ -48,7 +51,7 @@ class TaskData(BaseModel):
     run_history: list[tuple[datetime.datetime, dict]] = Field(default_factory=list,
                                                               description="stores each message from the run history of the task")
     detailed_results: dict = Field(default_factory=dict,
-                                   description="stores the detailed results of the task, the data structure is task specific")
+                                   description="Stores the detailed results of the task, the data structure is task specific.")
 
     class Config:
         json_encoders = {

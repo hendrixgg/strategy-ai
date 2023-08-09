@@ -1,5 +1,6 @@
 import json
 import os
+import uuid
 
 from dotenv import load_dotenv
 from flask import Flask, Response
@@ -7,7 +8,7 @@ from flask_cors import CORS
 from langchain.chat_models import ChatOpenAI
 from strategy_ai.ai_core.data_sets.doc_store import DocStore, DocumentSource
 from strategy_ai.ai_core.data_sets.vector_store import FAISSVectorStore
-from strategy_ai.tasks.path_to_json import path_to_dict
+from strategy_ai.tasks.path_to_json import path_to_file_struct, path_to_dict
 from strategy_ai.tasks.task_models import TaskData, TaskTypeEnum
 from strategy_ai.tasks.task_functions import task_init, task_generate_results_with_processing, dict_iter_ndjson_bytes
 
@@ -21,20 +22,23 @@ CORS(api, origins="*")
 
 # File system
 # For now these directories are hardcoded, but in the future they could be accessed from a database
+backend_directory = os.path.dirname(__file__)
 available_documents_directory = os.path.join(
-    os.getcwd(), "strategy_ai", "available_data")
+    backend_directory, "strategy_ai", "available_data")
+hidden_files_directory = os.path.join(
+    available_documents_directory, "hidden_files")
+visible_files_directory = os.path.join(
+    available_documents_directory, "visible_files")
 
 methodology_documents_directory = os.path.join(
-    available_documents_directory, "hidden_files", "methodology_files")
+    hidden_files_directory, "methodology_files")
 client_documents_directory = os.path.join(
-    available_documents_directory, "visible_files", "client_files")
-ai_documents_directory = os.path.join(
-    available_documents_directory, "visible_files", "ai_files")
+    visible_files_directory, "client_files")
+ai_documents_directory = os.path.join(visible_files_directory, "ai_files")
 
-ai_output_directory = os.path.join(
-    available_documents_directory, "hidden_files", "ai_output")
+ai_output_directory = os.path.join(hidden_files_directory, "ai_output")
 vector_store_save_directory = os.path.join(
-    available_documents_directory, "hidden_files", "vector_store_saves")
+    hidden_files_directory, "vector_store_saves")
 
 # loading documents from files
 documents = DocStore(dict({
@@ -44,7 +48,7 @@ documents = DocStore(dict({
     "AI Documents": DocumentSource(name="AI Generated Documents", directory_path=ai_documents_directory)
 }))
 
-# vector store to allow for quick document similarity search
+# vector store to allow for document similarity search
 vectorStore = FAISSVectorStore(documents.splitDocuments)
 
 # language model for chat
@@ -63,7 +67,7 @@ task_type_id_to_task_type = [
 
 @api.route("/files")
 def files():
-    return path_to_dict(os.getcwd(), os.path.join("strategy_ai", "available_data", "visible_files"))
+    return path_to_dict(visible_files_directory)
 
 
 @api.route("/init_task/<task_type_id>")
@@ -132,13 +136,15 @@ def recursive_dict_types(d: dict):
 
 
 # if __name__ == "__main__":
-#     newTask = TaskData(
-#         task_type=TaskTypeEnum.ASSESSMENT,
-#         files_available=path_to_dict(available_documents_directory)
-#     )
-#     task_init(newTask, vector_store=vectorStore, llm=llm)
-#     for result in task_generate_results_with_processing(newTask, save_directory=ai_output_directory):
-#         print(result)
+    # newTask = TaskData(
+    #     task_type=TaskTypeEnum.ASSESSMENT,
+    #     files_available=path_to_dict(available_documents_directory),
+    #     id=str(uuid.uuid4())
+    # )
+    # print(newTask.schema_json(indent=2))
+    # task_init(newTask, vector_store=vectorStore, llm=llm)
+    # for result in task_generate_results_with_processing(newTask, save_directory=ai_output_directory):
+    #     print(result)
     # list_of_actions = llm.predict_messages([
     #     SystemMessage(
     #         content=business_expert_system_message_template.format(goal=goals[0])),
