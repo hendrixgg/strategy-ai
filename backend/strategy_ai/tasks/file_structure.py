@@ -1,6 +1,5 @@
 import os
-import json
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, validator
 from typing import Optional, List
 
 # q: how can I search for all uses of a class in vscode?
@@ -8,14 +7,22 @@ from typing import Optional, List
 
 
 class FileStruct(BaseModel):
-    name: str
-    is_dir: bool = False
+    name: str = Field(..., description="The name of the file or directory")
+    is_dir: bool = Field(..., description="Is this a directory or file?")
     path: str
     root_path: Optional[str] = None
     children: Optional[List['FileStruct']] = None
 
     class Config:
         title = "File Structure Model"
+
+    @validator("children", pre=True)
+    def check_is_dir(cls, v, values):
+        if values["is_dir"] and v is None:
+            raise ValueError("Directories must have a list of children")
+        if not values["is_dir"] and v is not None:
+            raise ValueError("Files cannot have a list of children")
+        return v
 
 
 def path_to_file_struct(rootPath: str, path: str = os.curdir, include_root_path: bool = False) -> FileStruct:
@@ -28,12 +35,3 @@ def path_to_file_struct(rootPath: str, path: str = os.curdir, include_root_path:
         children=[path_to_file_struct(rootPath, os.path.join(
             path, x)) for x in os.listdir(fullPath)] if os.path.isdir(fullPath) else None,
     )
-
-
-def path_to_dict(rootPath: str, path: str = os.curdir) -> dict:
-    """returns a dict representation of the file structure at the given path"""
-    return path_to_file_struct(rootPath=rootPath, path=path).dict()
-
-
-def path_to_json(rootPath: str, path: str = os.curdir, indent: int = 4) -> str:
-    return path_to_file_struct(rootPath=rootPath, path=path).json(indent=indent)

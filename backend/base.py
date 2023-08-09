@@ -8,7 +8,7 @@ from flask_cors import CORS
 from langchain.chat_models import ChatOpenAI
 from strategy_ai.ai_core.data_sets.doc_store import DocStore, DocumentSource
 from strategy_ai.ai_core.data_sets.vector_store import FAISSVectorStore
-from strategy_ai.tasks.path_to_json import path_to_file_struct, path_to_dict
+from strategy_ai.tasks.file_structure import path_to_file_struct
 from strategy_ai.tasks.task_models import TaskData, TaskTypeEnum
 from strategy_ai.tasks.task_functions import task_init, task_generate_results_with_processing, dict_iter_ndjson_bytes
 
@@ -67,7 +67,7 @@ task_type_id_to_task_type = [
 
 @api.route("/files")
 def files():
-    return path_to_dict(visible_files_directory)
+    return path_to_file_struct(backend_directory, os.path.relpath(visible_files_directory, backend_directory)).dict(by_alias=True)
 
 
 @api.route("/init_task/<task_type_id>")
@@ -79,12 +79,12 @@ def init_task(task_type_id: str):
 
     newTask = TaskData(
         task_type=task_type_id_to_task_type[task_type_id],
-        files_available=path_to_dict("", available_documents_directory))
+        files_available=path_to_file_struct("", available_documents_directory))
     task_init(newTask, vector_store=vectorStore, llm=llm)
 
     tasks[str(newTask.id)] = newTask
 
-    return newTask.json(include={"id", "task_type", "date_recent"})
+    return Response(newTask.json(include={"id", "task_type", "date_recent"}), mimetype="application/json")
 
 
 @api.route("/task_stream/<unique_id>")
@@ -135,13 +135,15 @@ def recursive_dict_types(d: dict):
     return d_types
 
 
-# if __name__ == "__main__":
+if __name__ == "__main__":
+    print(backend_directory, os.path.relpath(
+        visible_files_directory, backend_directory))
     # newTask = TaskData(
     #     task_type=TaskTypeEnum.ASSESSMENT,
-    #     files_available=path_to_dict(available_documents_directory),
+    #     files_available=path_to_file_struct(available_documents_directory),
     #     id=str(uuid.uuid4())
     # )
-    # print(newTask.schema_json(indent=2))
+    # print(newTask.dict(include={"id", "task_type", "date_recent"}))
     # task_init(newTask, vector_store=vectorStore, llm=llm)
     # for result in task_generate_results_with_processing(newTask, save_directory=ai_output_directory):
     #     print(result)

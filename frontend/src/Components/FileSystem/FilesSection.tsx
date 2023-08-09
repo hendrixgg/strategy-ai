@@ -53,7 +53,7 @@ const FilesSection: FunctionComponent<{}> = ({ }) => {
             </div>
             <div className="files elipses">
                 {files.map((child) => {
-                    return <Directory key={child.path} files={child} />
+                    return <Directory key={child.path} fileStructure={child} />
                 })}
                 {alternativeMessage()}
             </div>

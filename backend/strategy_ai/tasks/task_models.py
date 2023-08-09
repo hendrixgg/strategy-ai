@@ -4,7 +4,7 @@ import datetime
 from typing import Optional
 from pydantic import BaseModel, Field
 
-from strategy_ai.tasks.path_to_json import FileStruct
+from strategy_ai.tasks.file_structure import FileStruct
 
 
 class TaskState(Enum):
