@@ -140,17 +140,17 @@ def recursive_dict_types(d: dict):
     return d_types
 
 
-# if __name__ == "__main__":
-#     import uuid
-#     newTask = TaskData(
-#         task_type=TaskTypeEnum.SURFACING,
-#         files_available=path_to_file_struct(available_documents_directory),
-#         id=str(uuid.uuid4())
-#     )
+if __name__ == "__main__":
+    import uuid
+    newTask = TaskData(
+        task_type=TaskTypeEnum.SURFACING,
+        files_available=path_to_file_struct(available_documents_directory),
+        id=str(uuid.uuid4())
+    )
 
-#     task_init(newTask, vector_store=vectorStore, llm=llm)
-#     for result in task_generate_results_with_processing(newTask, save_directory=ai_output_directory):
-#         print("result")
+    task_init(newTask, vector_store=vectorStore, llm=llm)
+    for result in task_generate_results_with_processing(newTask, save_directory=ai_output_directory):
+        print("result")
 #     bad_json_str = '{"path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\frontend"}'
 #     try:
 #         parsed_json = json.loads(bad_json_str)

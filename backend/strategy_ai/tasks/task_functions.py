@@ -57,9 +57,8 @@ def task_save(task: TaskData, directory: str) -> None:
     with open(file=os.path.join(new_directory, "readableResults.md"), mode="w", newline="\n") as f:
         print(task.results_text, file=f)
 
-    with open(file=os.path.join(new_directory, "detailedResults.json"), mode="wb") as f:
-        f.write(bytes(task.json(
-            exclude={"run_history", "results_text"}, indent=4), encoding="ascii"))
+    with open(file=os.path.join(new_directory, "allTaskData.json"), mode="wb") as f:
+        f.write(bytes(task.json(indent=4), encoding="ascii"))
 
 
 def _task_init_surfacing(task: TaskData, vector_store: FAISSVectorStore, llm=ChatOpenAI(model="gpt-3.5-turbo-0613", temperature=0)) -> None:
