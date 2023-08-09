@@ -1,3 +1,4 @@
+import re
 import json
 import os
 import uuid
@@ -136,8 +137,20 @@ def recursive_dict_types(d: dict):
 
 
 if __name__ == "__main__":
-    print(backend_directory, os.path.relpath(
-        visible_files_directory, backend_directory))
+    bad_json_str = '{"path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\frontend"}'
+    try:
+        parsed_json = json.loads(bad_json_str)
+    except json.decoder.JSONDecodeError as e:
+        error_message = str(e)
+        print(repr(e))
+        if error_message.startswith("Invalid \\escape:"):
+            parsed_json = json.loads(
+                bad_json_str.replace("\\", "\\\\"))
+            print(
+                f"Corrected the following error: {type(e)} {error_message}")
+        else:
+            raise e
+    print(parsed_json)
     # newTask = TaskData(
     #     task_type=TaskTypeEnum.ASSESSMENT,
     #     files_available=path_to_file_struct(available_documents_directory),

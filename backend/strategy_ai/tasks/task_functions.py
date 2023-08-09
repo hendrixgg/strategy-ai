@@ -2,7 +2,9 @@ import datetime
 import json
 import os
 import asyncio
+import traceback
 from typing import Iterator
+
 from dotenv import load_dotenv
 
 from langchain.chat_models import ChatOpenAI
@@ -387,10 +389,23 @@ def _task_generate_results_surfacing(task: TaskData, api_call_timeout: int) -> I
                 # wait until the coroutine has completed
                 aiMessage["body"] = async_event_loop.run_until_complete(
                     asyncio.wait_for(aiMessage["task"], api_call_timeout))
+                # remove the coroutine and task from the message so that it can be serialized
                 del aiMessage["task"], aiMessage["coro"]
                 if aiMessage["title"] == "Formatted Response":
-                    aiMessage["body"] = json.loads(aiMessage["body"].additional_kwargs.get(
-                        "function_call").get("arguments"))["objectives_list"]
+                    # try to parse the json, if it fails, try to correct the error and parse again
+                    try:
+                        json_str = aiMessage["body"].additional_kwargs.get(
+                            "function_call").get("arguments")
+                        aiMessage["body"] = json.loads(json_str)
+                    except json.decoder.JSONDecodeError as e:
+                        # try to correct the error by replacing all \ with \\, effectively escaping the invalid escape characters
+                        if e.msg.startswith("Invalid \\escape"):
+                            aiMessage["body"] = json.loads(
+                                json_str.replace("\\", "\\\\"))
+                            print(traceback.print_exc())
+                            print("^^^^^^^^ CORRECTED ERROR ^^^^^^^^")
+                        else:
+                            raise e
                     yield {"type": "results_text", "body": f"```json\n{json.dumps(aiMessage['body'], indent=4)}\n```"}
                 elif aiMessage["title"] == "Text Response":
                     aiMessage["body"] = aiMessage["body"].content

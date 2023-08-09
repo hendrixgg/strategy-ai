@@ -1,0 +1,857 @@
+{
+    "task_type": {
+        "name": "t1_surfacing",
+        "id": 1
+    },
+    "files_available": {
+        "name": "available_data",
+        "is_dir": true,
+        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data",
+        "root_path": null,
+        "children": [
+            {
+                "name": "hidden_files",
+                "is_dir": true,
+                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files",
+                "root_path": null,
+                "children": [
+                    {
+                        "name": "ai_output",
+                        "is_dir": true,
+                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output",
+                        "root_path": null,
+                        "children": [
+                            {
+                                "name": "empty.txt",
+                                "is_dir": false,
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\empty.txt",
+                                "root_path": null,
+                                "children": null
+                            },
+                            {
+                                "name": "t1_surfacing-336f599f-8347-48ab-9390-a18d139e133e",
+                                "is_dir": true,
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-336f599f-8347-48ab-9390-a18d139e133e",
+                                "root_path": null,
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "is_dir": false,
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-336f599f-8347-48ab-9390-a18d139e133e\\detailedResults.json",
+                                        "root_path": null,
+                                        "children": null
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "is_dir": false,
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-336f599f-8347-48ab-9390-a18d139e133e\\readableResults.md",
+                                        "root_path": null,
+                                        "children": null
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "is_dir": false,
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-336f599f-8347-48ab-9390-a18d139e133e\\runHistory.csv",
+                                        "root_path": null,
+                                        "children": null
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t1_surfacing-3b6c3508-8be1-40ea-a6a1-0210ced14ecf",
+                                "is_dir": true,
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-3b6c3508-8be1-40ea-a6a1-0210ced14ecf",
+                                "root_path": null,
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "is_dir": false,
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-3b6c3508-8be1-40ea-a6a1-0210ced14ecf\\detailedResults.json",
+                                        "root_path": null,
+                                        "children": null
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "is_dir": false,
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-3b6c3508-8be1-40ea-a6a1-0210ced14ecf\\readableResults.md",
+                                        "root_path": null,
+                                        "children": null
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "is_dir": false,
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-3b6c3508-8be1-40ea-a6a1-0210ced14ecf\\runHistory.csv",
+                                        "root_path": null,
+                                        "children": null
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t1_surfacing-435ad9e3-1657-4ce3-80c6-9918a2aa6292",
+                                "is_dir": true,
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-435ad9e3-1657-4ce3-80c6-9918a2aa6292",
+                                "root_path": null,
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "is_dir": false,
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-435ad9e3-1657-4ce3-80c6-9918a2aa6292\\detailedResults.json",
+                                        "root_path": null,
+                                        "children": null
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "is_dir": false,
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-435ad9e3-1657-4ce3-80c6-9918a2aa6292\\readableResults.md",
+                                        "root_path": null,
+                                        "children": null
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "is_dir": false,
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-435ad9e3-1657-4ce3-80c6-9918a2aa6292\\runHistory.csv",
+                                        "root_path": null,
+                                        "children": null
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "t1_surfacing-f898c55a-9a18-4a87-8be6-255217337c53",
+                                "is_dir": true,
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-f898c55a-9a18-4a87-8be6-255217337c53",
+                                "root_path": null,
+                                "children": [
+                                    {
+                                        "name": "detailedResults.json",
+                                        "is_dir": false,
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-f898c55a-9a18-4a87-8be6-255217337c53\\detailedResults.json",
+                                        "root_path": null,
+                                        "children": null
+                                    },
+                                    {
+                                        "name": "readableResults.md",
+                                        "is_dir": false,
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-f898c55a-9a18-4a87-8be6-255217337c53\\readableResults.md",
+                                        "root_path": null,
+                                        "children": null
+                                    },
+                                    {
+                                        "name": "runHistory.csv",
+                                        "is_dir": false,
+                                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\ai_output\\t1_surfacing-f898c55a-9a18-4a87-8be6-255217337c53\\runHistory.csv",
+                                        "root_path": null,
+                                        "children": null
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "methodology_files",
+                        "is_dir": true,
+                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files",
+                        "root_path": null,
+                        "children": [
+                            {
+                                "name": "empty.txt",
+                                "is_dir": false,
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt",
+                                "root_path": null,
+                                "children": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "vector_store_saves",
+                        "is_dir": true,
+                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\vector_store_saves",
+                        "root_path": null,
+                        "children": [
+                            {
+                                "name": "empty.txt",
+                                "is_dir": false,
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\vector_store_saves\\empty.txt",
+                                "root_path": null,
+                                "children": null
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "visible_files",
+                "is_dir": true,
+                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files",
+                "root_path": null,
+                "children": [
+                    {
+                        "name": "ai_files",
+                        "is_dir": true,
+                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files",
+                        "root_path": null,
+                        "children": [
+                            {
+                                "name": "empty.txt",
+                                "is_dir": false,
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt",
+                                "root_path": null,
+                                "children": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "client_files",
+                        "is_dir": true,
+                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files",
+                        "root_path": null,
+                        "children": [
+                            {
+                                "name": "empty.txt",
+                                "is_dir": false,
+                                "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt",
+                                "root_path": null,
+                                "children": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "weblinks.txt",
+                        "is_dir": false,
+                        "path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\weblinks.txt",
+                        "root_path": null,
+                        "children": null
+                    }
+                ]
+            }
+        ]
+    },
+    "state": "finished",
+    "message": "Finished task t1_surfacing, uuid: 2ce970f6-5850-4bf2-b25e-de6252e67746. It took 0:00:09.943087.",
+    "date_start": "2023-08-09T03:21:29.331728",
+    "date_recent": "2023-08-09T03:21:39.274815",
+    "id": "2ce970f6-5850-4bf2-b25e-de6252e67746",
+    "progress_info": "Financial objectives complete:\n- Increasing Revenue\n- Cost Reduction\n- Asset Optimization\nCustomer objectives complete:\n- Improving the Brand\n- Customer Service\n- Product Service/Functionality\nInternal objectives complete:\n- Operational Excellence\n- Product Innovation\n- Regulatory Compliance\n- Customer Intimacy\nEnabler objectives complete:\n- Strategic Assets\n- Building a Climate for Action\n- Attracting, Retaining, and Developing Talent\n",
+    "detailed_results": {
+        "title": "Company Objectives",
+        "body": {
+            "Financial": {
+                "title": "Category: Financial",
+                "body": {
+                    "Increasing Revenue": {
+                        "title": "topic: Increasing Revenue",
+                        "body": [
+                            {
+                                "type": "system",
+                                "title": "Context",
+                                "body": "Use the following pieces of context to answer the user's question.\nTake note of the sources and include them in the answer in the format: \"SOURCES: source1 source2\", use \"SOURCES\" in capital letters regardless of the number of sources.\nIf you don't know the answer, just say that \"I don't know\", don't try to make up an answer.\n\n----------------\n\n        # Context Results:\n\n        \n        ## Result No. 1\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.49150100350379944\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 2\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.49152061343193054\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 3\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.49152061343193054\n\n        #### Content:\n```text\ntext\n```\n        \n        \n"
+                            },
+                            {
+                                "type": "user",
+                                "title": "Human Prompt",
+                                "body": "Provide a list of this company's objectives addressing Increasing Revenue, in an organized format.\nIf there is a function provided, use the function.\nLastly, aim to identify 2-3 objetives. If you cannot find objectives on the topic of Increasing Revenue, list some relevant suggestions based on the context.\n"
+                            },
+                            [
+                                {
+                                    "type": "assistant",
+                                    "title": "Text Response",
+                                    "body": "I'm sorry, but I couldn't find any specific objectives addressing increasing revenue in the provided context. However, based on the context, here are some relevant suggestions for objectives related to increasing revenue:\n\n1. Increase market share: One objective could be to focus on expanding the company's market share by targeting new customer segments or entering new markets.\n\n2. Improve customer retention: Another objective could be to enhance customer loyalty and retention by implementing strategies such as improving customer service, offering personalized experiences, and implementing customer loyalty programs.\n\n3. Launch new products or services: Introducing new products or services can help attract new customers and generate additional revenue streams.\n\nPlease note that these suggestions are based on the context provided and may not reflect the actual objectives of the company."
+                                },
+                                {
+                                    "type": "assistant",
+                                    "title": "Formatted Response",
+                                    "body": [
+                                        {
+                                            "Verb": "Increase",
+                                            "Outcome": "revenue",
+                                            "Definition": "",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Maximize",
+                                            "Outcome": "profit",
+                                            "Definition": "",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Improve",
+                                            "Outcome": "sales",
+                                            "Definition": "",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt"
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
+                    },
+                    "Cost Reduction": {
+                        "title": "topic: Cost Reduction",
+                        "body": [
+                            {
+                                "type": "system",
+                                "title": "Context",
+                                "body": "Use the following pieces of context to answer the user's question.\nTake note of the sources and include them in the answer in the format: \"SOURCES: source1 source2\", use \"SOURCES\" in capital letters regardless of the number of sources.\nIf you don't know the answer, just say that \"I don't know\", don't try to make up an answer.\n\n----------------\n\n        # Context Results:\n\n        \n        ## Result No. 1\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.4809224605560303\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 2\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.4810011386871338\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 3\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.4810011386871338\n\n        #### Content:\n```text\ntext\n```\n        \n        \n"
+                            },
+                            {
+                                "type": "user",
+                                "title": "Human Prompt",
+                                "body": "Provide a list of this company's objectives addressing Cost Reduction, in an organized format.\nIf there is a function provided, use the function.\nLastly, aim to identify 2-3 objetives. If you cannot find objectives on the topic of Cost Reduction, list some relevant suggestions based on the context.\n"
+                            },
+                            [
+                                {
+                                    "type": "assistant",
+                                    "title": "Text Response",
+                                    "body": "I'm sorry, but I couldn't find any specific objectives addressing cost reduction in the provided context. However, based on the topic of cost reduction, here are some relevant suggestions for objectives that a company could have:\n\n1. Objective: Streamline Operations to Reduce Costs\n   - Function: Identify and eliminate inefficiencies in processes and workflows.\n   - Example: Implement lean manufacturing principles to reduce waste and improve productivity.\n\n2. Objective: Negotiate Better Supplier Contracts to Lower Costs\n   - Function: Evaluate and negotiate contracts with suppliers to secure more favorable terms and pricing.\n   - Example: Conduct regular supplier reviews and renegotiate contracts to achieve cost savings.\n\n3. Objective: Implement Cost Control Measures to Optimize Expenses\n   - Function: Monitor and control expenses across all departments and functions.\n   - Example: Implement cost tracking systems and establish cost reduction targets for each department.\n\nPlease note that these are general suggestions and may not directly relate to the specific company in question. It is important for each company to assess its own unique situation and tailor objectives accordingly."
+                                },
+                                {
+                                    "type": "assistant",
+                                    "title": "Formatted Response",
+                                    "body": [
+                                        {
+                                            "Verb": "Reduce",
+                                            "Outcome": "operating costs",
+                                            "Definition": "Decrease the expenses associated with running the business",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Optimize",
+                                            "Outcome": "supply chain",
+                                            "Definition": "Improve the efficiency and effectiveness of the supply chain",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Streamline",
+                                            "Outcome": "business processes",
+                                            "Definition": "Simplify and improve the efficiency of internal processes",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt"
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
+                    },
+                    "Asset Optimization": {
+                        "title": "topic: Asset Optimization",
+                        "body": [
+                            {
+                                "type": "system",
+                                "title": "Context",
+                                "body": "Use the following pieces of context to answer the user's question.\nTake note of the sources and include them in the answer in the format: \"SOURCES: source1 source2\", use \"SOURCES\" in capital letters regardless of the number of sources.\nIf you don't know the answer, just say that \"I don't know\", don't try to make up an answer.\n\n----------------\n\n        # Context Results:\n\n        \n        ## Result No. 1\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.4747392535209656\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 2\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.4748157560825348\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 3\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.4748157560825348\n\n        #### Content:\n```text\ntext\n```\n        \n        \n"
+                            },
+                            {
+                                "type": "user",
+                                "title": "Human Prompt",
+                                "body": "Provide a list of this company's objectives addressing Asset Optimization, in an organized format.\nIf there is a function provided, use the function.\nLastly, aim to identify 2-3 objetives. If you cannot find objectives on the topic of Asset Optimization, list some relevant suggestions based on the context.\n"
+                            },
+                            [
+                                {
+                                    "type": "assistant",
+                                    "title": "Text Response",
+                                    "body": "I'm sorry, but I couldn't find any specific objectives addressing Asset Optimization in the provided context. However, based on the context, here are some relevant suggestions for objectives related to Asset Optimization:\n\n1. Improve asset utilization: Increase the efficiency and productivity of company assets by optimizing their usage and minimizing downtime.\n2. Reduce maintenance costs: Implement strategies to optimize asset maintenance schedules and practices, aiming to minimize costs while ensuring optimal performance.\n3. Enhance asset lifecycle management: Develop processes and systems to effectively manage the entire lifecycle of assets, from acquisition to disposal, to maximize their value and minimize risks.\n\nPlease note that these suggestions are based on the general concept of Asset Optimization and may not directly reflect the specific objectives of the company in question.\n\nSOURCES: None"
+                                },
+                                {
+                                    "type": "assistant",
+                                    "title": "Formatted Response",
+                                    "body": [
+                                        {
+                                            "Verb": "Optimize",
+                                            "Outcome": "asset utilization",
+                                            "Definition": "Maximize the efficiency and productivity of company assets",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Minimize",
+                                            "Outcome": "asset downtime",
+                                            "Definition": "Reduce the amount of time that company assets are not in operation",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Improve",
+                                            "Outcome": "asset maintenance",
+                                            "Definition": "Enhance the regular upkeep and repair of company assets",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt"
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
+                    }
+                }
+            },
+            "Customer": {
+                "title": "Category: Customer",
+                "body": {
+                    "Improving the Brand": {
+                        "title": "topic: Improving the Brand",
+                        "body": [
+                            {
+                                "type": "system",
+                                "title": "Context",
+                                "body": "Use the following pieces of context to answer the user's question.\nTake note of the sources and include them in the answer in the format: \"SOURCES: source1 source2\", use \"SOURCES\" in capital letters regardless of the number of sources.\nIf you don't know the answer, just say that \"I don't know\", don't try to make up an answer.\n\n----------------\n\n        # Context Results:\n\n        \n        ## Result No. 1\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.4875651001930237\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 2\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.48765939474105835\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 3\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.48765939474105835\n\n        #### Content:\n```text\ntext\n```\n        \n        \n"
+                            },
+                            {
+                                "type": "user",
+                                "title": "Human Prompt",
+                                "body": "Provide a list of this company's objectives addressing Improving the Brand, in an organized format.\nIf there is a function provided, use the function.\nLastly, aim to identify 2-3 objetives. If you cannot find objectives on the topic of Improving the Brand, list some relevant suggestions based on the context.\n"
+                            },
+                            [
+                                {
+                                    "type": "assistant",
+                                    "title": "Text Response",
+                                    "body": "I'm sorry, but I couldn't find any specific objectives addressing Improving the Brand in the provided context. However, based on the context, here are some relevant suggestions for objectives related to improving the brand:\n\n1. Increase brand awareness: Develop strategies to increase the visibility and recognition of the company's brand among the target audience.\n2. Enhance brand reputation: Implement measures to improve the perception and reputation of the brand, focusing on building trust and credibility.\n3. Differentiate the brand: Identify unique selling points and develop strategies to differentiate the brand from competitors, highlighting its unique value proposition.\n\nPlease note that these suggestions are based on the general concept of improving the brand and may not directly reflect the objectives of the specific company in question.\n\nSOURCES: None"
+                                },
+                                {
+                                    "type": "assistant",
+                                    "title": "Formatted Response",
+                                    "body": [
+                                        {
+                                            "Verb": "Increase",
+                                            "Outcome": "brand awareness",
+                                            "Definition": "Increase the recognition and familiarity of the company's brand among the target audience.",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Enhance",
+                                            "Outcome": "brand perception",
+                                            "Definition": "Improve how the target audience perceives and associates with the company's brand.",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Develop",
+                                            "Outcome": "brand loyalty",
+                                            "Definition": "Build strong and lasting relationships with customers to foster loyalty towards the company's brand.",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt"
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
+                    },
+                    "Customer Service": {
+                        "title": "topic: Customer Service",
+                        "body": [
+                            {
+                                "type": "system",
+                                "title": "Context",
+                                "body": "Use the following pieces of context to answer the user's question.\nTake note of the sources and include them in the answer in the format: \"SOURCES: source1 source2\", use \"SOURCES\" in capital letters regardless of the number of sources.\nIf you don't know the answer, just say that \"I don't know\", don't try to make up an answer.\n\n----------------\n\n        # Context Results:\n\n        \n        ## Result No. 1\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.45413804054260254\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 2\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.4541513919830322\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 3\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.4541513919830322\n\n        #### Content:\n```text\ntext\n```\n        \n        \n"
+                            },
+                            {
+                                "type": "user",
+                                "title": "Human Prompt",
+                                "body": "Provide a list of this company's objectives addressing Customer Service, in an organized format.\nIf there is a function provided, use the function.\nLastly, aim to identify 2-3 objetives. If you cannot find objectives on the topic of Customer Service, list some relevant suggestions based on the context.\n"
+                            },
+                            [
+                                {
+                                    "type": "assistant",
+                                    "title": "Text Response",
+                                    "body": "I'm sorry, but I couldn't find any specific objectives addressing Customer Service in the available data. However, based on the context, here are some relevant suggestions for objectives related to Customer Service:\n\n1. Improve customer satisfaction: Implement strategies to enhance the overall customer experience and ensure that customers are satisfied with the company's products or services.\n2. Enhance response time: Aim to reduce the time it takes to respond to customer inquiries or complaints, ensuring prompt and efficient customer service.\n3. Implement customer feedback system: Establish a system to collect and analyze customer feedback, allowing the company to identify areas for improvement and make necessary adjustments to enhance customer service.\n\nPlease note that these suggestions are based on the context provided and may not reflect the actual objectives of the company."
+                                },
+                                {
+                                    "type": "assistant",
+                                    "title": "Formatted Response",
+                                    "body": [
+                                        {
+                                            "Verb": "Improve",
+                                            "Outcome": "customer satisfaction",
+                                            "Definition": "Increase the level of satisfaction that customers have with our products or services",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Reduce",
+                                            "Outcome": "customer complaints",
+                                            "Definition": "Decrease the number of complaints received from customers regarding our products or services",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Enhance",
+                                            "Outcome": "customer support",
+                                            "Definition": "Improve the level of support provided to customers, ensuring their needs are met effectively and efficiently",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt"
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
+                    },
+                    "Product Service/Functionality": {
+                        "title": "topic: Product Service/Functionality",
+                        "body": [
+                            {
+                                "type": "system",
+                                "title": "Context",
+                                "body": "Use the following pieces of context to answer the user's question.\nTake note of the sources and include them in the answer in the format: \"SOURCES: source1 source2\", use \"SOURCES\" in capital letters regardless of the number of sources.\nIf you don't know the answer, just say that \"I don't know\", don't try to make up an answer.\n\n----------------\n\n        # Context Results:\n\n        \n        ## Result No. 1\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.48213472962379456\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 2\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.482150673866272\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 3\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.482150673866272\n\n        #### Content:\n```text\ntext\n```\n        \n        \n"
+                            },
+                            {
+                                "type": "user",
+                                "title": "Human Prompt",
+                                "body": "Provide a list of this company's objectives addressing Product Service/Functionality, in an organized format.\nIf there is a function provided, use the function.\nLastly, aim to identify 2-3 objetives. If you cannot find objectives on the topic of Product Service/Functionality, list some relevant suggestions based on the context.\n"
+                            },
+                            [
+                                {
+                                    "type": "assistant",
+                                    "title": "Text Response",
+                                    "body": "I'm sorry, but I couldn't find any specific objectives addressing Product Service/Functionality in the provided context. However, based on the context, here are some relevant suggestions for objectives related to Product Service/Functionality:\n\n1. Improve product/service quality: Enhance the features, performance, and reliability of the product/service to meet or exceed customer expectations.\n2. Enhance user experience: Focus on improving the usability, intuitiveness, and overall satisfaction of customers when using the product/service.\n3. Expand product/service offerings: Introduce new features, functionalities, or variations of the product/service to cater to a wider range of customer needs and preferences.\n\nPlease note that these suggestions are based on the general importance of product/service functionality and may not specifically reflect the objectives of the company in question."
+                                },
+                                {
+                                    "type": "assistant",
+                                    "title": "Formatted Response",
+                                    "body": [
+                                        {
+                                            "Verb": "Improve",
+                                            "Outcome": "product functionality",
+                                            "Definition": "Enhance the features and capabilities of the product to meet customer needs and expectations.",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Optimize",
+                                            "Outcome": "service performance",
+                                            "Definition": "Improve the speed, reliability, and efficiency of the service to ensure smooth and seamless user experience.",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Enhance",
+                                            "Outcome": "product usability",
+                                            "Definition": "Simplify the user interface and improve the overall user experience to make the product more intuitive and user-friendly.",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt"
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
+                    }
+                }
+            },
+            "Internal": {
+                "title": "Category: Internal",
+                "body": {
+                    "Operational Excellence": {
+                        "title": "topic: Operational Excellence",
+                        "body": [
+                            {
+                                "type": "system",
+                                "title": "Context",
+                                "body": "Use the following pieces of context to answer the user's question.\nTake note of the sources and include them in the answer in the format: \"SOURCES: source1 source2\", use \"SOURCES\" in capital letters regardless of the number of sources.\nIf you don't know the answer, just say that \"I don't know\", don't try to make up an answer.\n\n----------------\n\n        # Context Results:\n\n        \n        ## Result No. 1\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.5123716592788696\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 2\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.5123931765556335\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 3\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.5123931765556335\n\n        #### Content:\n```text\ntext\n```\n        \n        \n"
+                            },
+                            {
+                                "type": "user",
+                                "title": "Human Prompt",
+                                "body": "Provide a list of this company's objectives addressing Operational Excellence, in an organized format.\nIf there is a function provided, use the function.\nLastly, aim to identify 2-3 objetives. If you cannot find objectives on the topic of Operational Excellence, list some relevant suggestions based on the context.\n"
+                            },
+                            [
+                                {
+                                    "type": "assistant",
+                                    "title": "Text Response",
+                                    "body": "I'm sorry, but I couldn't find any specific objectives addressing Operational Excellence for this company in the provided context. However, based on the context, here are some relevant suggestions for objectives related to Operational Excellence:\n\n1. Improve efficiency and productivity: Implement processes and systems to streamline operations, reduce waste, and increase productivity.\n2. Enhance quality control: Implement quality control measures to ensure consistent and high-quality products or services.\n3. Optimize supply chain management: Improve the efficiency and effectiveness of the supply chain to reduce costs, improve delivery times, and enhance customer satisfaction.\n\nPlease note that these suggestions are based on the general concept of Operational Excellence and may not directly reflect the objectives of the company in question."
+                                },
+                                {
+                                    "type": "assistant",
+                                    "title": "Formatted Response",
+                                    "body": [
+                                        {
+                                            "Verb": "Improve",
+                                            "Outcome": "operational efficiency",
+                                            "Definition": "Increase productivity and reduce waste in business operations",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Streamline",
+                                            "Outcome": "business processes",
+                                            "Definition": "Optimize and simplify workflows to improve efficiency and reduce costs",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Implement",
+                                            "Outcome": "continuous improvement practices",
+                                            "Definition": "Establish a culture of ongoing improvement to enhance operational performance",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt"
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
+                    },
+                    "Product Innovation": {
+                        "title": "topic: Product Innovation",
+                        "body": [
+                            {
+                                "type": "system",
+                                "title": "Context",
+                                "body": "Use the following pieces of context to answer the user's question.\nTake note of the sources and include them in the answer in the format: \"SOURCES: source1 source2\", use \"SOURCES\" in capital letters regardless of the number of sources.\nIf you don't know the answer, just say that \"I don't know\", don't try to make up an answer.\n\n----------------\n\n        # Context Results:\n\n        \n        ## Result No. 1\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.46577274799346924\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 2\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.46580731868743896\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 3\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.46580731868743896\n\n        #### Content:\n```text\ntext\n```\n        \n        \n"
+                            },
+                            {
+                                "type": "user",
+                                "title": "Human Prompt",
+                                "body": "Provide a list of this company's objectives addressing Product Innovation, in an organized format.\nIf there is a function provided, use the function.\nLastly, aim to identify 2-3 objetives. If you cannot find objectives on the topic of Product Innovation, list some relevant suggestions based on the context.\n"
+                            },
+                            [
+                                {
+                                    "type": "assistant",
+                                    "title": "Text Response",
+                                    "body": "I'm sorry, but I couldn't find any specific objectives addressing Product Innovation for this company in the available data. However, based on the context, here are some relevant suggestions for objectives related to Product Innovation:\n\n1. Develop and launch new products or features that meet the evolving needs and preferences of customers.\n2. Improve the existing product line by incorporating new technologies, materials, or design elements to enhance performance, functionality, or user experience.\n3. Conduct market research and gather customer feedback to identify opportunities for product innovation and differentiation.\n4. Foster a culture of innovation within the organization by encouraging and rewarding creative thinking and idea generation.\n5. Establish strategic partnerships or collaborations with external stakeholders, such as technology providers or research institutions, to leverage their expertise and resources for product innovation.\n\nPlease note that these suggestions are based on general best practices for product innovation and may not specifically reflect the objectives of the company in question.\n\nSOURCES: None"
+                                },
+                                {
+                                    "type": "assistant",
+                                    "title": "Formatted Response",
+                                    "body": [
+                                        {
+                                            "Verb": "Increase",
+                                            "Outcome": "product development speed",
+                                            "Definition": "Reduce the time it takes to develop new products",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Enhance",
+                                            "Outcome": "product quality",
+                                            "Definition": "Improve the overall quality of products",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Expand",
+                                            "Outcome": "product portfolio",
+                                            "Definition": "Increase the range of products offered by the company",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt"
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
+                    },
+                    "Regulatory Compliance": {
+                        "title": "topic: Regulatory Compliance",
+                        "body": [
+                            {
+                                "type": "system",
+                                "title": "Context",
+                                "body": "Use the following pieces of context to answer the user's question.\nTake note of the sources and include them in the answer in the format: \"SOURCES: source1 source2\", use \"SOURCES\" in capital letters regardless of the number of sources.\nIf you don't know the answer, just say that \"I don't know\", don't try to make up an answer.\n\n----------------\n\n        # Context Results:\n\n        \n        ## Result No. 1\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.512047529220581\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 2\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.512047529220581\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 3\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.5120517015457153\n\n        #### Content:\n```text\ntext\n```\n        \n        \n"
+                            },
+                            {
+                                "type": "user",
+                                "title": "Human Prompt",
+                                "body": "Provide a list of this company's objectives addressing Regulatory Compliance, in an organized format.\nIf there is a function provided, use the function.\nLastly, aim to identify 2-3 objetives. If you cannot find objectives on the topic of Regulatory Compliance, list some relevant suggestions based on the context.\n"
+                            },
+                            [
+                                {
+                                    "type": "assistant",
+                                    "title": "Text Response",
+                                    "body": "I'm sorry, but I couldn't find any specific objectives addressing Regulatory Compliance in the available data. However, based on the context, here are some relevant suggestions for objectives related to Regulatory Compliance:\n\n1. Ensure compliance with all applicable laws and regulations: This objective focuses on ensuring that the company follows all relevant laws and regulations in its operations.\n\n2. Develop and implement effective compliance policies and procedures: This objective aims to establish clear policies and procedures that guide employees in complying with regulatory requirements.\n\n3. Conduct regular audits and assessments: This objective involves conducting regular audits and assessments to identify any potential compliance issues and take corrective actions.\n\nPlease note that these suggestions are based on the context provided and may not reflect the actual objectives of the company."
+                                },
+                                {
+                                    "type": "assistant",
+                                    "title": "Formatted Response",
+                                    "body": [
+                                        {
+                                            "Verb": "Ensure",
+                                            "Outcome": "compliance with",
+                                            "Definition": "regulatory requirements",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Implement",
+                                            "Outcome": "policies and procedures",
+                                            "Definition": "to ensure regulatory compliance",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Conduct",
+                                            "Outcome": "regular audits",
+                                            "Definition": "to assess compliance with regulations",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt"
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
+                    },
+                    "Customer Intimacy": {
+                        "title": "topic: Customer Intimacy",
+                        "body": [
+                            {
+                                "type": "system",
+                                "title": "Context",
+                                "body": "Use the following pieces of context to answer the user's question.\nTake note of the sources and include them in the answer in the format: \"SOURCES: source1 source2\", use \"SOURCES\" in capital letters regardless of the number of sources.\nIf you don't know the answer, just say that \"I don't know\", don't try to make up an answer.\n\n----------------\n\n        # Context Results:\n\n        \n        ## Result No. 1\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.47811245918273926\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 2\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.4781411290168762\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 3\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.4781411290168762\n\n        #### Content:\n```text\ntext\n```\n        \n        \n"
+                            },
+                            {
+                                "type": "user",
+                                "title": "Human Prompt",
+                                "body": "Provide a list of this company's objectives addressing Customer Intimacy, in an organized format.\nIf there is a function provided, use the function.\nLastly, aim to identify 2-3 objetives. If you cannot find objectives on the topic of Customer Intimacy, list some relevant suggestions based on the context.\n"
+                            },
+                            [
+                                {
+                                    "type": "assistant",
+                                    "title": "Text Response",
+                                    "body": "I'm sorry, but I couldn't find any specific objectives addressing Customer Intimacy in the provided context. However, based on the topic, here are some relevant suggestions for objectives related to Customer Intimacy:\n\n1. Enhance customer satisfaction: Implement strategies to understand customer needs and preferences better, and consistently deliver products and services that meet or exceed their expectations.\n\n2. Develop personalized customer experiences: Utilize customer data and insights to create tailored experiences, such as personalized recommendations, customized offers, and targeted marketing campaigns.\n\n3. Foster long-term customer relationships: Focus on building strong and lasting relationships with customers by providing exceptional customer service, offering loyalty programs, and engaging in regular communication to understand their evolving needs.\n\nPlease note that these suggestions are based on the concept of Customer Intimacy and may not directly reflect the objectives of the company in question."
+                                },
+                                {
+                                    "type": "assistant",
+                                    "title": "Formatted Response",
+                                    "body": [
+                                        {
+                                            "Verb": "Improve",
+                                            "Outcome": "customer satisfaction",
+                                            "Definition": "Increase the level of satisfaction that customers have with our products and services",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Enhance",
+                                            "Outcome": "customer loyalty",
+                                            "Definition": "Increase the level of loyalty that customers have towards our brand",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Personalize",
+                                            "Outcome": "customer experiences",
+                                            "Definition": "Tailor the customer experience to meet the individual needs and preferences of each customer",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt"
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
+                    }
+                }
+            },
+            "Enabler": {
+                "title": "Category: Enabler",
+                "body": {
+                    "Strategic Assets": {
+                        "title": "topic: Strategic Assets",
+                        "body": [
+                            {
+                                "type": "system",
+                                "title": "Context",
+                                "body": "Use the following pieces of context to answer the user's question.\nTake note of the sources and include them in the answer in the format: \"SOURCES: source1 source2\", use \"SOURCES\" in capital letters regardless of the number of sources.\nIf you don't know the answer, just say that \"I don't know\", don't try to make up an answer.\n\n----------------\n\n        # Context Results:\n\n        \n        ## Result No. 1\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.5018822550773621\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 2\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.5019340515136719\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 3\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.5019340515136719\n\n        #### Content:\n```text\ntext\n```\n        \n        \n"
+                            },
+                            {
+                                "type": "user",
+                                "title": "Human Prompt",
+                                "body": "Provide a list of this company's objectives addressing Strategic Assets, in an organized format.\nIf there is a function provided, use the function.\nLastly, aim to identify 2-3 objetives. If you cannot find objectives on the topic of Strategic Assets, list some relevant suggestions based on the context.\n"
+                            },
+                            [
+                                {
+                                    "type": "assistant",
+                                    "title": "Text Response",
+                                    "body": "I'm sorry, but I couldn't find any specific objectives addressing Strategic Assets in the provided context. The files seem to be empty. However, based on the topic of Strategic Assets, here are some relevant suggestions for objectives:\n\n1. Objective: Optimize the utilization of strategic assets\n   - Function: Conduct regular assessments and analysis of strategic assets to identify areas for improvement and optimization.\n   - Action: Implement strategies to maximize the value and effectiveness of strategic assets, such as through better allocation, utilization, and maintenance.\n\n2. Objective: Enhance the protection and security of strategic assets\n   - Function: Develop and implement robust security measures to safeguard strategic assets from potential threats and risks.\n   - Action: Conduct regular security audits, implement access controls, and establish contingency plans to mitigate risks and ensure the integrity and availability of strategic assets.\n\n3. Objective: Continuously evaluate and update strategic asset portfolio\n   - Function: Monitor market trends and changes in business needs to assess the relevance and value of existing strategic assets.\n   - Action: Regularly review and update the strategic asset portfolio, considering divestment of underperforming assets, acquisition of new assets, and strategic partnerships to enhance the overall asset portfolio.\n\nPlease note that these suggestions are based on the topic of Strategic Assets and may not directly reflect the objectives of the company in question."
+                                },
+                                {
+                                    "type": "assistant",
+                                    "title": "Formatted Response",
+                                    "body": [
+                                        {
+                                            "Verb": "Optimize",
+                                            "Outcome": "utilization of strategic assets",
+                                            "Definition": "Maximize the efficiency and effectiveness of the company's strategic assets to achieve competitive advantage.",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Identify",
+                                            "Outcome": "new strategic assets",
+                                            "Definition": "Discover and acquire new strategic assets that can contribute to the company's competitive advantage.",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Evaluate",
+                                            "Outcome": "strategic asset performance",
+                                            "Definition": "Assess the performance and value of the company's strategic assets to ensure they are aligned with the overall business strategy.",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt"
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
+                    },
+                    "Building a Climate for Action": {
+                        "title": "topic: Building a Climate for Action",
+                        "body": [
+                            {
+                                "type": "system",
+                                "title": "Context",
+                                "body": "Use the following pieces of context to answer the user's question.\nTake note of the sources and include them in the answer in the format: \"SOURCES: source1 source2\", use \"SOURCES\" in capital letters regardless of the number of sources.\nIf you don't know the answer, just say that \"I don't know\", don't try to make up an answer.\n\n----------------\n\n        # Context Results:\n\n        \n        ## Result No. 1\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.5039289593696594\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 2\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.5040056705474854\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 3\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.5040056705474854\n\n        #### Content:\n```text\ntext\n```\n        \n        \n"
+                            },
+                            {
+                                "type": "user",
+                                "title": "Human Prompt",
+                                "body": "Provide a list of this company's objectives addressing Building a Climate for Action, in an organized format.\nIf there is a function provided, use the function.\nLastly, aim to identify 2-3 objetives. If you cannot find objectives on the topic of Building a Climate for Action, list some relevant suggestions based on the context.\n"
+                            },
+                            [
+                                {
+                                    "type": "assistant",
+                                    "title": "Text Response",
+                                    "body": "I'm sorry, but I couldn't find any specific objectives addressing \"Building a Climate for Action\" in the provided context. The files seem to be empty. However, based on the topic, here are some relevant suggestions for objectives related to building a climate for action:\n\n1. Objective: Reduce greenhouse gas emissions\n   - Function: Implement energy-efficient practices and technologies\n   - Function: Transition to renewable energy sources\n   - Function: Promote sustainable transportation options\n\n2. Objective: Increase awareness and education on climate change\n   - Function: Develop educational programs and materials on climate change\n   - Function: Conduct workshops and seminars on climate change mitigation and adaptation\n   - Function: Collaborate with educational institutions to integrate climate change curriculum\n\n3. Objective: Advocate for climate-friendly policies and regulations\n   - Function: Engage in policy advocacy at local, national, and international levels\n   - Function: Collaborate with government agencies and policymakers to develop climate-friendly regulations\n   - Function: Support and participate in climate change conferences and forums\n\nPlease note that these suggestions are based on the general topic of \"Building a Climate for Action\" and may not directly reflect the objectives of the specific company in question."
+                                },
+                                {
+                                    "type": "assistant",
+                                    "title": "Formatted Response",
+                                    "body": [
+                                        {
+                                            "Verb": "Increase",
+                                            "Outcome": "awareness",
+                                            "Definition": "about climate change and its impact",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Reduce",
+                                            "Outcome": "carbon emissions",
+                                            "Definition": "to mitigate climate change",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Implement",
+                                            "Outcome": "sustainable practices",
+                                            "Definition": "to minimize environmental impact",
+                                            "Source": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt"
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
+                    },
+                    "Attracting, Retaining, and Developing Talent": {
+                        "title": "topic: Attracting, Retaining, and Developing Talent",
+                        "body": [
+                            {
+                                "type": "system",
+                                "title": "Context",
+                                "body": "Use the following pieces of context to answer the user's question.\nTake note of the sources and include them in the answer in the format: \"SOURCES: source1 source2\", use \"SOURCES\" in capital letters regardless of the number of sources.\nIf you don't know the answer, just say that \"I don't know\", don't try to make up an answer.\n\n----------------\n\n        # Context Results:\n\n        \n        ## Result No. 1\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\client_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.49597951769828796\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 2\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\visible_files\\ai_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.49597951769828796\n\n        #### Content:\n```text\ntext\n```\n        \n\n        ## Result No. 3\n\n        ### Source:\nC:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\backend\\strategy_ai\\available_data\\hidden_files\\methodology_files\\empty.txt, on page: None\n\n        #### Score (lower is better):\n0.4960020184516907\n\n        #### Content:\n```text\ntext\n```\n        \n        \n"
+                            },
+                            {
+                                "type": "user",
+                                "title": "Human Prompt",
+                                "body": "Provide a list of this company's objectives addressing Attracting, Retaining, and Developing Talent, in an organized format.\nIf there is a function provided, use the function.\nLastly, aim to identify 2-3 objetives. If you cannot find objectives on the topic of Attracting, Retaining, and Developing Talent, list some relevant suggestions based on the context.\n"
+                            },
+                            [
+                                {
+                                    "type": "assistant",
+                                    "title": "Text Response",
+                                    "body": "I'm sorry, but I couldn't find any specific objectives addressing Attracting, Retaining, and Developing Talent in the available context. However, based on the topic, here are some relevant suggestions for objectives:\n\n1. Attracting Talent:\n   - Increase brand awareness and reputation to attract top talent.\n   - Develop a strong employer brand to attract qualified candidates.\n   - Implement effective recruitment strategies to attract diverse talent.\n\n2. Retaining Talent:\n   - Create a positive work environment and culture to improve employee retention.\n   - Offer competitive compensation and benefits packages to retain top performers.\n   - Provide opportunities for career growth and development to encourage employee loyalty.\n\n3. Developing Talent:\n   - Implement training and development programs to enhance employee skills and knowledge.\n   - Establish mentorship and coaching programs to support employee growth.\n   - Provide ongoing feedback and performance evaluations to identify areas for improvement and development.\n\nPlease note that these suggestions are based on the general objectives related to Attracting, Retaining, and Developing Talent and may not specifically apply to the company in question.\n\n"
+                                },
+                                {
+                                    "type": "assistant",
+                                    "title": "Formatted Response",
+                                    "body": [
+                                        {
+                                            "Verb": "Attract",
+                                            "Outcome": "top talent",
+                                            "Definition": "To attract highly skilled and qualified individuals to join the company",
+                                            "Source": "empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Retain",
+                                            "Outcome": "key employees",
+                                            "Definition": "To create an environment that encourages employee loyalty and reduces turnover",
+                                            "Source": "empty.txt"
+                                        },
+                                        {
+                                            "Verb": "Develop",
+                                            "Outcome": "employee skills",
+                                            "Definition": "To provide opportunities for employees to enhance their skills and grow professionally",
+                                            "Source": "empty.txt"
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
