@@ -386,11 +386,19 @@ def _task_generate_results_surfacing(task: TaskData, api_call_timeout: int) -> I
             for aiMessage in topicInfo["body"][2]:
                 yield {"type": "results_text", "body": prefix + aiMessage["title"]}
                 # wait until the coroutine has completed
-                aiMessage["body"] = async_event_loop.run_until_complete(
-                    asyncio.wait_for(aiMessage["task"], api_call_timeout))
+                try:
+                    aiMessage["body"] = async_event_loop.run_until_complete(
+                        asyncio.wait_for(aiMessage["task"], timeout=api_call_timeout))
+                except asyncio.TimeoutError:
+                    aiMessage["task"].cancel()
+                    aiMessage["title"] = "Timeout Error"
+                    aiMessage["body"] = "API call timed out."
+                    print(traceback.print_exc())
+                    print("^^^^^^^^ TIMEOUT ERROR ^^^^^^^^")
                 # remove the coroutine and task from the message so that it can be serialized
                 del aiMessage["task"], aiMessage["coro"]
-                if aiMessage["title"] == "Formatted Response":
+
+                if aiMessage["title"] == "Formatted Response" and isinstance(aiMessage["body"], AIMessage):
                     # try to parse the json, if it fails, try to correct the error and parse again
                     try:
                         json_str = aiMessage["body"].additional_kwargs.get("function_call", {}).get(
@@ -411,6 +419,10 @@ def _task_generate_results_surfacing(task: TaskData, api_call_timeout: int) -> I
                 elif aiMessage["title"] == "Text Response":
                     aiMessage["body"] = aiMessage["body"].content
                     yield {"type": "results_text", "body": f"```text\n{aiMessage['body']}\n```"}
+                elif aiMessage["title"] == "Timeout Error":
+                    yield {"type": "results_text", "body": f"```text\n{aiMessage['body']}\n```"}
+                else:
+                    assert False, f"invalid aiMessage title: {aiMessage['title']}"
 
             yield {"type": "progress_info", "body": f"- {topic}"}
 
