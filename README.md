@@ -17,8 +17,8 @@ This is currently just software that can used internally and also be shown as a 
     1. node_modules (npm install)
     1. python packages (see backend/requirements.txt)
 1. Create a file in the backend directory titled ".env" containing OPENAI_API_KEY="your api key here"
-1. Open up split cmd terminals  
-1. In one terminal start the python server by running: "npm run dev-backend"
+1. Open up two command prompt windows in the frontend sub-folder
+1. In one terminal in start the python server by running: "npm run dev-backend"
 1. In the other terminal open the vite react app by running: "npm run dev"
 
 ## What Types of Documents Can Be Uploaded?
