@@ -588,7 +588,7 @@ First we need to decide on what the smallest timeframe we want to consider, sinc
 I need a tool that takes a look at a department (ex: sales) and understands the following:
 - **what** the department achieved over the **last timeframe** (ex: $8M in sales selling products/services x, y, z, to customers a, b, c; over 1 quarter)
 - the department's past performance (ex: 10% growth in sales, 5% growth in sales, 2% growth in sales)
-- the department's and culture (startup vs. mature, vacation season vs. busy season, relaxed vs. stressed, etc.)
+- culture (startup vs. mature, vacation season vs. busy season, relaxed vs. stressed, etc.)
 - **how** the department achieved what they did last year
     - strategy map
     - objectives
