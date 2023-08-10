@@ -66,6 +66,7 @@ Set up backend using **python**, but realize that all of the same functionality 
 1. followed the steps in the article up to [here](https://dev.to/nagatodev/how-to-connect-flask-to-reactjs-1k8i#:~:text=backend/__pycache__-,Connecting,-the%20API%20endpoint)
 2. python modules explicitly installed with pip install (versions and implicit dependencies found in backend/requirements.txt):
     - Flask
+    - Flask-Cors
     - langchain
     - "unstructured[local-inference]"
     - faiss-cpu
