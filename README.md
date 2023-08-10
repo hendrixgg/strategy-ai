@@ -12,52 +12,6 @@ This is currently just software that can used internally and also be shown as a 
 
 ## How to run?
 
-### Installation
-
-Requirements:
-- [github link](https://github.com/hendrixgg/strategy-ai)
-- Node.js and npm (gives you the option to install python along with it)
-- OpenAI api key
-
-1. Ensure that you have Node.js and NPM installed so that you can build the project
-    1. check if it is installed by opening a cmd terminal and running: “node -v” or “npm -v”
-    2. if not installed go to: https://nodejs.org/en/download
-    3. download the installer for your operating system
-    4. run the installer (say yes to everything and check that box at the end where it mentions Chocolatey)
-    5. when the command prompt opens up, press enter and proceed with the installation
-2. now get the repository, either:
-    1. without git:
-        1. download the zip file from the website: [https://github.com/hendrixgg/strategy-ai](https://github.com/hendrixgg/strategy-ai)
-            
-            ![Image showing the buttone to download the zip file after following the above link](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0b18457e-e0d7-436a-b30b-76a8d55b50ff/Untitled.png)
-            
-        2. extract the compressed folder
-        3. copy the folder path, you will need it for next steps
-    2. use git to clone the repository
-3. open up command prompt in the frontend directory (using WINDOWS)
-    1. press “Windows Button” > type “cmd” > press “Enter”
-4. To install the UI, run:
-    
-    ```bash
-    cd <path to extracted folder>\frontend && npm install
-    ```
-    
-5. To install the backend:
-    1. install the dependencies (this may take a few minutes) run:
-        
-        ```bash
-        cd <path to extracted folder>\backend && python -m venv env && env\Scripts\activate && pip install -r requirements.txt
-        ```
-        
-    2. now you need to input your OpenAI api key
-        1. open the backend folder
-        2. create a file titled “.env”
-        3. in the file put: OPENAI_API_KEY = “your api key here”
-        4. paste your actual OpenAI api key within the quotes
-        5. save the file
-
-**The installation is now complete**
-
 ### Running Development Environment
 1. Ensure that all dependencies are installed
     1. node_modules (npm install)
