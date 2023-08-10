@@ -72,6 +72,18 @@ task_type_id_to_task_type = [
 
 @api.route("/files")
 def files():
+    # update the vector store with the new documents
+    global documents, vectorStore
+    # loading documents from files
+    documents = DocStore(dict({
+        "Methodology Documents": DocumentSource(name="Pm2 Methodology Documents", directory_path=methodology_documents_directory),
+        "Client Documents": DocumentSource(name="Client Documents", directory_path=client_documents_directory),
+        "Website Documents": DocumentSource(name="Website Documents", filePaths=[os.path.join(available_documents_directory, "visible_files", "weblinks.txt")]),
+        "AI Documents": DocumentSource(name="AI Generated Documents", directory_path=ai_documents_directory)
+    }))
+
+    # vector store to allow for document similarity search
+    vectorStore = FAISSVectorStore(documents.splitDocuments)
     return path_to_file_struct(backend_directory, os.path.relpath(visible_files_directory, backend_directory)).dict(by_alias=True)
 
 
@@ -147,10 +159,10 @@ def recursive_dict_types(d: dict):
 #         files_available=path_to_file_struct(available_documents_directory),
 #         id=str(uuid.uuid4())
 #     )
-
 #     task_init(newTask, vector_store=vectorStore, llm=llm)
 #     for result in task_generate_results_with_processing(newTask, save_directory=ai_output_directory):
 #         print("result")
+
 #     bad_json_str = '{"path": "C:\\Users\\Hendrix\\Documents\\GitHub\\strategy-ai\\frontend"}'
 #     try:
 #         parsed_json = json.loads(bad_json_str)
